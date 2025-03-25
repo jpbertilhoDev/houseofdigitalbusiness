@@ -1,0 +1,41 @@
+<!-- src/app/core/components/language-selector/language-selector.component.html -->
+<div class="language-selector">
+  <button
+    class="language-toggle"
+    (click)="toggleDropdown($event)"
+    aria-label="Select language"
+    [attr.aria-expanded]="isOpen()"
+  >
+    <span class="flag">{{ currentLanguage?.flag }}</span>
+    <span class="language-code">{{ (currentLanguage?.code ?? 'en').toUpperCase() }}</span>
+    <i class="chevron-icon" [@rotateAnimation]="isOpen() ? 'open' : 'closed'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </i>
+  </button>
+
+  <div
+    class="language-dropdown"
+    [@dropdownAnimation]="isOpen() ? 'open' : 'closed'"
+    role="menu"
+    aria-hidden="!isOpen()"
+  >
+    <ul class="language-list">
+      <li *ngFor="let language of languages; let i = index"
+          class="language-item"
+          [class.active]="language.code === currentLanguage?.code"
+          [@fadeIn]
+          [style.animation-delay]="i * 50 + 'ms'"
+          (click)="selectLanguage(language, $event)"
+          role="menuitem"
+      >
+        <span class="flag">{{ language.flag }}</span>
+        <div class="language-info">
+          <span class="language-native">{{ language.nativeName }}</span>
+          <span class="language-name">{{ language.name }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

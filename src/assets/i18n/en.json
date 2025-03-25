@@ -1,0 +1,93 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to",
+    "company": "House Digital of Business",
+    "subtitle": "Professional digital solutions for your business growth in Germany and beyond",
+    "services_btn": "Our Services",
+    "portfolio_btn": "View Portfolio"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer comprehensive digital solutions to help your business thrive in the digital landscape",
+    "learn_more": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "description1": "House Digital of Business is a premium digital agency based in Germany, providing innovative solutions to businesses worldwide. Our team of experts is dedicated to delivering exceptional digital experiences that drive growth and success.",
+    "description2": "With our deep expertise in digital technologies and business strategies, we help our clients transform their vision into reality.",
+    "features": {
+      "team": "Expert Team of Developers & Designers",
+      "solutions": "Tailored Solutions for Your Business",
+      "innovation": "Focus on Innovation & Quality",
+      "approach": "Client-Centered Approach"
+    },
+    "learn_more": "Learn More About Us"
+  },
+  "portfolio": {
+    "title": "Featured Projects",
+    "subtitle": "Take a look at some of our recent work that showcases our expertise and creativity",
+    "view_all": "View All Projects"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by businesses across Germany and beyond"
+  },
+  "cta": {
+    "title": "Ready to Grow Your Business?",
+    "subtitle": "Contact us today to discuss how we can help you achieve your digital goals.",
+    "button": "Get in Touch"
+  },
+  "contact": {
+    "title": "Get in",
+    "title_highlight": "Touch",
+    "subtitle": "We'd love to hear from you. Contact us for any inquiries or to discuss your project.",
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you shortly",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "service": "Service of Interest",
+      "hear_about": "How did you hear about us?",
+      "terms": "I agree to the Privacy Policy and Terms of Service",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully! We'll be in touch soon.",
+      "error": "There are errors in your form. Please correct them and try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "subtitle": "We're here to help and answer any questions",
+      "location": {
+        "title": "Our Location",
+        "value": "Alexanderplatz 5, 10178 Berlin, Germany"
+      },
+      "phone": {
+        "title": "Phone Number",
+        "value": "+49 30 1234 5678",
+        "hours": "Monday - Friday, 9:00 AM - 6:00 PM"
+      },
+      "email": {
+        "title": "Email Address",
+        "value": "info@housedigitalofbusiness.com",
+        "response": "We'll respond within 24 business hours"
+      },
+      "social": "Follow Us"
+    }
+  },
+  "footer": {
+    "copyright": "© 2023 House Digital of Business. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookies Policy"
+  }
+}

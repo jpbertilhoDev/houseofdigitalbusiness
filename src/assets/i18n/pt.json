@@ -1,0 +1,93 @@
+{
+  "header": {
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre Nós",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "hero": {
+    "welcome": "Bem-vindo à",
+    "company": "House Digital of Business",
+    "subtitle": "Soluções digitais profissionais para o crescimento do seu negócio na Alemanha e além",
+    "services_btn": "Nossos Serviços",
+    "portfolio_btn": "Ver Portfólio"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Oferecemos soluções digitais abrangentes para ajudar seu negócio a prosperar no cenário digital",
+    "learn_more": "Saiba Mais"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "description1": "A House Digital of Business é uma agência digital premium com sede na Alemanha, fornecendo soluções inovadoras para empresas em todo o mundo. Nossa equipe de especialistas é dedicada a entregar experiências digitais excepcionais que impulsionam o crescimento e o sucesso.",
+    "description2": "Com nossa profunda expertise em tecnologias digitais e estratégias de negócios, ajudamos nossos clientes a transformar sua visão em realidade.",
+    "features": {
+      "team": "Equipe Especializada de Desenvolvedores e Designers",
+      "solutions": "Soluções Personalizadas para o Seu Negócio",
+      "innovation": "Foco em Inovação e Qualidade",
+      "approach": "Abordagem Centrada no Cliente"
+    },
+    "learn_more": "Saiba Mais Sobre Nós"
+  },
+  "portfolio": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Confira alguns de nossos trabalhos recentes que demonstram nossa expertise e criatividade",
+    "view_all": "Ver Todos os Projetos"
+  },
+  "testimonials": {
+    "title": "O Que Nossos Clientes Dizem",
+    "subtitle": "Confiado por empresas em toda a Alemanha e além"
+  },
+  "cta": {
+    "title": "Pronto para Expandir Seu Negócio?",
+    "subtitle": "Entre em contato hoje para discutir como podemos ajudá-lo a alcançar seus objetivos digitais.",
+    "button": "Fale Conosco"
+  },
+  "contact": {
+    "title": "Entre em",
+    "title_highlight": "Contato",
+    "subtitle": "Adoraríamos ouvir de você. Entre em contato para quaisquer dúvidas ou para discutir seu projeto.",
+    "form": {
+      "title": "Envie-nos uma Mensagem",
+      "subtitle": "Preencha o formulário abaixo e entraremos em contato em breve",
+      "name": "Nome Completo",
+      "email": "Endereço de Email",
+      "phone": "Número de Telefone",
+      "subject": "Assunto",
+      "message": "Sua Mensagem",
+      "service": "Serviço de Interesse",
+      "hear_about": "Como você nos conheceu?",
+      "terms": "Concordo com a Política de Privacidade e Termos de Serviço",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.",
+      "error": "Existem erros no seu formulário. Por favor, corrija-os e tente novamente."
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "subtitle": "Estamos aqui para ajudar e responder a quaisquer perguntas",
+      "location": {
+        "title": "Nossa Localização",
+        "value": "Alexanderplatz 5, 10178 Berlim, Alemanha"
+      },
+      "phone": {
+        "title": "Número de Telefone",
+        "value": "+49 30 1234 5678",
+        "hours": "Segunda - Sexta, 9:00 - 18:00"
+      },
+      "email": {
+        "title": "Endereço de Email",
+        "value": "info@housedigitalofbusiness.com",
+        "response": "Respondemos em até 24 horas úteis"
+      },
+      "social": "Siga-nos"
+    }
+  },
+  "footer": {
+    "copyright": "© 2023 House Digital of Business. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "cookies": "Política de Cookies"
+  }
+}

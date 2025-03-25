@@ -1,0 +1,152 @@
+// // src/app/core/components/language-selector/language-selector.component.scss
+// :host {
+//   display: block;
+//   position: relative;
+// }
+
+// .language-selector {
+//   position: relative;
+//   display: inline-block;
+//   user-select: none;
+//   z-index: 1000;
+// }
+
+// .language-toggle {
+//   display: flex;
+//   align-items: center;
+//   background: transparent;
+//   border: 1px solid rgba(var(--primary-color-rgb, 0, 255, 255), 0.2);
+//   border-radius: 50px;
+//   padding: 8px 16px;
+//   cursor: pointer;
+//   transition: all 0.3s ease;
+//   color: var(--nav-text, #333);
+//   font-size: 14px;
+//   font-weight: 500;
+
+//   &:hover {
+//     background-color: rgba(var(--primary-color-rgb, 0, 255, 255), 0.1);
+//     border-color: var(--primary-color, #00FFFF);
+//     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+//     transform: translateY(-1px);
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb, 0, 255, 255), 0.3);
+//   }
+
+//   .flag {
+//     font-size: 16px;
+//     margin-right: 8px;
+//   }
+
+//   .language-code {
+//     font-weight: 600;
+//     letter-spacing: 0.5px;
+//   }
+
+//   .chevron-icon {
+//     margin-left: 8px;
+//     display: flex;
+//     align-items: center;
+//     transition: transform 0.3s ease;
+//   }
+// }
+
+// .language-dropdown {
+//   position: absolute;
+//   top: calc(100% + 10px);
+//   right: 0;
+//   min-width: 200px;
+//   background-color: var(--card-bg, #FFFFFF);
+//   border-radius: 12px;
+//   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+//   overflow: hidden;
+//   z-index: 1000;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: -5px;
+//     right: 20px;
+//     width: 10px;
+//     height: 10px;
+//     background-color: var(--card-bg, #FFFFFF);
+//     transform: rotate(45deg);
+//     border-top: 1px solid rgba(0, 0, 0, 0.05);
+//     border-left: 1px solid rgba(0, 0, 0, 0.05);
+//   }
+// }
+
+// .language-list {
+//   list-style: none;
+//   padding: 10px 0;
+//   margin: 0;
+// }
+
+// .language-item {
+//   display: flex;
+//   align-items: center;
+//   padding: 12px 20px;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   color: var(--text-color, #333333);
+
+//   &:hover {
+//     background-color: rgba(var(--primary-color-rgb, 0, 255, 255), 0.05);
+//     color: var(--primary-color, #00FFFF);
+//   }
+
+//   &.active {
+//     background-color: rgba(var(--primary-color-rgb, 0, 255, 255), 0.1);
+//     color: var(--primary-color, #00FFFF);
+//     font-weight: 500;
+//     position: relative;
+
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       bottom: 0;
+//       width: 3px;
+//       background-color: var(--primary-color, #00FFFF);
+//     }
+//   }
+
+//   .flag {
+//     font-size: 18px;
+//     margin-right: 12px;
+//   }
+
+//   .language-info {
+//     display: flex;
+//     flex-direction: column;
+
+//     .language-native {
+//       font-weight: 500;
+//       font-size: 14px;
+//     }
+
+//     .language-name {
+//       font-size: 12px;
+//       opacity: 0.7;
+//     }
+//   }
+// }
+
+// // Responsividade
+// @media (max-width: 768px) {
+//   .language-toggle {
+//     padding: 6px 12px;
+
+//     .language-code {
+//       display: none;
+//     }
+
+//     .flag {
+//       margin-right: 4px;
+//     }
+//   }
+// }

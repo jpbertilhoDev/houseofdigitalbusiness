@@ -1,0 +1,93 @@
+{
+  "header": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "about": "Über Uns",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "welcome": "Willkommen bei",
+    "company": "House Digital of Business",
+    "subtitle": "Professionelle digitale Lösungen für Ihr Geschäftswachstum in Deutschland und darüber hinaus",
+    "services_btn": "Unsere Dienstleistungen",
+    "portfolio_btn": "Portfolio Ansehen"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Wir bieten umfassende digitale Lösungen, um Ihrem Unternehmen im digitalen Umfeld zum Erfolg zu verhelfen",
+    "learn_more": "Mehr Erfahren"
+  },
+  "about": {
+    "title": "Über Uns",
+    "description1": "House Digital of Business ist eine Premium-Digitalagentur mit Sitz in Deutschland, die innovative Lösungen für Unternehmen weltweit anbietet. Unser Expertenteam ist darauf spezialisiert, außergewöhnliche digitale Erlebnisse zu liefern, die Wachstum und Erfolg fördern.",
+    "description2": "Mit unserer umfassenden Expertise in digitalen Technologien und Geschäftsstrategien helfen wir unseren Kunden, ihre Vision in die Realität umzusetzen.",
+    "features": {
+      "team": "Expertenteam aus Entwicklern & Designern",
+      "solutions": "Maßgeschneiderte Lösungen für Ihr Unternehmen",
+      "innovation": "Fokus auf Innovation & Qualität",
+      "approach": "Kundenorientierter Ansatz"
+    },
+    "learn_more": "Mehr Über Uns Erfahren"
+  },
+  "portfolio": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Werfen Sie einen Blick auf einige unserer neuesten Arbeiten, die unsere Expertise und Kreativität zeigen",
+    "view_all": "Alle Projekte Ansehen"
+  },
+  "testimonials": {
+    "title": "Was Unsere Kunden Sagen",
+    "subtitle": "Vertrauenswürdig für Unternehmen in ganz Deutschland und darüber hinaus"
+  },
+  "cta": {
+    "title": "Bereit, Ihr Geschäft zu Erweitern?",
+    "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
+    "button": "Kontakt Aufnehmen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "title_highlight": "Aufnehmen",
+    "subtitle": "Wir freuen uns, von Ihnen zu hören. Kontaktieren Sie uns für Anfragen oder um Ihr Projekt zu besprechen.",
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "subtitle": "Füllen Sie das untenstehende Formular aus und wir melden uns in Kürze bei Ihnen",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "service": "Dienstleistung von Interesse",
+      "hear_about": "Wie haben Sie von uns erfahren?",
+      "terms": "Ich stimme der Datenschutzrichtlinie und den Nutzungsbedingungen zu",
+      "submit": "Nachricht Senden",
+      "sending": "Wird gesendet...",
+      "success": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden uns in Kürze bei Ihnen melden.",
+      "error": "Es gibt Fehler in Ihrem Formular. Bitte korrigieren Sie diese und versuchen Sie es erneut."
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "subtitle": "Wir sind hier, um zu helfen und Ihre Fragen zu beantworten",
+      "location": {
+        "title": "Unser Standort",
+        "value": "Alexanderplatz 5, 10178 Berlin, Deutschland"
+      },
+      "phone": {
+        "title": "Telefonnummer",
+        "value": "+49 30 1234 5678",
+        "hours": "Montag - Freitag, 9:00 - 18:00 Uhr"
+      },
+      "email": {
+        "title": "E-Mail-Adresse",
+        "value": "info@housedigitalofbusiness.com",
+        "response": "Wir antworten innerhalb von 24 Geschäftsstunden"
+      },
+      "social": "Folgen Sie Uns"
+    }
+  },
+  "footer": {
+    "copyright": "© 2023 House Digital of Business. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "cookies": "Cookie-Richtlinie"
+  }
+}

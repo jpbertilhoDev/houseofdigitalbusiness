@@ -1,0 +1,160 @@
+<!-- Hero Section -->
+<section class="hero" @fadeIn>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Welcome to <span>House Digital of Business</span></h1>
+      <p>Professional digital solutions for your business growth in Germany and beyond</p>
+      <div class="hero-buttons">
+        <a routerLink="/services" class="btn">Our Services</a>
+        <a routerLink="/portfolio" class="btn btn-outline">View Portfolio</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="placeholder-image"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services section" @staggerCards>
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>We offer comprehensive digital solutions to help your business thrive in the digital landscape</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card card-item" *ngFor="let service of services">
+        <div class="service-icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3>{{service.title}}</h3>
+        <p>{{service.description}}</p>
+        <a [routerLink]="'/services'" class="service-link">
+          Learn More
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="about-preview section" @slideInUp>
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>House Digital of Business is a premium digital agency based in Germany, providing innovative solutions to businesses worldwide. Our team of experts is dedicated to delivering exceptional digital experiences that drive growth and success.</p>
+        <p>With our deep expertise in digital technologies and business strategies, we help our clients transform their vision into reality.</p>
+        <ul class="about-features">
+          <li><i class="fas fa-check-circle"></i> Expert Team of Developers & Designers</li>
+          <li><i class="fas fa-check-circle"></i> Tailored Solutions for Your Business</li>
+          <li><i class="fas fa-check-circle"></i> Focus on Innovation & Quality</li>
+          <li><i class="fas fa-check-circle"></i> Client-Centered Approach</li>
+        </ul>
+        <a routerLink="/about" class="btn">Learn More About Us</a>
+      </div>
+      <div class="about-image">
+        <div class="placeholder-image"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Preview Section -->
+<section class="portfolio-preview section" @staggerCards>
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <p>Take a look at some of our recent work that showcases our expertise and creativity</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item card-item" *ngFor="let project of featuredProjects">
+        <div class="portfolio-image">
+          <div class="placeholder-image"></div>
+          <div class="portfolio-overlay">
+            <a [routerLink]="'/portfolio'" class="portfolio-link">
+              <i class="fas fa-eye"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>{{project.title}}</h3>
+          <p>{{project.category}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all">
+      <a routerLink="/portfolio" class="btn">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials section" @slideInUp>
+  <div class="container">
+    <div class="section-title">
+      <h2>What Our Clients Say</h2>
+      <p>Trusted by businesses across Germany and beyond</p>
+    </div>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-item" *ngFor="let testimonial of testimonials; let i = index"
+           [ngClass]="{'active': currentTestimonial === i}">
+        <div class="testimonial-content">
+          <div class="testimonial-text">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>{{testimonial.text}}</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <div class="placeholder-image"></div>
+            </div>
+            <div class="author-info">
+              <h4>{{testimonial.name}}</h4>
+              <p>{{testimonial.position}}, {{testimonial.company}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-controls">
+      <button class="control-prev" (click)="prevTestimonial()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="control-dots">
+        <span *ngFor="let dot of testimonials; let i = index"
+              [ngClass]="{'active': currentTestimonial === i}"
+              (click)="setTestimonial(i)"></span>
+      </div>
+      <button class="control-next" (click)="nextTestimonial()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section" @fadeIn>
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Grow Your Business?</h2>
+      <p>Contact us today to discuss how we can help you achieve your digital goals.</p>
+      <a routerLink="/contact" class="btn btn-lg">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- width: 100 - styles.scss:123
+max-width: 1200px
+
+home.component.scss:24
+flex: 1
+padding-right:20 px
+
+home.component.scss:72
+max-width: 600 -->

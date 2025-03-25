@@ -1,0 +1,55 @@
+// Color variables
+$primary-color: #00FFFF; // Cyan
+$primary-dark: #00CCCC;
+$primary-light: #99FFFF;
+$accent-color: #FF5722;
+// $text-color: #333333;
+$light-text: #FFFFFF;
+$background-light: #F5F5F5;
+$background-dark: #232323;
+$success-color: #4CAF50;
+$warning-color: #FFC107;
+$error-color: #F44336;
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+$spacing-xl: 80px;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 15px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-header: 1010;
+$z-index-modal: 1050;
+$z-index-tooltip: 1070;
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+$transition-slow: all 0.5s ease;
