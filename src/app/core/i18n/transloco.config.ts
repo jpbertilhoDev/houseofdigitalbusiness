@@ -1,42 +1,46 @@
 // src/app/core/i18n/transloco.config.ts
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Provider } from '@angular/core';
+import { inject, Injectable, Provider } from '@angular/core';
 import {
-  TRANSLOCO_LOADER,
-  Translation,
-  TranslocoLoader,
+  TranslocoModule,
   TRANSLOCO_CONFIG,
   translocoConfig,
-  TranslocoModule,
-  TRANSLOCO_TRANSPILER,
-  DefaultTranspiler,
-} from '@ngneat/transloco';
+  TranslocoLoader,
+  Translation,
+} from '@jsverse/transloco';
 import { Observable } from 'rxjs';
 
+// Loader personalizado para carregar traduções via HTTP
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
-  constructor(private http: HttpClient) {}
-
-  getTranslation(lang: string): Observable<Translation> {
+  // constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+  getTranslation(lang: string): Observable<any> {
+    console.log('ESTOU AUQI');
+    console.log(lang);
     return this.http.get<Translation>(`/assets/i18n/${lang}.json`);
   }
 }
 
+// Configuração do Transloco com boas práticas
 export const translocoProviders: Provider[] = [
   {
     provide: TRANSLOCO_CONFIG,
     useValue: translocoConfig({
-      availableLangs: ['en', 'pt', 'de'],
-      defaultLang: 'en',
-      reRenderOnLangChange: true,
-      fallbackLang: 'en',
-      prodMode: false, // Set to true in production
+      availableLangs: ['en', 'pt', 'de'], // Idiomas disponíveis
+      defaultLang: 'en', // Idioma padrão
+      reRenderOnLangChange: true, // Re-renderiza ao mudar idioma
+      fallbackLang: 'en', // Idioma de fallback
+      prodMode: false, // Desativado em desenvolvimento
+      missingHandler: {
+        // Tratamento de chaves ausentes
+        useFallbackTranslation: true, // Usa o idioma de fallback
+        logMissingKey: true, // Loga chaves ausentes no console
+      },
     }),
   },
-  { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
-  // Adicione este provedor que estava faltando
-  { provide: TRANSLOCO_TRANSPILER, useClass: DefaultTranspiler },
+  // { provide: TranslocoLoader, useClass: TranslocoHttpLoader },
 ];
 
-// Exportamos o módulo para poder importá-lo nos componentes standalone
+// Exportação do módulo para uso em standalone components
 export const translocoImports = [TranslocoModule];

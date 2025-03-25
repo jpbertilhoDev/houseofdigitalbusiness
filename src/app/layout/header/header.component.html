@@ -4,32 +4,31 @@
     <div class="header-content">
       <div class="logo">
         <a routerLink="/">
-          <span class="logo-text">House <span class="highlight">Digital</span> of Business</span>
+          <span class="logo-text">
+            {{ 'header.company' | transloco }}
+          </span>
         </a>
       </div>
 
       <nav class="nav-menu" [ngClass]="{'active': menuActive}">
         <ul>
-          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'nav.home' | transloco }}</a></li>
-          <li><a routerLink="/services" routerLinkActive="active">{{ 'nav.services' | transloco }}</a></li>
-          <li><a routerLink="/about" routerLinkActive="active">{{ 'nav.about' | transloco }}</a></li>
-          <li><a routerLink="/portfolio" routerLinkActive="active">{{ 'nav.portfolio' | transloco }}</a></li>
-          <li><a routerLink="/contact" routerLinkActive="active">{{ 'nav.contact' | transloco }}</a></li>
+          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'header.home' | transloco }}</a></li>
+          <li><a routerLink="/services" routerLinkActive="active">{{ 'header.services' | transloco }}</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | transloco }}</a></li>
+          <li><a routerLink="/portfolio" routerLinkActive="active">{{ 'header.portfolio' | transloco }}</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | transloco }}</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
         <app-language-selector></app-language-selector>
-
-
-        <!-- Seletor de Tema -->
         <app-theme-toggle></app-theme-toggle>
-
-      <div class="menu-toggle" (click)="toggleMenu()">
-        <span [ngClass]="{'active': menuActive}"></span>
-        <span [ngClass]="{'active': menuActive}"></span>
-        <span [ngClass]="{'active': menuActive}"></span>
+        <div class="menu-toggle" (click)="toggleMenu()">
+          <span [ngClass]="{'active': menuActive}"></span>
+          <span [ngClass]="{'active': menuActive}"></span>
+          <span [ngClass]="{'active': menuActive}"></span>
+        </div>
       </div>
     </div>
   </div>
-
+</header>

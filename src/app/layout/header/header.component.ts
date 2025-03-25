@@ -1,10 +1,11 @@
 // src/app/layout/header/header.component.ts
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslocoModule } from '@ngneat/transloco';
+// import { TranslocoModule } from '@ngneat/transloco';
 import { LanguageSelectorComponent } from '../../core/components/language-selector/language-selector.component';
-import { ThemeToggleComponent } from "../../core/components/theme-toggle/theme-toggle.component";
+import { ThemeToggleComponent } from '../../core/components/theme-toggle/theme-toggle.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-header',
@@ -14,16 +15,18 @@ import { ThemeToggleComponent } from "../../core/components/theme-toggle/theme-t
     RouterModule,
     TranslocoModule,
     LanguageSelectorComponent,
-    ThemeToggleComponent
-],
+    ThemeToggleComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   isScrolled = false;
   menuActive = false;
 
-  constructor() {}
+  constructor() {
+    console.log("bakaka")
+  }
 
   ngOnInit(): void {}
 

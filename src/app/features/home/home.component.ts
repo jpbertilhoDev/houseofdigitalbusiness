@@ -9,11 +9,12 @@ import {
   query,
   stagger,
 } from '@angular/animations';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslocoModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [

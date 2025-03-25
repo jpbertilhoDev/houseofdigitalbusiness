@@ -1,6 +1,6 @@
 // src/app/core/i18n/language.service.ts
 import { Injectable, inject } from '@angular/core';
-import { TranslocoService } from '@ngneat/transloco';
+import { TranslocoService } from '@jsverse/transloco'; // Atualizado para @jsverse/transloco
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface Language {
@@ -17,28 +17,12 @@ export class LanguageService {
   private translocoService = inject(TranslocoService);
 
   private currentLanguageSubject = new BehaviorSubject<string>('en');
-  public currentLanguage$: Observable<string> =
-    this.currentLanguageSubject.asObservable();
+  public currentLanguage$: Observable<string> = this.currentLanguageSubject.asObservable();
 
-  public languages: Language[] = [
-    {
-      code: 'en',
-      name: 'English',
-      nativeName: 'English',
-      flag: '🇬🇧',
-    },
-    {
-      code: 'pt',
-      name: 'Portuguese',
-      nativeName: 'Português',
-      flag: '🇵🇹',
-    },
-    {
-      code: 'de',
-      name: 'German',
-      nativeName: 'Deutsch',
-      flag: '🇩🇪',
-    },
+  public readonly languages: Language[] = [
+    { code: 'en', name: 'English', nativeName: 'English', flag: '🇬🇧' },
+    { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
+    { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
   ];
 
   constructor() {
@@ -46,21 +30,15 @@ export class LanguageService {
   }
 
   private initializeLanguage(): void {
-    // Detectar idioma do navegador
-    const browserLang = this.getBrowserLang();
-    const defaultLang =
-      browserLang && this.isLanguageAvailable(browserLang) ? browserLang : 'en';
-
-    // Verificar se há um idioma salvo no localStorage
     const savedLang = localStorage.getItem('selectedLanguage');
-    const initialLang = savedLang || defaultLang;
-
-    this.setLanguage(initialLang);
+    const browserLang = this.getBrowserLang();
+    const defaultLang = savedLang || (browserLang && this.isLanguageAvailable(browserLang) ? browserLang : 'en');
+    this.setLanguage(defaultLang);
   }
 
   private getBrowserLang(): string | null {
     const browserLang = navigator.language;
-    return browserLang ? browserLang.split('-')[0] : null;
+    return browserLang ? browserLang.split('-')[0].toLowerCase() : null;
   }
 
   private isLanguageAvailable(langCode: string): boolean {
@@ -73,12 +51,9 @@ export class LanguageService {
       this.currentLanguageSubject.next(langCode);
       localStorage.setItem('selectedLanguage', langCode);
       document.documentElement.lang = langCode;
-
-      // Adicionar classe ao body para estilização específica de idioma
-      document.body.className = document.body.className
-        .replace(/lang-\w+/g, '')
-        .trim();
-      document.body.classList.add(`lang-${langCode}`);
+    } else {
+      console.warn(`Idioma ${langCode} não suportado. Usando fallback 'en'.`);
+      this.setLanguage('en');
     }
   }
 
@@ -91,7 +66,6 @@ export class LanguageService {
   }
 
   public getActiveLanguage(): Language {
-    const current = this.getLanguageByCode(this.getCurrentLanguage());
-    return current || this.languages[0];
+    return this.getLanguageByCode(this.getCurrentLanguage()) || this.languages[0];
   }
 }

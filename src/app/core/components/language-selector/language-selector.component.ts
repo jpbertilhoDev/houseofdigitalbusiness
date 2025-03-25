@@ -1,18 +1,20 @@
 // src/app/core/components/language-selector/language-selector.component.ts
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslocoModule } from '@ngneat/transloco';
+
 import { LanguageService, Language } from '../../i18n/language.service';
 
 @Component({
   selector: 'app-language-selector',
   standalone: true,
-  imports: [CommonModule, TranslocoModule],
+  imports: [CommonModule],
   template: `
     <div class="language-selector">
       <button class="language-toggle" (click)="toggleDropdown($event)">
         <span class="flag">{{ activeLanguage.flag }}</span>
-        <span class="language-code">{{ activeLanguage.code.toUpperCase() }}</span>
+        <span class="language-code">{{
+          activeLanguage.code.toUpperCase()
+        }}</span>
         <span class="arrow">▼</span>
       </button>
 
@@ -32,111 +34,113 @@ import { LanguageService, Language } from '../../i18n/language.service';
       </div>
     </div>
   `,
-  styles: [`
-    .language-selector {
-      position: relative;
-      display: inline-block;
-    }
+  styles: [
+    `
+      .language-selector {
+        position: relative;
+        display: inline-block;
+      }
 
-    .language-toggle {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 8px 12px;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50px;
-      cursor: pointer;
-      color: var(--nav-text, white);
-      transition: all 0.3s ease;
-    }
-
-    .language-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-1px);
-    }
-
-    .flag {
-      font-size: 16px;
-    }
-
-    .language-code {
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .arrow {
-      font-size: 10px;
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-    }
-
-    .language-dropdown {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      min-width: 180px;
-      z-index: 1000;
-      overflow: hidden;
-    }
-
-    .language-option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      color: #333;
-    }
-
-    .language-option:hover {
-      background-color: #f5f5f5;
-    }
-
-    .language-option.active {
-      background-color: #e0e0e0;
-      position: relative;
-    }
-
-    .language-option.active::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 3px;
-      background-color: var(--primary-color, #0088cc);
-    }
-
-    .language-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .language-native {
-      font-weight: 500;
-      font-size: 14px;
-    }
-
-    .language-name {
-      font-size: 12px;
-      opacity: 0.7;
-    }
-
-    @media (max-width: 768px) {
       .language-toggle {
-        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 8px 12px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        cursor: pointer;
+        color: var(--nav-text, white);
+        transition: all 0.3s ease;
+      }
+
+      .language-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+      }
+
+      .flag {
+        font-size: 16px;
       }
 
       .language-code {
-        display: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
       }
-    }
-  `]
+
+      .arrow {
+        font-size: 10px;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .language-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        min-width: 180px;
+        z-index: 1000;
+        overflow: hidden;
+      }
+
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #333;
+      }
+
+      .language-option:hover {
+        background-color: #f5f5f5;
+      }
+
+      .language-option.active {
+        background-color: #e0e0e0;
+        position: relative;
+      }
+
+      .language-option.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--primary-color, #0088cc);
+      }
+
+      .language-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .language-native {
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .language-name {
+        font-size: 12px;
+        opacity: 0.7;
+      }
+
+      @media (max-width: 768px) {
+        .language-toggle {
+          padding: 6px 10px;
+        }
+
+        .language-code {
+          display: none;
+        }
+      }
+    `,
+  ],
 })
 export class LanguageSelectorComponent implements OnInit {
   private languageService = inject(LanguageService);
@@ -149,7 +153,7 @@ export class LanguageSelectorComponent implements OnInit {
     this.languages = this.languageService.languages;
     this.activeLanguage = this.languageService.getActiveLanguage();
 
-    this.languageService.currentLanguage$.subscribe(langCode => {
+    this.languageService.currentLanguage$.subscribe((langCode) => {
       const lang = this.languageService.getLanguageByCode(langCode);
       if (lang) {
         this.activeLanguage = lang;
