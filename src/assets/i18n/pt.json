@@ -56,11 +56,45 @@
   "portfolio": {
     "title": "Projetos em Destaque",
     "subtitle": "Confira alguns de nossos trabalhos recentes que demonstram nossa expertise e criatividade",
-    "view_all": "Ver Todos os Projetos"
+    "view_all": "Ver Todos os Projetos",
+    "cards": [
+      {
+        "title": "Plataforma de E-commerce",
+        "description": "Desenvolvimento Web"
+      },
+      {
+        "title": "Painel Financeiro",
+        "description": "Desenvolvimento Web"
+      },
+      {
+        "title": "Aplicativo Móvel de Viagens",
+        "description": "Desenvolvimento Mobile"
+      }
+    ]
   },
   "testimonials": {
     "title": "O Que Nossos Clientes Dizem",
-    "subtitle": "Confiado por empresas em toda a Alemanha e além"
+    "subtitle": "Confiado por empresas em toda a Alemanha e além",
+    "items": [
+      {
+        "text": "A House Digital of Business transformou completamente a nossa presença online. A sua equipa entregou uma solução que superou as nossas expectativas e ajudou-nos a expandir significativamente o nosso negócio.",
+        "name": "Michael Schmidt",
+        "position": "CEO",
+        "company": "TechInnovate GmbH"
+      },
+      {
+        "text": "Trabalhar com esta equipa foi um prazer. Compreenderam perfeitamente as nossas necessidades e entregaram um website que representa na perfeição a nossa marca. Altamente recomendado!",
+        "name": "Anna Müller",
+        "position": "Diretora de Marketing",
+        "company": "Lifestyle Brands"
+      },
+      {
+        "text": "A solução de comércio eletrónico desenvolvida pela House Digital of Business aumentou as nossas vendas online em 200%. A sua experiência e profissionalismo são excecionais.",
+        "name": "Thomas Weber",
+        "position": "Fundador",
+        "company": "EcoProducts"
+      }
+    ]
   },
   "cta": {
     "title": "Pronto para Expandir Seu Negócio?",
@@ -108,9 +142,139 @@
     }
   },
   "footer": {
-    "copyright": "© 2023 House Digital of Business. Todos os direitos reservados.",
+    "copyright": "© 2025 House Digital of Business. Todos os direitos reservados.",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "cookies": "Política de Cookies"
+  },
+
+  "servicesPage": {
+    "hero": {
+      "title": "Nossos <span>Serviços</span>",
+      "subtitle": "Soluções digitais completas para ajudar seu negócio a prosperar no cenário digital"
+    },
+    "filter": {
+      "all": "Todos os Serviços",
+      "web": "Desenvolvimento Web",
+      "mobile": "Desenvolvimento Mobile",
+      "design": "Design & UX",
+      "marketing": "Marketing Digital",
+      "consulting": "Consultoria Empresarial"
+    },
+    "services": [
+      {
+        "id": "web-development",
+        "title": "Desenvolvimento Web",
+        "shortDescription": "Aplicações web personalizadas para as necessidades do seu negócio.",
+        "fullDescription": "Nossa equipe de desenvolvimento web cria sites e aplicações web personalizados e de alto desempenho.",
+        "features": [
+          "Design e desenvolvimento de sites responsivos",
+          "Desenvolvimento de aplicações web personalizadas",
+          "Soluções de e-commerce"
+        ],
+        "process": [
+          {
+            "title": "Descoberta & Planejamento",
+            "description": "Analisamos suas necessidades e desenvolvemos um plano detalhado do projeto."
+          },
+          {
+            "title": "Desenvolvimento",
+            "description": "Nossos desenvolvedores constroem sua solução usando as tecnologias mais recentes."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Redesign de Plataforma de E-commerce",
+            "client": "Varejista de Moda",
+            "description": "Redesign completo de uma plataforma de e-commerce.",
+            "results": ["Aumento de 45% na taxa de conversão"]
+          }
+        ]
+      },
+      {
+        "id": "mobile-app-development",
+        "title": "Desenvolvimento de Apps Mobile",
+        "shortDescription": "Aplicações móveis nativas e multiplataforma para iOS e Android.",
+        "fullDescription": "Desenvolvemos aplicações móveis de alta qualidade que engajam usuários e impulsionam o crescimento do negócio.",
+        "features": [
+          "Desenvolvimento de apps nativos para iOS",
+          "Desenvolvimento multiplataforma"
+        ],
+        "process": [
+          {
+            "title": "Conceito & Estratégia",
+            "description": "Definimos o conceito do seu app e desenvolvemos uma estratégia abrangente."
+          },
+          {
+            "title": "Desenvolvimento do App",
+            "description": "Construímos seu app usando as tecnologias mais adequadas."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "App de Rastreamento de Fitness",
+            "client": "Empresa de Saúde e Bem-Estar",
+            "description": "Desenvolvemos um app completo de rastreamento de fitness.",
+            "results": [
+              "Mais de 100.000 downloads no primeiro mês"
+            ]
+          }
+        ]
+      }
+    ],
+    "whyChooseUs": {
+      "title": "Por que nos escolher",
+      "subtitle": "O que diferencia a House Digital of Business da concorrência",
+      "benefits": [
+        {
+          "title": "Equipe Especializada",
+          "description": "Nossa equipe é composta por profissionais experientes com profundo conhecimento."
+        },
+        {
+          "title": "Soluções Personalizadas",
+          "description": "Desenvolvemos soluções sob medida para as necessidades específicas do seu negócio."
+        }
+      ],
+      "statistics": [
+        {
+          "value": "95%",
+          "label": "Satisfação dos Clientes"
+        },
+        {
+          "value": "200+",
+          "label": "Projetos Concluídos"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "O que nossos clientes dizem",
+      "subtitle": "Depoimentos de empresas que ajudamos a ter sucesso",
+      "items": [
+        {
+          "text": "A House Digital of Business transformou completamente nossa presença online.",
+          "name": "Michael Schmidt",
+          "position": "CEO",
+          "company": "TechInnovate GmbH"
+        },
+        {
+          "text": "O aplicativo móvel desenvolvido pela House Digital of Business foi um divisor de águas.",
+          "name": "Anna Müller",
+          "position": "Diretora de Marketing",
+          "company": "Lifestyle Brands"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Pronto para transformar seu negócio?",
+      "subtitle": "Entre em contato hoje para discutir como nossos serviços podem ajudar a alcançar seus objetivos digitais.",
+      "button": "Fale Conosco",
+      "serviceCta": {
+        "title": "Pronto para começar?",
+        "subtitle": "Entre em contato hoje para discutir como nossos serviços de {{serviceTitle}} podem beneficiar seu negócio.",
+        "button": "Entre em Contato"
+      }
+    }
   }
 }
+
+

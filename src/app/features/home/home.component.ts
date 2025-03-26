@@ -54,63 +54,38 @@ import { Subscription } from 'rxjs';
   ],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
   services: { icon: string; title: string; description: string }[] = [];
-  // portfolio: { title: string; description: string }[] = [];
+  portfolio!: { title: string; subtitle: string; view_all: string };
+  featuredProjects: { title: string; description: string }[] = [];
+  testimonialsSection: { title: string; subtitle: string } = {
+    title: '',
+    subtitle: '',
+  };
+  testimonials: {
+    text: string;
+    name: string;
+    position: string;
+    company: string;
+  }[] = [];
 
-  featuredProjects = [
-    {
-      title: 'E-commerce Platform',
-      category: 'Web Development',
-      image: 'assets/images/projects/project1.jpg',
-    },
-    {
-      title: 'Financial Dashboard',
-      category: 'UI/UX Design',
-      image: 'assets/images/projects/project2.jpg',
-    },
-    {
-      title: 'Travel Mobile App',
-      category: 'Mobile Development',
-      image: 'assets/images/projects/project3.jpg',
-    },
-  ];
-  testimonials = [
-    {
-      text: 'House Digital of Business transformed our online presence completely. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly.',
-      name: 'Michael Schmidt',
-      position: 'CEO',
-      company: 'TechInnovate GmbH',
-      image: 'assets/images/testimonials/testimonial1.jpg',
-    },
-    {
-      text: 'Working with this team was a pleasure. They understood our needs perfectly and delivered a website that perfectly represents our brand. Highly recommended!',
-      name: 'Anna Müller',
-      position: 'Marketing Director',
-      company: 'Lifestyle Brands',
-      image: 'assets/images/testimonials/testimonial2.jpg',
-    },
-    {
-      text: 'The e-commerce solution developed by House Digital of Business increased our online sales by 200%. Their expertise and professionalism are outstanding.',
-      name: 'Thomas Weber',
-      position: 'Founder',
-      company: 'EcoProducts',
-      image: 'assets/images/testimonials/testimonial3.jpg',
-    },
-  ];
   currentTestimonial = 0;
   testimonialInterval: any;
   private langChangeSubscription!: Subscription;
-
 
   constructor(private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
     this.loadServices();
+    this.loadPortfolio();
+    this.loadFeaturedProjects();
+    this.loadTestimonials();
     this.startTestimonialRotation();
     this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
       () => {
         this.loadServices();
+        this.loadPortfolio();
+        this.loadFeaturedProjects();
+        this.loadTestimonials();
       }
     );
   }
@@ -128,9 +103,25 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.services = this.translocoService.translate('services.cards');
   }
 
-  // private loadPortfolio(): void {
-  //   // this.portfolio = this.translocoService.translate('portfolio.card')
-  // }
+  private loadPortfolio(): void {
+    this.portfolio = {
+      title: this.translocoService.translate('portfolio.title'),
+      subtitle: this.translocoService.translate('portfolio.subtitle'),
+      view_all: this.translocoService.translate('portfolio.view_all'),
+    };
+  }
+
+  private loadFeaturedProjects(): void {
+    this.featuredProjects = this.translocoService.translate('portfolio.cards');
+  }
+
+  private loadTestimonials(): void {
+    this.testimonialsSection = {
+      title: this.translocoService.translate('testimonials.title'),
+      subtitle: this.translocoService.translate('testimonials.subtitle'),
+    };
+    this.testimonials = this.translocoService.translate('testimonials.items');
+  }
 
   startTestimonialRotation(): void {
     this.testimonialInterval = setInterval(() => {

@@ -31,7 +31,6 @@
       }
     ],
     "learn_more": "Learn More"
-
   },
   "about": {
     "title": "About Us",
@@ -48,11 +47,45 @@
   "portfolio": {
     "title": "Featured Projects",
     "subtitle": "Take a look at some of our recent work that showcases our expertise and creativity",
-    "view_all": "View All Projects"
+    "view_all": "View All Projects",
+    "cards": [
+      {
+        "title": "E-commerce Platform",
+        "description": "Web Development"
+      },
+      {
+        "title": "Financial Dashboard",
+        "description": "Web Development"
+      },
+      {
+        "title": "Travel Mobile Appp",
+        "description": "Mobile Development"
+      }
+    ]
   },
   "testimonials": {
     "title": "What Our Clients Say",
-    "subtitle": "Trusted by businesses across Germany and beyond"
+    "subtitle": "Trusted by businesses across Germany and beyond",
+    "items": [
+      {
+        "text": "House Digital of Business transformed our online presence completely. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly.",
+        "name": "Michael Schmidt",
+        "position": "CEO",
+        "company": "TechInnovate GmbH"
+      },
+      {
+        "text": "Working with this team was a pleasure. They understood our needs perfectly and delivered a website that perfectly represents our brand. Highly recommended!",
+        "name": "Anna Müller",
+        "position": "Marketing Director",
+        "company": "Lifestyle Brands"
+      },
+      {
+        "text": "The e-commerce solution developed by House Digital of Business increased our online sales by 200%. Their expertise and professionalism are outstanding.",
+        "name": "Thomas Weber",
+        "position": "Founder",
+        "company": "EcoProducts"
+      }
+    ]
   },
   "cta": {
     "title": "Ready to Grow Your Business?",
@@ -104,5 +137,75 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookies Policy"
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Our <span>Services</span>",
+      "subtitle": "Comprehensive digital solutions to help your business thrive in the digital landscape"
+    },
+    "filter": {
+      "all": "All Services",
+      "web": "Web Development",
+      "mobile": "Mobile Development",
+      "design": "Design & UX",
+      "marketing": "Digital Marketing",
+      "consulting": "Business Consulting"
+    },
+    "services": [
+      {
+        "id": "web-development",
+        "title": "Web Development",
+        "shortDescription": "Custom web applications tailored to your business needs.",
+        "fullDescription": "Our web development team creates custom, high-performance websites and web applications that deliver exceptional user experiences.",
+        "features": [
+          "Responsive website design and development",
+          "Custom web application development",
+          "E-commerce solutions"
+        ],
+        "process": [
+          {
+            "title": "Discovery & Planning",
+            "description": "We analyze your requirements and develop a detailed project plan."
+          },
+          {
+            "title": "Development",
+            "description": "Our developers build your solution using the latest technologies."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "E-commerce Platform Redesign",
+            "client": "Fashion Retailer",
+            "description": "Completely redesigned and rebuilt an e-commerce platform.",
+            "results": ["45% increase in conversion rate"]
+          }
+        ]
+      },
+      {
+        "id": "mobile-app-development",
+        "title": "Mobile App Development",
+        "shortDescription": "Native and cross-platform mobile applications for iOS and Android.",
+        "fullDescription": "We develop high-quality mobile applications that engage users and drive business growth.",
+        "features": ["Native iOS app development", "Cross-platform development"],
+        "process": [
+          {
+            "title": "Concept & Strategy",
+            "description": "We define your app concept and develop a comprehensive strategy."
+          },
+          {
+            "title": "App Development",
+            "description": "We build your app using the most appropriate technologies."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Fitness Tracking App",
+            "client": "Health & Wellness Company",
+            "description": "Developed a comprehensive fitness tracking app.",
+            "results": ["Over 100,000 downloads in the first month"]
+          }
+        ]
+      }
+    ]
   }
 }

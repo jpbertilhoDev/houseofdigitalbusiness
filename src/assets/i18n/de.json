@@ -56,12 +56,54 @@
   "portfolio": {
     "title": "Ausgewählte Projekte",
     "subtitle": "Werfen Sie einen Blick auf einige unserer neuesten Arbeiten, die unsere Expertise und Kreativität zeigen",
-    "view_all": "Alle Projekte Ansehen"
+    "view_all": "Alle Projekte Ansehen",
+    "cards": [
+
+    {
+      "title": "E-Commerce-Plattform",
+      "description": "Webentwicklung"
+    },
+
+    {
+      "title": "Finanz-Dashboard",
+      "description": "UI/UX-Design"
+    },
+
+    {
+      "title": "Reise-Mobile-App",
+      "description": "Mobile-Entwicklung"
+    }
+  ]
   },
+
+
   "testimonials": {
     "title": "Was Unsere Kunden Sagen",
-    "subtitle": "Vertrauenswürdig für Unternehmen in ganz Deutschland und darüber hinaus"
+    "subtitle": "Vertrauenswürdig für Unternehmen in ganz Deutschland und darüber hinaus",
+    "items": [
+      {
+        "text": "House Digital of Business hat unsere Online-Präsenz komplett verändert. Ihr Team lieferte eine Lösung, die unsere Erwartungen übertraf und uns half, unser Geschäft deutlich auszubauen.",
+        "name": "Michael Schmidt",
+        "position": "CEO",
+        "company": "TechInnovate GmbH"
+      },
+      {
+        "text": "Die Zusammenarbeit mit diesem Team war ein Vergnügen. Sie haben unsere Bedürfnisse perfekt verstanden und eine Website geliefert, die unsere Marke perfekt repräsentiert. Sehr empfehlenswert!",
+        "name": "Anna Müller",
+        "position": "Marketingdirektorin",
+        "company": "Lifestyle Brands"
+      },
+      {
+        "text": "Die von House Digital of Business entwickelte E-Commerce-Lösung hat unseren Online-Umsatz um 200% gesteigert. Ihre Expertise und Professionalität sind hervorragend.",
+        "name": "Thomas Weber",
+        "position": "Gründer",
+        "company": "EcoProducts"
+      }
+    ]
   },
+
+
+
   "cta": {
     "title": "Bereit, Ihr Geschäft zu Erweitern?",
     "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
