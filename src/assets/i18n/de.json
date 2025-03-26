@@ -16,6 +16,29 @@
   "services": {
     "title": "Unsere Dienstleistungen",
     "subtitle": "Wir bieten umfassende digitale Lösungen, um Ihrem Unternehmen im digitalen Umfeld zum Erfolg zu verhelfen",
+    "cards": [
+      {
+        "icon": "fas fa-code",
+        "title": "Webentwicklung",
+        "description": "Individuelle Webanwendungen, entwickelt mit modernsten Technologien."
+      },
+      {
+        "icon": "fas fa-mobile-alt",
+        "title": "Mobile Anwendungen",
+        "description": "Native und plattformübergreifende mobile Apps für iOS und Android."
+      },
+      {
+        "icon": "fas fa-paint-brush",
+        "title": "UI/UX-Design",
+        "description": "Benutzerzentriertes Design, das Ästhetik mit Funktionalität verbindet."
+      },
+      {
+        "icon":"fas fa-chart-line",
+        "title": "Digitales Marketing",
+        "description": "Strategische digitale Marketinglösungen zur Steigerung Ihrer Online-Präsenz und zur Förderung von Konversionen."
+
+      }
+    ],
     "learn_more": "Mehr Erfahren"
   },
   "about": {

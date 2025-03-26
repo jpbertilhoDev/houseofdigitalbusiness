@@ -16,7 +16,22 @@
   "services": {
     "title": "Our Services",
     "subtitle": "We offer comprehensive digital solutions to help your business thrive in the digital landscape",
+    "cards": [
+      {
+        "title": "Web Development",
+        "description": "Custom web applications built with cutting-edge technologies."
+      },
+      {
+        "title": "Mobile Applications",
+        "description": "Native and cross-platform mobile apps for iOS and Android."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "User-centered design that combines aesthetics with functionality."
+      }
+    ],
     "learn_more": "Learn More"
+
   },
   "about": {
     "title": "About Us",

@@ -9,7 +9,8 @@ import {
   query,
   stagger,
 } from '@angular/animations';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -53,35 +54,10 @@ import { TranslocoModule } from '@jsverse/transloco';
   ],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  // Services data
-  services = [
-    {
-      icon: 'fas fa-code',
-      title: 'Web Development',
-      description:
-        'Custom web applications built with cutting-edge technologies to meet your business requirements.',
-    },
-    {
-      icon: 'fas fa-mobile-alt',
-      title: 'Mobile Applications',
-      description:
-        'Native and cross-platform mobile apps that deliver exceptional user experiences.',
-    },
-    {
-      icon: 'fas fa-paint-brush',
-      title: 'UI/UX Design',
-      description:
-        'User-centered design that combines aesthetics with functionality for optimal user engagement.',
-    },
-    {
-      icon: 'fas fa-chart-line',
-      title: 'Digital Marketing',
-      description:
-        'Strategic digital marketing solutions to grow your online presence and drive conversions.',
-    },
-  ];
 
-  // Featured projects data
+  services: { icon: string; title: string; description: string }[] = [];
+  // portfolio: { title: string; description: string }[] = [];
+
   featuredProjects = [
     {
       title: 'E-commerce Platform',
@@ -99,8 +75,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: 'assets/images/projects/project3.jpg',
     },
   ];
-
-  // Testimonials data
   testimonials = [
     {
       text: 'House Digital of Business transformed our online presence completely. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly.',
@@ -124,21 +98,39 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: 'assets/images/testimonials/testimonial3.jpg',
     },
   ];
-
   currentTestimonial = 0;
   testimonialInterval: any;
+  private langChangeSubscription!: Subscription;
 
-  constructor() {}
+
+  constructor(private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    this.loadServices();
     this.startTestimonialRotation();
+    this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
+      () => {
+        this.loadServices();
+      }
+    );
   }
 
   ngOnDestroy(): void {
     if (this.testimonialInterval) {
       clearInterval(this.testimonialInterval);
     }
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
   }
+
+  private loadServices(): void {
+    this.services = this.translocoService.translate('services.cards');
+  }
+
+  // private loadPortfolio(): void {
+  //   // this.portfolio = this.translocoService.translate('portfolio.card')
+  // }
 
   startTestimonialRotation(): void {
     this.testimonialInterval = setInterval(() => {
@@ -148,7 +140,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   setTestimonial(index: number): void {
     this.currentTestimonial = index;
-    // Reset interval when manually changing testimonial
     clearInterval(this.testimonialInterval);
     this.startTestimonialRotation();
   }
@@ -158,7 +149,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentTestimonial === 0
         ? this.testimonials.length - 1
         : this.currentTestimonial - 1;
-    // Reset interval when manually changing testimonial
     clearInterval(this.testimonialInterval);
     this.startTestimonialRotation();
   }

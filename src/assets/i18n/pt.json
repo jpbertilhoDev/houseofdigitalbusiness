@@ -16,7 +16,30 @@
   "services": {
     "title": "Nossos Serviços",
     "subtitle": "Oferecemos soluções digitais abrangentes para ajudar seu negócio a prosperar no cenário digital",
+    "cards": [
+      {
+        "title": "Desenvolvimento Web",
+        "description": "Aplicações web personalizadas construídas com tecnologias de ponta para atender às suas necessidades de negócios."
+
+      },
+      {
+        "title": "Aplicativos Móveis",
+        "description": "Aplicativos móveis nativos e multiplataforma que oferecem experiências de usuário excepcionais."
+
+      },
+      {
+        "title": "Design UI/UX",
+        "description": "Design centrado no usuário que combina estética com funcionalidade para um engajamento ideal do usuário."
+
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Soluções estratégicas de marketing digital para aumentar sua presença online e impulsionar conversões."
+
+      }
+    ],
     "learn_more": "Saiba Mais"
+
   },
   "about": {
     "title": "Sobre Nós",

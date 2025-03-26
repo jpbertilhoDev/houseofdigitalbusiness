@@ -23,11 +23,6 @@ import { TranslocoModule } from '@jsverse/transloco';
 export class HeaderComponent {
   isScrolled = false;
   menuActive = false;
-
-  constructor() {
-    console.log("bakaka")
-  }
-
   ngOnInit(): void {}
 
   @HostListener('window:scroll')

@@ -5,7 +5,7 @@
       <h1> {{ 'hero.welcome' | transloco }} <span> {{ 'hero.company' | transloco }} </span></h1>
       <p>{{ 'hero.subtitle' | transloco }}</p>
       <div class="hero-buttons">
-        <a routerLink="/services" class="btn"></a>
+        <a routerLink="/services" class="btn">{{ 'services.learn_more' | transloco }}</a>
         <a routerLink="/portfolio" class="btn btn-outline">View Portfolio</a>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <div class="container">
     <div class="section-title">
       <h2>{{ 'services.title' | transloco }}</h2>
-      <p>We offer comprehensive digital solutions to help your business thrive in the digital landscape</p>
+      <p>{{ 'services.subtitle' | transloco }}</p>
     </div>
 
     <div class="services-grid">
@@ -31,7 +31,7 @@
         <h3>{{service.title}}</h3>
         <p>{{service.description}}</p>
         <a [routerLink]="'/services'" class="service-link">
-          Learn More
+          {{ 'services.learn_more' | transloco }}
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -44,16 +44,16 @@
   <div class="container">
     <div class="about-content">
       <div class="about-text">
-        <h2>About Us</h2>
-        <p>House Digital of Business is a premium digital agency based in Germany, providing innovative solutions to businesses worldwide. Our team of experts is dedicated to delivering exceptional digital experiences that drive growth and success.</p>
-        <p>With our deep expertise in digital technologies and business strategies, we help our clients transform their vision into reality.</p>
+        <h2>{{ 'about.title' | transloco }}</h2>
+        <p>{{ 'about.description1' | transloco }}</p>
+        <p>{{ 'about.description2' | transloco }}</p>
         <ul class="about-features">
-          <li><i class="fas fa-check-circle"></i> Expert Team of Developers & Designers</li>
-          <li><i class="fas fa-check-circle"></i> Tailored Solutions for Your Business</li>
-          <li><i class="fas fa-check-circle"></i> Focus on Innovation & Quality</li>
-          <li><i class="fas fa-check-circle"></i> Client-Centered Approach</li>
+          <li><i class="fas fa-check-circle"></i> {{ 'about.features.team' | transloco }}</li>
+          <li><i class="fas fa-check-circle"></i> {{ 'about.features.solutions' | transloco }}</li>
+          <li><i class="fas fa-check-circle"></i> {{ 'about.features.innovation' | transloco }}</li>
+          <li><i class="fas fa-check-circle"></i> {{ 'about.features.approach' | transloco }}</li>
         </ul>
-        <a routerLink="/about" class="btn">Learn More About Us</a>
+        <a routerLink="/about" class="btn">{{ 'about.learn_more' | transloco }}</a>
       </div>
       <div class="about-image">
         <div class="placeholder-image"></div>
@@ -66,7 +66,7 @@
 <section class="portfolio-preview section" @staggerCards>
   <div class="container">
     <div class="section-title">
-      <h2>Featured Projects</h2>
+      <h2>features</h2>
       <p>Take a look at some of our recent work that showcases our expertise and creativity</p>
     </div>
 
