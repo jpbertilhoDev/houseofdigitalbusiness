@@ -36,7 +36,6 @@
         "icon":"fas fa-chart-line",
         "title": "Digitales Marketing",
         "description": "Strategische digitale Marketinglösungen zur Steigerung Ihrer Online-Präsenz und zur Förderung von Konversionen."
-
       }
     ],
     "learn_more": "Mehr Erfahren"
@@ -58,25 +57,20 @@
     "subtitle": "Werfen Sie einen Blick auf einige unserer neuesten Arbeiten, die unsere Expertise und Kreativität zeigen",
     "view_all": "Alle Projekte Ansehen",
     "cards": [
-
-    {
-      "title": "E-Commerce-Plattform",
-      "description": "Webentwicklung"
-    },
-
-    {
-      "title": "Finanz-Dashboard",
-      "description": "UI/UX-Design"
-    },
-
-    {
-      "title": "Reise-Mobile-App",
-      "description": "Mobile-Entwicklung"
-    }
-  ]
+      {
+        "title": "E-Commerce-Plattform",
+        "description": "Webentwicklung"
+      },
+      {
+        "title": "Finanz-Dashboard",
+        "description": "UI/UX-Design"
+      },
+      {
+        "title": "Reise-Mobile-App",
+        "description": "Mobile-Entwicklung"
+      }
+    ]
   },
-
-
   "testimonials": {
     "title": "Was Unsere Kunden Sagen",
     "subtitle": "Vertrauenswürdig für Unternehmen in ganz Deutschland und darüber hinaus",
@@ -101,9 +95,6 @@
       }
     ]
   },
-
-
-
   "cta": {
     "title": "Bereit, Ihr Geschäft zu Erweitern?",
     "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
@@ -154,5 +145,148 @@
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "cookies": "Cookie-Richtlinie"
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Unsere <span>Dienstleistungen</span>",
+      "subtitle": "Umfassende digitale Lösungen, um Ihrem Unternehmen im digitalen Umfeld zum Erfolg zu verhelfen"
+    },
+    "filter": {
+      "all": "Alle Dienstleistungen",
+      "web": "Webentwicklung",
+      "mobile": "Mobile Entwicklung",
+      "design": "Design & UX",
+      "marketing": "Digitales Marketing",
+      "consulting": "Unternehmensberatung"
+    },
+    "backToServices": "Zurück zu Dienstleistungen",
+    "keyFeatures": "Hauptmerkmale",
+    "ourProcess": "Unser Prozess",
+    "caseStudies": "Fallstudien",
+    "client": "Kunde",
+    "results": "Ergebnisse",
+    "services": [
+      {
+        "id": "web-development",
+        "title": "Webentwicklung",
+        "shortDescription": "Maßgeschneiderte Webanwendungen für die Bedürfnisse Ihres Unternehmens.",
+        "fullDescription": "Unser Webentwicklungsteam erstellt maßgeschneiderte, leistungsstarke Websites und Webanwendungen, die Ergebnisse liefern.",
+        "icon": "fas fa-code",
+        "features": [
+          "Responsive Webdesign und -entwicklung",
+          "Entwicklung maßgeschneiderter Webanwendungen",
+          "E-Commerce-Lösungen"
+        ],
+        "process": [
+          {
+            "step": "1",
+            "title": "Entdeckung & Planung",
+            "description": "Wir analysieren Ihre Bedürfnisse und entwickeln einen detaillierten Projektplan."
+          },
+          {
+            "step": "2",
+            "title": "Entwicklung",
+            "description": "Unsere Entwickler bauen Ihre Lösung mit den neuesten Technologien."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Redesign einer E-Commerce-Plattform",
+            "client": "Modehändler",
+            "description": "Komplettes Redesign einer E-Commerce-Plattform.",
+            "results": ["45% Steigerung der Konversionsrate"]
+          }
+        ]
+      },
+      {
+        "id": "mobile-app-development",
+        "title": "Mobile App-Entwicklung",
+        "shortDescription": "Native und plattformübergreifende mobile Anwendungen für iOS und Android.",
+        "fullDescription": "Wir entwickeln hochwertige mobile Anwendungen, die Benutzer ansprechen und das Geschäftswachstum fördern.",
+        "icon": "fas fa-mobile-alt",
+        "features": [
+          "Native iOS-App-Entwicklung",
+          "Plattformübergreifende Entwicklung"
+        ],
+        "process": [
+          {
+            "step": "1",
+            "title": "Konzept & Strategie",
+            "description": "Wir definieren Ihr App-Konzept und entwickeln eine umfassende Strategie."
+          },
+          {
+            "step": "2",
+            "title": "App-Entwicklung",
+            "description": "Wir bauen Ihre App mit den am besten geeigneten Technologien."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Fitness-Tracking-App",
+            "client": "Gesundheits- und Wellness-Unternehmen",
+            "description": "Wir haben eine umfassende Fitness-Tracking-App entwickelt.",
+            "results": [
+              "Über 100.000 Downloads im ersten Monat"
+            ]
+          }
+        ]
+      }
+    ],
+    "whyChooseUs": {
+      "title": "Warum uns wählen",
+      "subtitle": "Was House Digital of Business von der Konkurrenz unterscheidet",
+      "benefits": [
+        {
+          "id": "expert-team",
+          "icon": "fas fa-users",
+          "title": "Expertenteam",
+          "description": "Unser Team besteht aus erfahrenen Fachleuten mit tiefgreifendem Wissen."
+        },
+        {
+          "id": "custom-solutions",
+          "icon": "fas fa-cogs",
+          "title": "Maßgeschneiderte Lösungen",
+          "description": "Wir entwickeln maßgeschneiderte Lösungen für Ihre spezifischen Geschäftsanforderungen."
+        }
+      ],
+      "statistics": [
+        {
+          "value": "95%",
+          "label": "Kundenzufriedenheit"
+        },
+        {
+          "value": "200+",
+          "label": "Abgeschlossene Projekte"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Was unsere Kunden sagen",
+      "subtitle": "Erfahrungsberichte von Unternehmen, denen wir zum Erfolg verholfen haben",
+      "items": [
+        {
+          "text": "House Digital of Business hat unsere Online-Präsenz komplett verändert.",
+          "name": "Michael Schmidt",
+          "position": "CEO",
+          "company": "TechInnovate GmbH"
+        },
+        {
+          "text": "Die von House Digital of Business entwickelte mobile App war ein Wendepunkt.",
+          "name": "Anna Müller",
+          "position": "Marketingdirektorin",
+          "company": "Lifestyle Brands"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit, Ihr Unternehmen zu transformieren?",
+      "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere Dienstleistungen Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
+      "button": "Kontakt Aufnehmen",
+      "serviceCta": {
+        "title": "Bereit anzufangen?",
+        "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere {{serviceTitle}}-Dienstleistungen Ihrem Unternehmen nutzen können.",
+        "button": "Kontakt Aufnehmen"
+      }
+    }
   }
 }

@@ -18,23 +18,31 @@
     "subtitle": "We offer comprehensive digital solutions to help your business thrive in the digital landscape",
     "cards": [
       {
+        "icon": "fas fa-code",
         "title": "Web Development",
         "description": "Custom web applications built with cutting-edge technologies."
       },
       {
+        "icon": "fas fa-mobile-alt",
         "title": "Mobile Applications",
         "description": "Native and cross-platform mobile apps for iOS and Android."
       },
       {
+        "icon": "fas fa-paint-brush",
         "title": "UI/UX Design",
         "description": "User-centered design that combines aesthetics with functionality."
+      },
+      {
+        "icon": "fas fa-chart-line",
+        "title": "Digital Marketing",
+        "description": "Strategic digital marketing solutions to increase your online presence and drive conversions."
       }
     ],
     "learn_more": "Learn More"
   },
   "about": {
     "title": "About Us",
-    "description1": "House Digital of Business is a premium digital agency based in Germany, providing innovative solutions to businesses worldwide. Our team of experts is dedicated to delivering exceptional digital experiences that drive growth and success.",
+    "description1": "House Digital of Business is a premium digital agency based in Germany, providing innovative solutions for businesses worldwide. Our team of experts is dedicated to delivering exceptional digital experiences that drive growth and success.",
     "description2": "With our deep expertise in digital technologies and business strategies, we help our clients transform their vision into reality.",
     "features": {
       "team": "Expert Team of Developers & Designers",
@@ -50,15 +58,15 @@
     "view_all": "View All Projects",
     "cards": [
       {
-        "title": "E-commerce Platform",
+        "title": "E-Commerce Platform",
         "description": "Web Development"
       },
       {
-        "title": "Financial Dashboard",
-        "description": "Web Development"
+        "title": "Finance Dashboard",
+        "description": "UI/UX Design"
       },
       {
-        "title": "Travel Mobile Appp",
+        "title": "Travel Mobile App",
         "description": "Mobile Development"
       }
     ]
@@ -68,13 +76,13 @@
     "subtitle": "Trusted by businesses across Germany and beyond",
     "items": [
       {
-        "text": "House Digital of Business transformed our online presence completely. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly.",
+        "text": "House Digital of Business completely transformed our online presence. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly.",
         "name": "Michael Schmidt",
         "position": "CEO",
         "company": "TechInnovate GmbH"
       },
       {
-        "text": "Working with this team was a pleasure. They understood our needs perfectly and delivered a website that perfectly represents our brand. Highly recommended!",
+        "text": "Working with this team was a pleasure. They perfectly understood our needs and delivered a website that perfectly represents our brand. Highly recommended!",
         "name": "Anna Müller",
         "position": "Marketing Director",
         "company": "Lifestyle Brands"
@@ -88,7 +96,7 @@
     ]
   },
   "cta": {
-    "title": "Ready to Grow Your Business?",
+    "title": "Ready to Expand Your Business?",
     "subtitle": "Contact us today to discuss how we can help you achieve your digital goals.",
     "button": "Get in Touch"
   },
@@ -109,7 +117,7 @@
       "terms": "I agree to the Privacy Policy and Terms of Service",
       "submit": "Send Message",
       "sending": "Sending...",
-      "success": "Your message has been sent successfully! We'll be in touch soon.",
+      "success": "Your message has been successfully sent! We will get back to you shortly.",
       "error": "There are errors in your form. Please correct them and try again."
     },
     "info": {
@@ -127,7 +135,7 @@
       "email": {
         "title": "Email Address",
         "value": "info@housedigitalofbusiness.com",
-        "response": "We'll respond within 24 business hours"
+        "response": "We respond within 24 business hours"
       },
       "social": "Follow Us"
     }
@@ -136,7 +144,7 @@
     "copyright": "© 2023 House Digital of Business. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "cookies": "Cookies Policy"
+    "cookies": "Cookie Policy"
   },
   "servicesPage": {
     "hero": {
@@ -151,12 +159,19 @@
       "marketing": "Digital Marketing",
       "consulting": "Business Consulting"
     },
+    "backToServices": "Back to Services",
+    "keyFeatures": "Key Features",
+    "ourProcess": "Our Process",
+    "caseStudies": "Case Studies",
+    "client": "Client",
+    "results": "Results",
     "services": [
       {
         "id": "web-development",
         "title": "Web Development",
         "shortDescription": "Custom web applications tailored to your business needs.",
-        "fullDescription": "Our web development team creates custom, high-performance websites and web applications that deliver exceptional user experiences.",
+        "fullDescription": "Our web development team creates custom, high-performance websites and web applications that drive results.",
+        "icon": "fas fa-code",
         "features": [
           "Responsive website design and development",
           "Custom web application development",
@@ -164,10 +179,12 @@
         ],
         "process": [
           {
+            "step": "1",
             "title": "Discovery & Planning",
-            "description": "We analyze your requirements and develop a detailed project plan."
+            "description": "We analyze your needs and develop a detailed project plan."
           },
           {
+            "step": "2",
             "title": "Development",
             "description": "Our developers build your solution using the latest technologies."
           }
@@ -176,7 +193,7 @@
           {
             "title": "E-commerce Platform Redesign",
             "client": "Fashion Retailer",
-            "description": "Completely redesigned and rebuilt an e-commerce platform.",
+            "description": "Complete redesign of an e-commerce platform.",
             "results": ["45% increase in conversion rate"]
           }
         ]
@@ -186,13 +203,19 @@
         "title": "Mobile App Development",
         "shortDescription": "Native and cross-platform mobile applications for iOS and Android.",
         "fullDescription": "We develop high-quality mobile applications that engage users and drive business growth.",
-        "features": ["Native iOS app development", "Cross-platform development"],
+        "icon": "fas fa-mobile-alt",
+        "features": [
+          "Native iOS app development",
+          "Cross-platform development"
+        ],
         "process": [
           {
+            "step": "1",
             "title": "Concept & Strategy",
             "description": "We define your app concept and develop a comprehensive strategy."
           },
           {
+            "step": "2",
             "title": "App Development",
             "description": "We build your app using the most appropriate technologies."
           }
@@ -201,11 +224,69 @@
           {
             "title": "Fitness Tracking App",
             "client": "Health & Wellness Company",
-            "description": "Developed a comprehensive fitness tracking app.",
-            "results": ["Over 100,000 downloads in the first month"]
+            "description": "We developed a comprehensive fitness tracking app.",
+            "results": [
+              "Over 100,000 downloads in the first month"
+            ]
           }
         ]
       }
-    ]
+    ],
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "subtitle": "What sets House Digital of Business apart from the competition",
+      "benefits": [
+        {
+          "id": "expert-team",
+          "icon": "fas fa-users",
+          "title": "Expert Team",
+          "description": "Our team consists of experienced professionals with deep knowledge."
+        },
+        {
+          "id": "custom-solutions",
+          "icon": "fas fa-cogs",
+          "title": "Custom Solutions",
+          "description": "We develop tailored solutions for your specific business needs."
+        }
+      ],
+      "statistics": [
+        {
+          "value": "95%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "200+",
+          "label": "Completed Projects"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Testimonials from businesses we've helped succeed",
+      "items": [
+        {
+          "text": "House Digital of Business completely transformed our online presence.",
+          "name": "Michael Schmidt",
+          "position": "CEO",
+          "company": "TechInnovate GmbH"
+        },
+        {
+          "text": "The mobile app developed by House Digital of Business has been a game-changer.",
+          "name": "Anna Müller",
+          "position": "Marketing Director",
+          "company": "Lifestyle Brands"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "subtitle": "Contact us today to discuss how our services can help you achieve your digital goals.",
+      "button": "Get in Touch",
+      "serviceCta": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Contact us today to discuss how our {{serviceTitle}} services can benefit your business.",
+        "button": "Contact Us"
+      }
+    }
   }
 }

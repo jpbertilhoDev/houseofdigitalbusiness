@@ -2,8 +2,8 @@
 <section class="services-hero" @fadeIn>
   <div class="container">
     <div class="services-hero-content">
-      <h1>Our<span>Services</span></h1>
-      <p>Comprehensive digital solutions to help your business thrive in the digital landscape</p>
+      <h1 [innerHTML]="'servicesPage.hero.title' | transloco"></h1>
+      <p>{{ 'servicesPage.hero.subtitle' | transloco }}</p>
     </div>
   </div>
 </section>
@@ -33,7 +33,7 @@
         <h3>{{service.title}}</h3>
         <p>{{service.shortDescription}}</p>
         <div class="service-link">
-          <span>Learn More</span>
+          <span>{{ 'services.learn_more' | transloco }}</span>
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
@@ -45,7 +45,7 @@
 <section id="service-details" class="service-details section" *ngIf="selectedService" @slideInUp>
   <div class="container">
     <div class="back-button" (click)="clearSelectedService()">
-      <i class="fas fa-arrow-left"></i> Back to Services
+      <i class="fas fa-arrow-left"></i> {{ 'servicesPage.backToServices' | transloco }}
     </div>
 
     <div class="service-header">
@@ -62,7 +62,7 @@
       </div>
 
       <div class="service-features">
-        <h3>Key Features</h3>
+        <h3>{{ 'servicesPage.keyFeatures' | transloco }}</h3>
         <ul>
           <li *ngFor="let feature of selectedService.features">
             <i class="fas fa-check-circle"></i>
@@ -74,10 +74,10 @@
 
     <!-- Service Process -->
     <div class="service-process">
-      <h3>Our Process</h3>
+      <h3>{{ 'servicesPage.ourProcess' | transloco }}</h3>
       <div class="process-timeline">
-        <div class="process-step" *ngFor="let step of selectedService.process">
-          <div class="step-number">{{step.step}}</div>
+        <div class="process-step" *ngFor="let step of selectedService.process; let i = index">
+          <div class="step-number">{{i + 1}}</div>
           <div class="step-content">
             <h4>{{step.title}}</h4>
             <p>{{step.description}}</p>
@@ -88,7 +88,7 @@
 
     <!-- Case Studies -->
     <div class="case-studies">
-      <h3>Case Studies</h3>
+      <h3>{{ 'servicesPage.caseStudies' | transloco }}</h3>
       <div class="case-studies-grid">
         <div class="case-study" *ngFor="let caseStudy of selectedService.caseStudies">
           <div class="case-study-image">
@@ -96,10 +96,10 @@
           </div>
           <div class="case-study-content">
             <h4>{{caseStudy.title}}</h4>
-            <p class="case-study-client">Client: {{caseStudy.client}}</p>
+            <p class="case-study-client">{{ 'servicesPage.client' | transloco }}: {{caseStudy.client}}</p>
             <p>{{caseStudy.description}}</p>
             <div class="case-study-results">
-              <h5>Results:</h5>
+              <h5>{{ 'servicesPage.results' | transloco }}:</h5>
               <ul>
                 <li *ngFor="let result of caseStudy.results">{{result}}</li>
               </ul>
@@ -111,19 +111,19 @@
 
     <!-- CTA -->
     <div class="service-cta">
-      <h3>Ready to get started?</h3>
-      <p>Contact us today to discuss how our {{selectedService.title}} services can benefit your business.</p>
-      <a routerLink="/contact" class="btn">Contact Us</a>
+      <h3>{{ 'servicesPage.cta.serviceCta.title' | transloco }}</h3>
+      <p>{{ 'servicesPage.cta.serviceCta.subtitle' | transloco: { serviceTitle: selectedService.title } }}</p>
+      <a routerLink="/contact" class="btn">{{ 'servicesPage.cta.serviceCta.button' | transloco }}</a>
     </div>
   </div>
 </section>
 
-<!-- Why Choose Us Section - Versão Melhorada -->
+<!-- Why Choose Us Section -->
 <section class="why-choose-us section" @slideInUp>
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Why Choose Us</h2>
-      <p class="section-subtitle">What sets House Digital of Business apart from the competition</p>
+      <h2 class="section-title">{{ 'servicesPage.whyChooseUs.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.whyChooseUs.subtitle' | transloco }}</p>
       <div class="section-divider">
         <span class="divider-dot"></span>
         <span class="divider-line"></span>
@@ -159,55 +159,23 @@
 <section class="testimonials section" @fadeIn>
   <div class="container">
     <div class="section-title">
-      <h2>What Our Clients Say</h2>
-      <p>Testimonials from businesses we've helped succeed</p>
+      <h2>{{ 'servicesPage.testimonials.title' | transloco }}</h2>
+      <p>{{ 'servicesPage.testimonials.subtitle' | transloco }}</p>
     </div>
 
     <div class="testimonials-grid">
-      <div class="testimonial-card">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
         <div class="testimonial-content">
           <i class="fas fa-quote-left quote-icon"></i>
-          <p>"House Digital of Business transformed our online presence completely. Their team delivered a solution that exceeded our expectations and helped us grow our business significantly."</p>
+          <p>"{{testimonial.text}}"</p>
         </div>
         <div class="testimonial-author">
           <div class="author-image">
             <div class="placeholder-image"></div>
           </div>
           <div class="author-info">
-            <h4>Michael Schmidt</h4>
-            <p>CEO, TechInnovate GmbH</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <i class="fas fa-quote-left quote-icon"></i>
-          <p>"The mobile app developed by House Digital of Business has been a game-changer for our business. The user experience is exceptional, and the app has received fantastic feedback from our customers."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-image">
-            <div class="placeholder-image"></div>
-          </div>
-          <div class="author-info">
-            <h4>Anna Müller</h4>
-            <p>Marketing Director, Lifestyle Brands</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <i class="fas fa-quote-left quote-icon"></i>
-          <p>"Working with this team was a pleasure. Their digital marketing strategy helped us increase our online visibility and grow our customer base significantly."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-image">
-            <div class="placeholder-image"></div>
-          </div>
-          <div class="author-info">
-            <h4>Thomas Weber</h4>
-            <p>Founder, EcoProducts</p>
+            <h4>{{testimonial.name}}</h4>
+            <p>{{testimonial.position}}, {{testimonial.company}}</p>
           </div>
         </div>
       </div>
@@ -219,9 +187,9 @@
 <section class="cta-section" @fadeIn>
   <div class="container">
     <div class="cta-content">
-      <h2>Ready to Transform Your Business?</h2>
-      <p>Contact us today to discuss how our services can help you achieve your digital goals.</p>
-      <a routerLink="/contact" class="btn btn-lg">Get in Touch</a>
+      <h2>{{ 'servicesPage.cta.title' | transloco }}</h2>
+      <p>{{ 'servicesPage.cta.subtitle' | transloco }}</p>
+      <a routerLink="/contact" class="btn btn-lg">{{ 'servicesPage.cta.button' | transloco }}</a>
     </div>
   </div>
 </section>
