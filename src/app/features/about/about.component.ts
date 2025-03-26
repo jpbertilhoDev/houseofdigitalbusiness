@@ -1,7 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { Subscription } from 'rxjs';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger,
+} from '@angular/animations';
 
 interface TeamMember {
   name: string;
@@ -22,156 +31,149 @@ interface Milestone {
   icon: string;
 }
 
+interface CompanyValue {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslocoModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [
     trigger('fadeIn', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('800ms ease-out', style({ opacity: 1 }))
-      ])
+        animate('800ms ease-out', style({ opacity: 1 })),
+      ]),
     ]),
     trigger('slideInUp', [
       transition(':enter', [
         style({ transform: 'translateY(50px)', opacity: 0 }),
-        animate('800ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
-      ])
+        animate(
+          '800ms ease-out',
+          style({ transform: 'translateY(0)', opacity: 1 })
+        ),
+      ]),
     ]),
     trigger('slideInLeft', [
       transition(':enter', [
         style({ transform: 'translateX(-50px)', opacity: 0 }),
-        animate('800ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
+        animate(
+          '800ms ease-out',
+          style({ transform: 'translateX(0)', opacity: 1 })
+        ),
+      ]),
     ]),
     trigger('slideInRight', [
       transition(':enter', [
         style({ transform: 'translateX(50px)', opacity: 0 }),
-        animate('800ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
+        animate(
+          '800ms ease-out',
+          style({ transform: 'translateX(0)', opacity: 1 })
+        ),
+      ]),
     ]),
     trigger('staggerList', [
       transition(':enter', [
-        query('.stagger-item', [
-          style({ opacity: 0, transform: 'translateY(30px)' }),
-          stagger(100, [
-            animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-          ])
-        ], { optional: true })
-      ])
-    ])
-  ]
+        query(
+          '.stagger-item',
+          [
+            style({ opacity: 0, transform: 'translateY(30px)' }),
+            stagger(100, [
+              animate(
+                '600ms ease-out',
+                style({ opacity: 1, transform: 'translateY(0)' })
+              ),
+            ]),
+          ],
+          { optional: true }
+        ),
+      ]),
+    ]),
+  ],
 })
-export class AboutComponent implements OnInit {
-  // Company values
-  companyValues = [
-    {
-      title: 'Innovation',
-      description: 'We constantly seek new and creative solutions to meet our clients\' evolving needs.',
-      icon: 'fas fa-lightbulb'
-    },
-    {
-      title: 'Excellence',
-      description: 'We strive for the highest quality in everything we do, from design to development to client service.',
-      icon: 'fas fa-award'
-    },
-    {
-      title: 'Integrity',
-      description: 'We build relationships based on trust, transparency, and ethical business practices.',
-      icon: 'fas fa-shield-alt'
-    },
-    {
-      title: 'Collaboration',
-      description: 'We work closely with our clients and each other to achieve exceptional results.',
-      icon: 'fas fa-hands-helping'
-    }
-  ];
+export class AboutComponent implements OnInit, OnDestroy {
+  companyValues: CompanyValue[] = [];
+  teamMembers: TeamMember[] = [];
+  milestones: Milestone[] = [];
+  companyStats: { value: string; label: string }[] = [];
+  private langChangeSubscription!: Subscription;
 
-  // Team members
-  teamMembers: TeamMember[] = [
-    {
-      name: 'Alexander Schmidt',
-      position: 'CEO & Founder',
-      bio: 'With over 15 years of experience in digital transformation, Alexander leads our company with vision and expertise.',
-      image: 'assets/images/team/team1.jpg',
-      socialLinks: {
-        linkedin: 'https://linkedin.com/',
-        twitter: 'https://twitter.com/',
-        email: 'alexander@housedigitalofbusiness.com'
-      }
-    },
-    {
-      name: 'Julia Weber',
-      position: 'Creative Director',
-      bio: 'Julia brings creativity and strategic thinking to every project, ensuring our designs are both beautiful and effective.',
-      image: 'assets/images/team/team2.jpg',
-      socialLinks: {
-        linkedin: 'https://linkedin.com/',
-        twitter: 'https://twitter.com/',
-        email: 'julia@housedigitalofbusiness.com'
-      }
-    },
-    {
-      name: 'Markus Müller',
-      position: 'Technical Lead',
-      bio: 'Markus oversees all technical aspects of our projects, bringing innovative solutions to complex challenges.',
-      image: 'assets/images/team/team3.jpg',
-      socialLinks: {
-        linkedin: 'https://linkedin.com/',
-        twitter: 'https://twitter.com/',
-        email: 'markus@housedigitalofbusiness.com'
-      }
-    },
-    
-  ];
-
-  // Company milestones
-  milestones: Milestone[] = [
-    {
-      year: '2015',
-      title: 'Company Founded',
-      description: 'House Digital of Business was established in Berlin with a vision to transform digital experiences.',
-      icon: 'fas fa-flag'
-    },
-    {
-      year: '2017',
-      title: 'Expanded Services',
-      description: 'Added digital marketing and UX/UI design to our core service offerings.',
-      icon: 'fas fa-expand-alt'
-    },
-    {
-      year: '2019',
-      title: 'International Expansion',
-      description: 'Opened our first international office and began serving clients across Europe.',
-      icon: 'fas fa-globe-europe'
-    },
-    {
-      year: '2021',
-      title: 'Digital Innovation Award',
-      description: 'Received recognition for our innovative approaches to digital business solutions.',
-      icon: 'fas fa-trophy'
-    },
-    {
-      year: '2023',
-      title: 'Strategic Partnerships',
-      description: 'Formed strategic partnerships with leading technology providers to enhance our offerings.',
-      icon: 'fas fa-handshake'
-    }
-  ];
-
-  // Stats
-  companyStats = [
-    { value: '100+', label: 'Clients Worldwide' },
-    { value: '250+', label: 'Projects Completed' },
-    { value: '15+', label: 'Industry Awards' },
-    { value: '25+', label: 'Expert Team Members' }
-  ];
-
-  constructor() { }
+  constructor(public translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    this.loadAllData();
+    this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
+      () => {
+        this.loadAllData();
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  private loadAllData(): void {
+    this.loadCompanyValues();
+    this.loadCompanyStats();
+    this.loadMilestones();
+    this.loadTeamMembers();
+  }
+
+  private loadCompanyValues(): void {
+    const valuesTranslation = this.translocoService.translate('aboutPage.companyValues');
+    if (Array.isArray(valuesTranslation)) {
+      this.companyValues = valuesTranslation;
+    }
+  }
+
+  private loadCompanyStats(): void {
+    const translation = this.translocoService.translate('aboutPage.companyStats');
+    if (Array.isArray(translation)) {
+      this.companyStats = translation;
+    }
+  }
+
+  private loadMilestones(): void {
+    const milestonesTranslation = this.translocoService.translate('aboutPage.milestones');
+    if (Array.isArray(milestonesTranslation)) {
+      this.milestones = milestonesTranslation;
+    }
+  }
+
+  private loadTeamMembers(): void {
+    const membersTranslation = this.translocoService.translate('aboutPage.teamMembers');
+    if (Array.isArray(membersTranslation)) {
+      this.teamMembers = membersTranslation;
+    }
+  }
+
+  // Métodos auxiliares para acessar traduções de forma segura
+  getHeroTitle(): string {
+    return this.translocoService.translate('aboutPage.hero.title');
+  }
+
+  getHeroSubtitle(): string {
+    return this.translocoService.translate('aboutPage.hero.subtitle');
+  }
+
+  getStoryParagraphs(): string[] {
+    const paragraphs = this.translocoService.translate('aboutPage.ourStory.paragraphs');
+    return Array.isArray(paragraphs) ? paragraphs : [];
+  }
+
+  getSignatureName(): string {
+    return this.translocoService.translate('aboutPage.ourStory.signature.name');
+  }
+
+  getSignaturePosition(): string {
+    return this.translocoService.translate('aboutPage.ourStory.signature.position');
   }
 }

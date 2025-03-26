@@ -290,7 +290,142 @@
         "button": "Entre em Contato"
       }
     }
+  },
+  
+  "aboutPage": {
+    "hero": {
+      "title": "Sobre a <span>House Digital of Business</span>",
+      "subtitle": "Somos uma equipe de especialistas digitais apaixonados por criar soluções inovadoras que impulsionam o crescimento dos negócios."
+    },
+    "ourStory": {
+      "title": "Nossa História",
+      "subtitle": "A jornada da House Digital of Business",
+      "heading": "Da Visão à Realidade",
+      "paragraphs": [
+        "Fundada em 2015 em Berlim, a House Digital of Business começou com uma missão clara: ajudar empresas a prosperar no cenário digital por meio de soluções inovadoras e personalizadas.",
+        "O que começou como uma pequena equipe de especialistas digitais apaixonados cresceu e se tornou uma agência digital completa, atendendo clientes em toda a Alemanha e além. Nossa jornada tem sido definida por um compromisso com a excelência, inovação contínua e relacionamentos sólidos com os clientes.",
+        "Hoje, temos orgulho de ser um parceiro confiável para empresas que buscam aprimorar sua presença digital, otimizar operações e impulsionar o crescimento por meio da tecnologia."
+      ],
+      "signature": {
+        "name": "Alexander Schmidt",
+        "position": "CEO & Fundador"
+      }
+    },
+    "ourValues": {
+      "title": "Nossos Valores",
+      "subtitle": "Os princípios que orientam tudo o que fazemos"
+    },
+    "companyValues": [
+      {
+        "title": "Inovação",
+        "description": "Buscamos constantemente soluções novas e criativas para atender às necessidades em evolução de nossos clientes.",
+        "icon": "fas fa-lightbulb"
+      },
+      {
+        "title": "Excelência",
+        "description": "Buscamos a mais alta qualidade em tudo o que fazemos, do design ao desenvolvimento e atendimento ao cliente.",
+        "icon": "fas fa-award"
+      },
+      {
+        "title": "Integridade",
+        "description": "Construímos relacionamentos baseados em confiança, transparência e práticas comerciais éticas.",
+        "icon": "fas fa-shield-alt"
+      },
+      {
+        "title": "Colaboração",
+        "description": "Trabalhamos em estreita colaboração com nossos clientes e entre nós para alcançar resultados excepcionais.",
+        "icon": "fas fa-hands-helping"
+      }
+    ],
+    "companyStats": [
+      { "value": "100+", "label": "Clientes em Todo o Mundo" },
+      { "value": "250+", "label": "Projetos Concluídos" },
+      { "value": "15+", "label": "Prêmios do Setor" },
+      { "value": "25+", "label": "Membros Especialistas da Equipe" }
+    ],
+    "ourJourney": {
+      "title": "Nossa Jornada",
+      "subtitle": "Marcos importantes na história da nossa empresa"
+    },
+    "milestones": [
+      {
+        "year": "2015",
+        "title": "Fundação da Empresa",
+        "description": "A House Digital of Business foi estabelecida em Berlim com a visão de transformar experiências digitais.",
+        "icon": "fas fa-flag"
+      },
+      {
+        "year": "2017",
+        "title": "Expansão de Serviços",
+        "description": "Adicionamos marketing digital e design UX/UI à nossa oferta principal de serviços.",
+        "icon": "fas fa-expand-alt"
+      },
+      {
+        "year": "2019",
+        "title": "Expansão Internacional",
+        "description": "Abrimos nosso primeiro escritório internacional e começamos a atender clientes em toda a Europa.",
+        "icon": "fas fa-globe-europe"
+      },
+      {
+        "year": "2021",
+        "title": "Prêmio de Inovação Digital",
+        "description": "Recebemos reconhecimento por nossas abordagens inovadoras para soluções de negócios digitais.",
+        "icon": "fas fa-trophy"
+      },
+      {
+        "year": "2023",
+        "title": "Parcerias Estratégicas",
+        "description": "Formamos parcerias estratégicas com principais provedores de tecnologia para aprimorar nossas ofertas.",
+        "icon": "fas fa-handshake"
+      }
+    ],
+    "ourTeam": {
+      "title": "Nossa Equipe",
+      "subtitle": "Conheça os especialistas por trás da House Digital of Business"
+    },
+    "teamMembers": [
+      {
+        "name": "Alexander Schmidt",
+        "position": "CEO & Fundador",
+        "bio": "Com mais de 15 anos de experiência em transformação digital, Alexander lidera nossa empresa com visão e expertise.",
+        "image": "assets/images/team/team1.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email": "alexander@housedigitalofbusiness.com"
+        }
+      },
+      {
+        "name": "Julia Weber",
+        "position": "Diretora Criativa",
+        "bio": "Julia traz criatividade e pensamento estratégico para cada projeto, garantindo que nossos designs sejam bonitos e eficazes.",
+        "image": "assets/images/team/team2.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email": "julia@housedigitalofbusiness.com"
+        }
+      },
+      {
+        "name": "Markus Müller",
+        "position": "Líder Técnico",
+        "bio": "Markus supervisiona todos os aspectos técnicos de nossos projetos, trazendo soluções inovadoras para desafios complexos.",
+        "image": "assets/images/team/team3.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email": "markus@housedigitalofbusiness.com"
+        }
+      }
+    ],
+    "cta": {
+      "title": "Pronto para Trabalhar Conosco?",
+      "subtitle": "Vamos discutir como podemos ajudar seu negócio a crescer no cenário digital.",
+      "contactBtn": "Entre em Contato",
+      "servicesBtn": "Nossos Serviços"
+    }
   }
+
 }
 
 

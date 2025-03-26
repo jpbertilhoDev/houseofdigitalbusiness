@@ -2,8 +2,8 @@
 <section class="about-hero" @fadeIn>
   <div class="container">
     <div class="about-hero-content">
-      <h1>About <span>House Digital of Business</span></h1>
-      <p>We're a team of digital experts passionate about creating innovative solutions that drive business growth.</p>
+      <h1 [innerHTML]="'aboutPage.hero.title' | transloco"></h1>
+      <p>{{ 'aboutPage.hero.subtitle' | transloco }}</p>
     </div>
   </div>
 </section>
@@ -12,8 +12,8 @@
 <section class="our-story section" @slideInUp>
   <div class="container">
     <div class="section-title">
-      <h2>Our Story</h2>
-      <p>The journey of House Digital of Business</p>
+      <h2>{{ 'aboutPage.ourStory.title' | transloco }}</h2>
+      <p>{{ 'aboutPage.ourStory.subtitle' | transloco }}</p>
     </div>
 
     <div class="story-content">
@@ -21,13 +21,16 @@
         <div class="placeholder-image"></div>
       </div>
       <div class="story-text" @slideInRight>
-        <h3>From Vision to Reality</h3>
-        <p>Founded in 2015 in Berlin, House Digital of Business began with a clear mission: to help businesses thrive in the digital landscape through innovative, tailored solutions.</p>
-        <p>What started as a small team of passionate digital experts has grown into a full-service digital agency serving clients across Germany and beyond. Our journey has been defined by a commitment to excellence, continuous innovation, and strong client relationships.</p>
-        <p>Today, we're proud to be a trusted partner for businesses seeking to enhance their digital presence, streamline operations, and drive growth through technology.</p>
+        <h3>{{ 'aboutPage.ourStory.heading' | transloco }}</h3>
+
+        <!-- Acessando os parágrafos diretamente da tradução -->
+        <ng-container *ngIf="'aboutPage.ourStory.paragraphs' | transloco as paragraphs">
+          <p *ngFor="let paragraph of paragraphs">{{ paragraph }}</p>
+        </ng-container>
+
         <div class="signature">
-          <p>Alexander Schmidt</p>
-          <span>CEO & Founder</span>
+          <p>{{ 'aboutPage.ourStory.signature.name' | transloco }}</p>
+          <span>{{ 'aboutPage.ourStory.signature.position' | transloco }}</span>
         </div>
       </div>
     </div>
@@ -35,11 +38,11 @@
 </section>
 
 <!-- Company Values Section -->
-<section class="values section" @staggerList>
+<section class="values section" @staggerList *ngIf="companyValues.length > 0">
   <div class="container">
     <div class="section-title">
-      <h2>Our Values</h2>
-      <p>The principles that guide everything we do</p>
+      <h2>{{ 'aboutPage.ourValues.title' | transloco }}</h2>
+      <p>{{ 'aboutPage.ourValues.subtitle' | transloco }}</p>
     </div>
 
     <div class="values-grid">
@@ -47,31 +50,31 @@
         <div class="value-icon">
           <i [class]="value.icon"></i>
         </div>
-        <h3>{{value.title}}</h3>
-        <p>{{value.description}}</p>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Stats Section -->
-<section class="stats section" @fadeIn>
+<section class="stats section" @fadeIn *ngIf="companyStats.length > 0">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item" *ngFor="let stat of companyStats">
-        <div class="stat-value">{{stat.value}}</div>
-        <div class="stat-label">{{stat.label}}</div>
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Timeline Section -->
-<section class="timeline section" @slideInUp>
+<section class="timeline section" @slideInUp *ngIf="milestones.length > 0">
   <div class="container">
     <div class="section-title">
-      <h2>Our Journey</h2>
-      <p>Key milestones in our company's history</p>
+      <h2>{{ 'aboutPage.ourJourney.title' | transloco }}</h2>
+      <p>{{ 'aboutPage.ourJourney.subtitle' | transloco }}</p>
     </div>
 
     <div class="timeline-container">
@@ -80,9 +83,9 @@
           <div class="timeline-icon">
             <i [class]="milestone.icon"></i>
           </div>
-          <div class="timeline-year">{{milestone.year}}</div>
-          <h3>{{milestone.title}}</h3>
-          <p>{{milestone.description}}</p>
+          <div class="timeline-year">{{ milestone.year }}</div>
+          <h3>{{ milestone.title }}</h3>
+          <p>{{ milestone.description }}</p>
         </div>
       </div>
     </div>
@@ -90,11 +93,11 @@
 </section>
 
 <!-- Team Section -->
-<section class="team section" @staggerList>
+<section class="team section" @staggerList *ngIf="teamMembers.length > 0">
   <div class="container">
     <div class="section-title">
-      <h2>Our Team</h2>
-      <p>Meet the experts behind House Digital of Business</p>
+      <h2>{{ 'aboutPage.ourTeam.title' | transloco }}</h2>
+      <p>{{ 'aboutPage.ourTeam.subtitle' | transloco }}</p>
     </div>
 
     <div class="team-grid">
@@ -102,21 +105,21 @@
         <div class="member-image">
           <div class="placeholder-image"></div>
           <div class="member-social">
-            <a *ngIf="member.socialLinks.linkedin" [href]="member.socialLinks.linkedin" target="_blank" aria-label="LinkedIn">
+            <a *ngIf="member.socialLinks?.linkedin" [href]="member.socialLinks.linkedin" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a *ngIf="member.socialLinks.twitter" [href]="member.socialLinks.twitter" target="_blank" aria-label="Twitter">
+            <a *ngIf="member.socialLinks?.twitter" [href]="member.socialLinks.twitter" target="_blank" aria-label="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
-            <a *ngIf="member.socialLinks.email" [href]="'mailto:' + member.socialLinks.email" aria-label="Email">
+            <a *ngIf="member.socialLinks?.email" [href]="'mailto:' + member.socialLinks.email" aria-label="Email">
               <i class="fas fa-envelope"></i>
             </a>
           </div>
         </div>
         <div class="member-info">
-          <h3>{{member.name}}</h3>
-          <p class="member-position">{{member.position}}</p>
-          <p class="member-bio">{{member.bio}}</p>
+          <h3>{{ member.name }}</h3>
+          <p class="member-position">{{ member.position }}</p>
+          <p class="member-bio">{{ member.bio }}</p>
         </div>
       </div>
     </div>
@@ -127,11 +130,11 @@
 <section class="cta-section" @fadeIn>
   <div class="container">
     <div class="cta-content">
-      <h2>Ready to Work With Us?</h2>
-      <p>Let's discuss how we can help your business grow in the digital landscape.</p>
+      <h2>{{ 'aboutPage.cta.title' | transloco }}</h2>
+      <p>{{ 'aboutPage.cta.subtitle' | transloco }}</p>
       <div class="cta-buttons">
-        <a routerLink="/contact" class="btn btn-lg">Contact Us</a>
-        <a routerLink="/services" class="btn btn-outline btn-lg">Our Services</a>
+        <a routerLink="/contact" class="btn btn-lg">{{ 'aboutPage.cta.contactBtn' | transloco }}</a>
+        <a routerLink="/services" class="btn btn-outline btn-lg">{{ 'aboutPage.cta.servicesBtn' | transloco }}</a>
       </div>
     </div>
   </div>
