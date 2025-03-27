@@ -1,33 +1,31 @@
 <!-- src/app/layout/header/header.component.html -->
 <header class="header" [ngClass]="{'header-scrolled': isScrolled}">
   <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <a routerLink="/">
-          <span class="logo-text">
-            {{ 'header.company' | transloco }}
-          </span>
-        </a>
-      </div>
+    <div class="logo">
+      <a routerLink="/">
+        <span class="logo-text">
+          {{ 'header.company' | transloco }}
+        </span>
+      </a>
+    </div>
 
-      <nav class="nav-menu" [ngClass]="{'active': menuActive}">
-        <ul>
-          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'header.home' | transloco }}</a></li>
-          <li><a routerLink="/services" routerLinkActive="active">{{ 'header.services' | transloco }}</a></li>
-          <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | transloco }}</a></li>
-          <!-- <li><a routerLink="/portfolio" routerLinkActive="active">{{ 'header.portfolio' | transloco }}</a></li> -->
-          <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | transloco }}</a></li>
-        </ul>
-      </nav>
+    <nav class="main-nav">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'header.home' | transloco }}</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">{{ 'header.services' | transloco }}</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | transloco }}</a></li>
+        <!-- <li><a routerLink="/portfolio" routerLinkActive="active">{{ 'header.portfolio' | transloco }}</a></li> -->
+        <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | transloco }}</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <app-language-selector></app-language-selector>
-        <app-theme-toggle></app-theme-toggle>
-        <div class="menu-toggle" (click)="toggleMenu()">
-          <span [ngClass]="{'active': menuActive}"></span>
-          <span [ngClass]="{'active': menuActive}"></span>
-          <span [ngClass]="{'active': menuActive}"></span>
-        </div>
+    <div class="utility-nav">
+      <app-language-selector></app-language-selector>
+      <app-theme-toggle></app-theme-toggle>
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <span [ngClass]="{'active': menuActive}"></span>
+        <span [ngClass]="{'active': menuActive}"></span>
+        <span [ngClass]="{'active': menuActive}"></span>
       </div>
     </div>
   </div>

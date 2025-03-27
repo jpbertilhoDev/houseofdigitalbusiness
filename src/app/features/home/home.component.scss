@@ -2,13 +2,18 @@
 
 /* Hero Section - Redesign Minimalista */
 .hero {
-  min-height: 100vh;
-  padding: 0;
   position: relative;
-  overflow: hidden;
+  height: 100vh;
+  min-height: 700px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  padding-top: 80px;
+
+  @media (max-width: 768px) {
+    min-height: 600px;
+    padding-top: 70px;
+  }
 
   // Background simplificado
   &-background {

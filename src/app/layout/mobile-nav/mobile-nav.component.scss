@@ -1,0 +1,174 @@
+@import '../../../styles/variables';
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(var(--card-bg-rgb), 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 0;
+  display: none; // Escondido por padrão, visível apenas em mobile
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  // Efeito de stroke similar ao header
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1px;
+    padding-bottom: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(var(--primary-rgb), 0.3) 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(var(--primary-rgb), 0.3) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  // Brilho na parte superior
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(var(--primary-rgb), 0) 0%,
+      rgba(var(--primary-rgb), 0.5) 50%,
+      rgba(var(--primary-rgb), 0) 100%
+    );
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  // Modo escuro específico
+  body[data-theme="dark"] & {
+    background: rgba(22, 26, 37, 0.95);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  // Modo claro específico
+  body:not([data-theme="dark"]) & {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    max-width: 20%; // Para garantir que cada item tenha no máximo 20% da largura
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.7rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    position: relative;
+
+    i {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    span {
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.65rem;
+      letter-spacing: 0.2px;
+      transform: translateY(0);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    &:hover, &.active {
+      color: var(--primary-color);
+      opacity: 1;
+
+      i {
+        transform: translateY(-3px);
+      }
+
+      span {
+        transform: translateY(-2px);
+      }
+    }
+
+    &.active {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        width: 6px;
+        height: 6px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        opacity: 1;
+        box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.5);
+      }
+
+      i {
+        text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
+      }
+    }
+  }
+}
+
+// Mostrar somente em dispositivos móveis
+@media (max-width: $breakpoint-sm) {
+  .mobile-nav {
+    display: block;
+    height: auto;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  // Adicionar padding no body para evitar que o conteúdo fique embaixo da barra
+  body {
+    padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px));
+  }
+
+  // Ocultar o footer em mobile já que temos a navegação inferior
+  app-footer {
+    display: none;
+  }
+}
