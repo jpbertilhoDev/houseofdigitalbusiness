@@ -18,28 +18,27 @@
     "subtitle": "Oferecemos soluções digitais abrangentes para ajudar seu negócio a prosperar no cenário digital",
     "cards": [
       {
+        "icon": "fas fa-code",
         "title": "Desenvolvimento Web",
         "description": "Aplicações web personalizadas construídas com tecnologias de ponta para atender às suas necessidades de negócios."
-
       },
       {
+        "icon": "fas fa-mobile-alt",
         "title": "Aplicativos Móveis",
         "description": "Aplicativos móveis nativos e multiplataforma que oferecem experiências de usuário excepcionais."
-
       },
       {
+        "icon": "fas fa-paint-brush",
         "title": "Design UI/UX",
         "description": "Design centrado no usuário que combina estética com funcionalidade para um engajamento ideal do usuário."
-
       },
       {
+        "icon": "fas fa-chart-line",
         "title": "Marketing Digital",
         "description": "Soluções estratégicas de marketing digital para aumentar sua presença online e impulsionar conversões."
-
       }
     ],
     "learn_more": "Saiba Mais"
-
   },
   "about": {
     "title": "Sobre Nós",
@@ -142,12 +141,11 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 House Digital of Business. Todos os direitos reservados.",
+    "copyright": "© 2023 House Digital of Business. Todos os direitos reservados.",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "cookies": "Política de Cookies"
   },
-
   "servicesPage": {
     "hero": {
       "title": "Nossos <span>Serviços</span>",
@@ -232,6 +230,177 @@
             ]
           }
         ]
+      },
+      {
+        "id": "ui-ux-design",
+        "title": "Design UI/UX",
+        "shortDescription": "Design centrado no usuário que combina estética com funcionalidade.",
+        "fullDescription": "Nossa equipe de design cria interfaces de usuário bonitas e intuitivas que melhoram a experiência do usuário e aumentam o engajamento. Seguimos uma abordagem de design centrada no usuário, combinando estética com funcionalidade para criar produtos digitais que os usuários adoram.",
+        "icon": "fas fa-paint-brush",
+        "image": "assets/images/services/ui-ux-design.jpg",
+        "features": [
+          "Pesquisa e análise de usuários",
+          "Arquitetura de informação",
+          "Wireframing e prototipagem",
+          "Design visual",
+          "Design de interação",
+          "Testes de usabilidade",
+          "Criação de sistemas de design"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Pesquisa e Descoberta",
+            "description": "Realizamos pesquisas com usuários para entender seu público-alvo e suas necessidades."
+          },
+          {
+            "step": 2,
+            "title": "Arquitetura de Informação",
+            "description": "Organizamos conteúdo e definimos fluxos de usuário para uma experiência ideal."
+          },
+          {
+            "step": 3,
+            "title": "Wireframing e Prototipagem",
+            "description": "Criamos wireframes e protótipos interativos para visualizar a experiência do usuário."
+          },
+          {
+            "step": 4,
+            "title": "Design Visual",
+            "description": "Nossos designers criam designs visuais bonitos e alinhados à marca para seu produto digital."
+          },
+          {
+            "step": 5,
+            "title": "Testes de Usabilidade",
+            "description": "Testamos designs com usuários reais para garantir que atendam às necessidades e expectativas."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Redesign de Aplicativo Bancário",
+            "client": "Provedor de Serviços Financeiros",
+            "description": "Redesenhamos um aplicativo bancário para melhorar a experiência do usuário e aumentar a adoção de recursos.",
+            "image": "assets/images/case-studies/banking-app.jpg",
+            "results": [
+              "Aumento de 35% nos usuários ativos diários",
+              "Redução de 50% nas consultas ao suporte ao cliente",
+              "Aumento de 28% na adoção de recursos"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "digital-marketing",
+        "title": "Marketing Digital",
+        "shortDescription": "Soluções estratégicas de marketing digital para expandir sua presença online.",
+        "fullDescription": "Nossos especialistas em marketing digital ajudam você a alcançar seu público-alvo, aumentar o reconhecimento da marca e impulsionar conversões. Desenvolvemos estratégias abrangentes adaptadas aos objetivos do seu negócio e as implementamos em múltiplos canais digitais.",
+        "icon": "fas fa-chart-line",
+        "image": "assets/images/services/digital-marketing.jpg",
+        "features": [
+          "Otimização para Mecanismos de Busca (SEO)",
+          "Publicidade por Clique (PPC)",
+          "Marketing em redes sociais",
+          "Marketing de conteúdo",
+          "Email marketing",
+          "Análise e relatórios",
+          "Otimização de taxa de conversão"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Desenvolvimento de Estratégia",
+            "description": "Desenvolvemos uma estratégia abrangente de marketing digital alinhada com os objetivos do seu negócio."
+          },
+          {
+            "step": 2,
+            "title": "Seleção de Canais",
+            "description": "Identificamos os canais mais eficazes para alcançar seu público-alvo."
+          },
+          {
+            "step": 3,
+            "title": "Criação de Conteúdo",
+            "description": "Nossa equipe cria conteúdo envolvente que ressoa com seu público."
+          },
+          {
+            "step": 4,
+            "title": "Execução de Campanhas",
+            "description": "Implementamos campanhas em canais selecionados para maximizar alcance e engajamento."
+          },
+          {
+            "step": 5,
+            "title": "Análise e Otimização",
+            "description": "Analisamos continuamente o desempenho da campanha e otimizamos para melhores resultados."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Campanha Integrada de Marketing Digital",
+            "client": "Marca de Varejo de Luxo",
+            "description": "Desenvolvemos e executamos uma estratégia abrangente de marketing digital em múltiplos canais.",
+            "image": "assets/images/case-studies/marketing-campaign.jpg",
+            "results": [
+              "Aumento de 120% no tráfego orgânico",
+              "Aumento de 200% no engajamento em redes sociais",
+              "Aumento de 75% nas vendas online"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business-consulting",
+        "title": "Consultoria Empresarial",
+        "shortDescription": "Orientação estratégica para otimizar sua jornada de transformação digital.",
+        "fullDescription": "Nossos serviços de consultoria empresarial ajudam você a navegar pelas complexidades da transformação digital. Fornecemos orientação estratégica sobre adoção de tecnologia, otimização de processos e mudança organizacional para ajudá-lo a atingir seus objetivos de negócio.",
+        "icon": "fas fa-briefcase",
+        "image": "assets/images/services/business-consulting.jpg",
+        "features": [
+          "Estratégia de transformação digital",
+          "Avaliação de tecnologia e planejamento",
+          "Otimização de processos",
+          "Análise de dados e inteligência de negócios",
+          "Workshops de inovação",
+          "Gestão de mudanças",
+          "Avaliação de maturidade digital"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Avaliação",
+            "description": "Avaliamos sua maturidade digital atual e identificamos oportunidades de melhoria."
+          },
+          {
+            "step": 2,
+            "title": "Desenvolvimento de Estratégia",
+            "description": "Desenvolvemos uma estratégia de transformação digital personalizada alinhada com seus objetivos de negócio."
+          },
+          {
+            "step": 3,
+            "title": "Criação de Roteiro",
+            "description": "Criamos um roteiro detalhado para implementar sua estratégia de transformação digital."
+          },
+          {
+            "step": 4,
+            "title": "Suporte à Implementação",
+            "description": "Fornecemos orientação e suporte durante todo o processo de implementação."
+          },
+          {
+            "step": 5,
+            "title": "Medição e Refinamento",
+            "description": "Ajudamos você a medir resultados e refinar sua estratégia para melhoria contínua."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Estratégia de Transformação Digital",
+            "client": "Empresa de Manufatura",
+            "description": "Desenvolvemos e implementamos uma estratégia abrangente de transformação digital para modernizar operações.",
+            "image": "assets/images/case-studies/digital-transformation.jpg",
+            "results": [
+              "Aumento de 30% na eficiência operacional",
+              "Redução de 25% nos custos",
+              "Melhoria de 40% na satisfação do cliente"
+            ]
+          }
+        ]
       }
     ],
     "whyChooseUs": {
@@ -291,7 +460,6 @@
       }
     }
   },
-  
   "aboutPage": {
     "hero": {
       "title": "Sobre a <span>House Digital of Business</span>",
@@ -425,7 +593,4 @@
       "servicesBtn": "Nossos Serviços"
     }
   }
-
 }
-
-

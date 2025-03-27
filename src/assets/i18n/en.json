@@ -230,6 +230,177 @@
             ]
           }
         ]
+      },
+      {
+        "id": "ui-ux-design",
+        "title": "UI/UX Design",
+        "shortDescription": "User-centered design that combines aesthetics with functionality.",
+        "fullDescription": "Our design team creates beautiful, intuitive user interfaces that enhance user experience and drive engagement. We follow a user-centered design approach, combining aesthetics with functionality to create digital products that users love.",
+        "icon": "fas fa-paint-brush",
+        "image": "assets/images/services/ui-ux-design.jpg",
+        "features": [
+          "User research and analysis",
+          "Information architecture",
+          "Wireframing and prototyping",
+          "Visual design",
+          "Interaction design",
+          "Usability testing",
+          "Design systems creation"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Research & Discovery",
+            "description": "We conduct user research to understand your target audience and their needs."
+          },
+          {
+            "step": 2,
+            "title": "Information Architecture",
+            "description": "We organize content and define user flows for optimal user experience."
+          },
+          {
+            "step": 3,
+            "title": "Wireframing & Prototyping",
+            "description": "We create wireframes and interactive prototypes to visualize the user experience."
+          },
+          {
+            "step": 4,
+            "title": "Visual Design",
+            "description": "Our designers create beautiful, on-brand visual designs for your digital product."
+          },
+          {
+            "step": 5,
+            "title": "Usability Testing",
+            "description": "We test designs with real users to ensure they meet user needs and expectations."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Banking App Redesign",
+            "client": "Financial Services Provider",
+            "description": "Redesigned a banking app to improve user experience and increase feature adoption.",
+            "image": "assets/images/case-studies/banking-app.jpg",
+            "results": [
+              "35% increase in daily active users",
+              "50% reduction in customer support inquiries",
+              "28% increase in feature adoption"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "digital-marketing",
+        "title": "Digital Marketing",
+        "shortDescription": "Strategic digital marketing solutions to grow your online presence.",
+        "fullDescription": "Our digital marketing experts help you reach your target audience, increase brand awareness, and drive conversions. We develop comprehensive strategies tailored to your business goals and implement them across multiple digital channels.",
+        "icon": "fas fa-chart-line",
+        "image": "assets/images/services/digital-marketing.jpg",
+        "features": [
+          "Search Engine Optimization (SEO)",
+          "Pay-Per-Click (PPC) advertising",
+          "Social media marketing",
+          "Content marketing",
+          "Email marketing",
+          "Analytics and reporting",
+          "Conversion rate optimization"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Strategy Development",
+            "description": "We develop a comprehensive digital marketing strategy aligned with your business goals."
+          },
+          {
+            "step": 2,
+            "title": "Channel Selection",
+            "description": "We identify the most effective channels to reach your target audience."
+          },
+          {
+            "step": 3,
+            "title": "Content Creation",
+            "description": "Our team creates engaging content that resonates with your audience."
+          },
+          {
+            "step": 4,
+            "title": "Campaign Execution",
+            "description": "We implement campaigns across selected channels to maximize reach and engagement."
+          },
+          {
+            "step": 5,
+            "title": "Analysis & Optimization",
+            "description": "We continuously analyze campaign performance and optimize for better results."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Integrated Digital Marketing Campaign",
+            "client": "Luxury Retail Brand",
+            "description": "Developed and executed a comprehensive digital marketing strategy across multiple channels.",
+            "image": "assets/images/case-studies/marketing-campaign.jpg",
+            "results": [
+              "120% increase in organic traffic",
+              "200% increase in social media engagement",
+              "75% increase in online sales"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business-consulting",
+        "title": "Business Consulting",
+        "shortDescription": "Strategic guidance to optimize your digital transformation journey.",
+        "fullDescription": "Our business consulting services help you navigate the complexities of digital transformation. We provide strategic guidance on technology adoption, process optimization, and organizational change to help you achieve your business objectives.",
+        "icon": "fas fa-briefcase",
+        "image": "assets/images/services/business-consulting.jpg",
+        "features": [
+          "Digital transformation strategy",
+          "Technology assessment and roadmapping",
+          "Process optimization",
+          "Data analytics and business intelligence",
+          "Innovation workshops",
+          "Change management",
+          "Digital maturity assessment"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Assessment",
+            "description": "We assess your current digital maturity and identify opportunities for improvement."
+          },
+          {
+            "step": 2,
+            "title": "Strategy Development",
+            "description": "We develop a tailored digital transformation strategy aligned with your business goals."
+          },
+          {
+            "step": 3,
+            "title": "Roadmap Creation",
+            "description": "We create a detailed roadmap for implementing your digital transformation strategy."
+          },
+          {
+            "step": 4,
+            "title": "Implementation Support",
+            "description": "We provide guidance and support throughout the implementation process."
+          },
+          {
+            "step": 5,
+            "title": "Measurement & Refinement",
+            "description": "We help you measure results and refine your strategy for continuous improvement."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Digital Transformation Strategy",
+            "client": "Manufacturing Company",
+            "description": "Developed and implemented a comprehensive digital transformation strategy to modernize operations.",
+            "image": "assets/images/case-studies/digital-transformation.jpg",
+            "results": [
+              "30% increase in operational efficiency",
+              "25% reduction in costs",
+              "40% improvement in customer satisfaction"
+            ]
+          }
+        ]
       }
     ],
     "whyChooseUs": {

@@ -1,3 +1,4 @@
+
 {
   "header": {
     "home": "Startseite",
@@ -9,52 +10,52 @@
   "hero": {
     "welcome": "Willkommen bei",
     "company": "House Digital of Business",
-    "subtitle": "Professionelle digitale Lösungen für Ihr Geschäftswachstum in Deutschland und darüber hinaus",
+    "subtitle": "Professionelle digitale Lösungen für das Wachstum Ihres Unternehmens in Deutschland und darüber hinaus",
     "services_btn": "Unsere Dienstleistungen",
     "portfolio_btn": "Portfolio Ansehen"
   },
   "services": {
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Wir bieten umfassende digitale Lösungen, um Ihrem Unternehmen im digitalen Umfeld zum Erfolg zu verhelfen",
+    "subtitle": "Wir bieten umfassende digitale Lösungen, um Ihrem Unternehmen zum Erfolg im digitalen Umfeld zu verhelfen",
     "cards": [
       {
         "icon": "fas fa-code",
         "title": "Webentwicklung",
-        "description": "Individuelle Webanwendungen, entwickelt mit modernsten Technologien."
+        "description": "Maßgeschneiderte Webanwendungen, die mit modernsten Technologien entwickelt werden, um Ihre Geschäftsanforderungen zu erfüllen."
       },
       {
         "icon": "fas fa-mobile-alt",
-        "title": "Mobile Anwendungen",
-        "description": "Native und plattformübergreifende mobile Apps für iOS und Android."
+        "title": "Mobile Apps",
+        "description": "Native und plattformübergreifende mobile Anwendungen, die außergewöhnliche Benutzererlebnisse bieten."
       },
       {
         "icon": "fas fa-paint-brush",
-        "title": "UI/UX-Design",
-        "description": "Benutzerzentriertes Design, das Ästhetik mit Funktionalität verbindet."
+        "title": "UI/UX Design",
+        "description": "Nutzerzentriertes Design, das Ästhetik mit Funktionalität für optimales Nutzerengagement verbindet."
       },
       {
-        "icon":"fas fa-chart-line",
+        "icon": "fas fa-chart-line",
         "title": "Digitales Marketing",
-        "description": "Strategische digitale Marketinglösungen zur Steigerung Ihrer Online-Präsenz und zur Förderung von Konversionen."
+        "description": "Strategische digitale Marketinglösungen zur Steigerung Ihrer Online-Präsenz und zur Förderung von Conversions."
       }
     ],
     "learn_more": "Mehr Erfahren"
   },
   "about": {
     "title": "Über Uns",
-    "description1": "House Digital of Business ist eine Premium-Digitalagentur mit Sitz in Deutschland, die innovative Lösungen für Unternehmen weltweit anbietet. Unser Expertenteam ist darauf spezialisiert, außergewöhnliche digitale Erlebnisse zu liefern, die Wachstum und Erfolg fördern.",
-    "description2": "Mit unserer umfassenden Expertise in digitalen Technologien und Geschäftsstrategien helfen wir unseren Kunden, ihre Vision in die Realität umzusetzen.",
+    "description1": "House Digital of Business ist eine Premium-Digitalagentur mit Sitz in Deutschland, die innovative Lösungen für Unternehmen weltweit anbietet. Unser Team von Experten widmet sich der Bereitstellung außergewöhnlicher digitaler Erlebnisse, die Wachstum und Erfolg fördern.",
+    "description2": "Mit unserer tiefgreifenden Expertise in digitalen Technologien und Geschäftsstrategien helfen wir unseren Kunden, ihre Vision in die Realität umzusetzen.",
     "features": {
-      "team": "Expertenteam aus Entwicklern & Designern",
+      "team": "Spezialisiertes Team von Entwicklern und Designern",
       "solutions": "Maßgeschneiderte Lösungen für Ihr Unternehmen",
-      "innovation": "Fokus auf Innovation & Qualität",
+      "innovation": "Fokus auf Innovation und Qualität",
       "approach": "Kundenorientierter Ansatz"
     },
     "learn_more": "Mehr Über Uns Erfahren"
   },
   "portfolio": {
     "title": "Ausgewählte Projekte",
-    "subtitle": "Werfen Sie einen Blick auf einige unserer neuesten Arbeiten, die unsere Expertise und Kreativität zeigen",
+    "subtitle": "Sehen Sie sich einige unserer neuesten Arbeiten an, die unsere Expertise und Kreativität demonstrieren",
     "view_all": "Alle Projekte Ansehen",
     "cards": [
       {
@@ -63,7 +64,7 @@
       },
       {
         "title": "Finanz-Dashboard",
-        "description": "UI/UX-Design"
+        "description": "Webentwicklung"
       },
       {
         "title": "Reise-Mobile-App",
@@ -73,10 +74,10 @@
   },
   "testimonials": {
     "title": "Was Unsere Kunden Sagen",
-    "subtitle": "Vertrauenswürdig für Unternehmen in ganz Deutschland und darüber hinaus",
+    "subtitle": "Vertraut von Unternehmen in ganz Deutschland und darüber hinaus",
     "items": [
       {
-        "text": "House Digital of Business hat unsere Online-Präsenz komplett verändert. Ihr Team lieferte eine Lösung, die unsere Erwartungen übertraf und uns half, unser Geschäft deutlich auszubauen.",
+        "text": "House Digital of Business hat unsere Online-Präsenz komplett transformiert. Ihr Team hat eine Lösung geliefert, die unsere Erwartungen übertroffen und uns geholfen hat, unser Geschäft erheblich zu erweitern.",
         "name": "Michael Schmidt",
         "position": "CEO",
         "company": "TechInnovate GmbH"
@@ -84,11 +85,11 @@
       {
         "text": "Die Zusammenarbeit mit diesem Team war ein Vergnügen. Sie haben unsere Bedürfnisse perfekt verstanden und eine Website geliefert, die unsere Marke perfekt repräsentiert. Sehr empfehlenswert!",
         "name": "Anna Müller",
-        "position": "Marketingdirektorin",
+        "position": "Marketing Direktorin",
         "company": "Lifestyle Brands"
       },
       {
-        "text": "Die von House Digital of Business entwickelte E-Commerce-Lösung hat unseren Online-Umsatz um 200% gesteigert. Ihre Expertise und Professionalität sind hervorragend.",
+        "text": "Die von House Digital of Business entwickelte E-Commerce-Lösung hat unsere Online-Verkäufe um 200% gesteigert. Ihre Expertise und Professionalität sind außergewöhnlich.",
         "name": "Thomas Weber",
         "position": "Gründer",
         "company": "EcoProducts"
@@ -96,23 +97,23 @@
     ]
   },
   "cta": {
-    "title": "Bereit, Ihr Geschäft zu Erweitern?",
+    "title": "Bereit, Ihr Geschäft zu erweitern?",
     "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
-    "button": "Kontakt Aufnehmen"
+    "button": "Kontaktieren Sie Uns"
   },
   "contact": {
-    "title": "Kontakt",
-    "title_highlight": "Aufnehmen",
-    "subtitle": "Wir freuen uns, von Ihnen zu hören. Kontaktieren Sie uns für Anfragen oder um Ihr Projekt zu besprechen.",
+    "title": "Kontaktieren Sie",
+    "title_highlight": "Uns",
+    "subtitle": "Wir würden gerne von Ihnen hören. Kontaktieren Sie uns für Fragen oder um Ihr Projekt zu besprechen.",
     "form": {
       "title": "Senden Sie uns eine Nachricht",
-      "subtitle": "Füllen Sie das untenstehende Formular aus und wir melden uns in Kürze bei Ihnen",
+      "subtitle": "Füllen Sie das untenstehende Formular aus und wir werden uns in Kürze bei Ihnen melden",
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",
       "phone": "Telefonnummer",
       "subject": "Betreff",
       "message": "Ihre Nachricht",
-      "service": "Dienstleistung von Interesse",
+      "service": "Interessierte Dienstleistung",
       "hear_about": "Wie haben Sie von uns erfahren?",
       "terms": "Ich stimme der Datenschutzrichtlinie und den Nutzungsbedingungen zu",
       "submit": "Nachricht Senden",
@@ -122,7 +123,7 @@
     },
     "info": {
       "title": "Kontaktinformationen",
-      "subtitle": "Wir sind hier, um zu helfen und Ihre Fragen zu beantworten",
+      "subtitle": "Wir sind hier, um zu helfen und alle Fragen zu beantworten",
       "location": {
         "title": "Unser Standort",
         "value": "Alexanderplatz 5, 10178 Berlin, Deutschland"
@@ -130,14 +131,14 @@
       "phone": {
         "title": "Telefonnummer",
         "value": "+49 30 1234 5678",
-        "hours": "Montag - Freitag, 9:00 - 18:00 Uhr"
+        "hours": "Montag - Freitag, 9:00 - 18:00"
       },
       "email": {
         "title": "E-Mail-Adresse",
         "value": "info@housedigitalofbusiness.com",
         "response": "Wir antworten innerhalb von 24 Geschäftsstunden"
       },
-      "social": "Folgen Sie Uns"
+      "social": "Folgen Sie uns"
     }
   },
   "footer": {
@@ -149,12 +150,12 @@
   "servicesPage": {
     "hero": {
       "title": "Unsere <span>Dienstleistungen</span>",
-      "subtitle": "Umfassende digitale Lösungen, um Ihrem Unternehmen im digitalen Umfeld zum Erfolg zu verhelfen"
+      "subtitle": "Umfassende digitale Lösungen, um Ihrem Unternehmen zum Erfolg im digitalen Umfeld zu verhelfen"
     },
     "filter": {
       "all": "Alle Dienstleistungen",
       "web": "Webentwicklung",
-      "mobile": "Mobile Entwicklung",
+      "mobile": "Mobile-Entwicklung",
       "design": "Design & UX",
       "marketing": "Digitales Marketing",
       "consulting": "Unternehmensberatung"
@@ -170,10 +171,10 @@
         "id": "web-development",
         "title": "Webentwicklung",
         "shortDescription": "Maßgeschneiderte Webanwendungen für die Bedürfnisse Ihres Unternehmens.",
-        "fullDescription": "Unser Webentwicklungsteam erstellt maßgeschneiderte, leistungsstarke Websites und Webanwendungen, die Ergebnisse liefern.",
+        "fullDescription": "Unser Webentwicklungsteam erstellt maßgeschneiderte, leistungsstarke Websites und Webanwendungen.",
         "icon": "fas fa-code",
         "features": [
-          "Responsive Webdesign und -entwicklung",
+          "Design und Entwicklung responsiver Websites",
           "Entwicklung maßgeschneiderter Webanwendungen",
           "E-Commerce-Lösungen"
         ],
@@ -193,26 +194,26 @@
           {
             "title": "Redesign einer E-Commerce-Plattform",
             "client": "Modehändler",
-            "description": "Komplettes Redesign einer E-Commerce-Plattform.",
+            "description": "Vollständiges Redesign einer E-Commerce-Plattform.",
             "results": ["45% Steigerung der Konversionsrate"]
           }
         ]
       },
       {
         "id": "mobile-app-development",
-        "title": "Mobile App-Entwicklung",
+        "title": "Entwicklung von Mobile Apps",
         "shortDescription": "Native und plattformübergreifende mobile Anwendungen für iOS und Android.",
-        "fullDescription": "Wir entwickeln hochwertige mobile Anwendungen, die Benutzer ansprechen und das Geschäftswachstum fördern.",
         "icon": "fas fa-mobile-alt",
+        "fullDescription": "Wir entwickeln hochwertige mobile Anwendungen, die Benutzer engagieren und das Geschäftswachstum fördern.",
         "features": [
-          "Native iOS-App-Entwicklung",
+          "Entwicklung nativer Apps für iOS",
           "Plattformübergreifende Entwicklung"
         ],
         "process": [
           {
             "step": "1",
             "title": "Konzept & Strategie",
-            "description": "Wir definieren Ihr App-Konzept und entwickeln eine umfassende Strategie."
+            "description": "Wir definieren das Konzept Ihrer App und entwickeln eine umfassende Strategie."
           },
           {
             "step": "2",
@@ -227,6 +228,177 @@
             "description": "Wir haben eine umfassende Fitness-Tracking-App entwickelt.",
             "results": [
               "Über 100.000 Downloads im ersten Monat"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ui-ux-design",
+        "title": "UI/UX Design",
+        "shortDescription": "Nutzerzentriertes Design, das Ästhetik mit Funktionalität verbindet.",
+        "fullDescription": "Unser Designteam erstellt schöne und intuitive Benutzeroberflächen, die das Nutzererlebnis verbessern und das Engagement steigern. Wir verfolgen einen nutzerzentrierten Designansatz, der Ästhetik mit Funktionalität verbindet, um digitale Produkte zu schaffen, die Benutzer lieben.",
+        "icon": "fas fa-paint-brush",
+        "image": "assets/images/services/ui-ux-design.jpg",
+        "features": [
+          "Benutzerforschung und -analyse",
+          "Informationsarchitektur",
+          "Wireframing und Prototyping",
+          "Visuelles Design",
+          "Interaktionsdesign",
+          "Usability-Tests",
+          "Erstellung von Designsystemen"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Forschung und Entdeckung",
+            "description": "Wir führen Benutzerforschung durch, um Ihre Zielgruppe und deren Bedürfnisse zu verstehen."
+          },
+          {
+            "step": 2,
+            "title": "Informationsarchitektur",
+            "description": "Wir organisieren Inhalte und definieren Benutzerflüsse für ein optimales Erlebnis."
+          },
+          {
+            "step": 3,
+            "title": "Wireframing und Prototyping",
+            "description": "Wir erstellen Wireframes und interaktive Prototypen, um das Benutzererlebnis zu visualisieren."
+          },
+          {
+            "step": 4,
+            "title": "Visuelles Design",
+            "description": "Unsere Designer erstellen schöne, markengerechte visuelle Designs für Ihr digitales Produkt."
+          },
+          {
+            "step": 5,
+            "title": "Usability-Tests",
+            "description": "Wir testen Designs mit echten Benutzern, um sicherzustellen, dass sie den Bedürfnissen und Erwartungen entsprechen."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Redesign einer Banking-App",
+            "client": "Finanzdienstleister",
+            "description": "Wir haben eine Banking-App neu gestaltet, um das Benutzererlebnis zu verbessern und die Funktionsnutzung zu steigern.",
+            "image": "assets/images/case-studies/banking-app.jpg",
+            "results": [
+              "35% Anstieg der täglich aktiven Benutzer",
+              "50% Reduzierung der Kundendienstanfragen",
+              "28% Steigerung der Funktionsnutzung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "digital-marketing",
+        "title": "Digitales Marketing",
+        "shortDescription": "Strategische digitale Marketinglösungen zur Erweiterung Ihrer Online-Präsenz.",
+        "fullDescription": "Unsere Experten für digitales Marketing helfen Ihnen, Ihre Zielgruppe zu erreichen, die Markenbekanntheit zu steigern und Conversions zu fördern. Wir entwickeln umfassende Strategien, die auf die Ziele Ihres Unternehmens zugeschnitten sind, und setzen diese über mehrere digitale Kanäle um.",
+        "icon": "fas fa-chart-line",
+        "image": "assets/images/services/digital-marketing.jpg",
+        "features": [
+          "Suchmaschinenoptimierung (SEO)",
+          "Pay-per-Click-Werbung (PPC)",
+          "Social-Media-Marketing",
+          "Content-Marketing",
+          "E-Mail-Marketing",
+          "Analyse und Berichterstattung",
+          "Conversion-Rate-Optimierung"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Strategieentwicklung",
+            "description": "Wir entwickeln eine umfassende digitale Marketingstrategie, die auf die Ziele Ihres Unternehmens abgestimmt ist."
+          },
+          {
+            "step": 2,
+            "title": "Kanalauswahl",
+            "description": "Wir identifizieren die effektivsten Kanäle, um Ihre Zielgruppe zu erreichen."
+          },
+          {
+            "step": 3,
+            "title": "Content-Erstellung",
+            "description": "Unser Team erstellt ansprechende Inhalte, die bei Ihrem Publikum Anklang finden."
+          },
+          {
+            "step": 4,
+            "title": "Kampagnendurchführung",
+            "description": "Wir implementieren Kampagnen auf ausgewählten Kanälen, um Reichweite und Engagement zu maximieren."
+          },
+          {
+            "step": 5,
+            "title": "Analyse und Optimierung",
+            "description": "Wir analysieren kontinuierlich die Kampagnenleistung und optimieren für bessere Ergebnisse."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Integrierte digitale Marketingkampagne",
+            "client": "Luxus-Einzelhandelsmarke",
+            "description": "Wir haben eine umfassende digitale Marketingstrategie über mehrere Kanäle entwickelt und umgesetzt.",
+            "image": "assets/images/case-studies/marketing-campaign.jpg",
+            "results": [
+              "120% Steigerung des organischen Traffics",
+              "200% Steigerung des Social-Media-Engagements",
+              "75% Steigerung der Online-Verkäufe"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business-consulting",
+        "title": "Unternehmensberatung",
+        "shortDescription": "Strategische Beratung zur Optimierung Ihrer digitalen Transformationsreise.",
+        "fullDescription": "Unsere Unternehmensberatungsdienste helfen Ihnen, die Komplexität der digitalen Transformation zu bewältigen. Wir bieten strategische Beratung zu Technologieadoption, Prozessoptimierung und organisatorischem Wandel, um Ihnen zu helfen, Ihre Geschäftsziele zu erreichen.",
+        "icon": "fas fa-briefcase",
+        "image": "assets/images/services/business-consulting.jpg",
+        "features": [
+          "Digitale Transformationsstrategie",
+          "Technologiebewertung und -planung",
+          "Prozessoptimierung",
+          "Datenanalyse und Business Intelligence",
+          "Innovationsworkshops",
+          "Change Management",
+          "Bewertung der digitalen Reife"
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Bewertung",
+            "description": "Wir bewerten Ihre aktuelle digitale Reife und identifizieren Verbesserungsmöglichkeiten."
+          },
+          {
+            "step": 2,
+            "title": "Strategieentwicklung",
+            "description": "Wir entwickeln eine maßgeschneiderte digitale Transformationsstrategie, die auf Ihre Geschäftsziele abgestimmt ist."
+          },
+          {
+            "step": 3,
+            "title": "Roadmap-Erstellung",
+            "description": "Wir erstellen eine detaillierte Roadmap zur Umsetzung Ihrer digitalen Transformationsstrategie."
+          },
+          {
+            "step": 4,
+            "title": "Implementierungsunterstützung",
+            "description": "Wir bieten Anleitung und Unterstützung während des gesamten Implementierungsprozesses."
+          },
+          {
+            "step": 5,
+            "title": "Messung und Verfeinerung",
+            "description": "Wir helfen Ihnen, Ergebnisse zu messen und Ihre Strategie für kontinuierliche Verbesserung zu verfeinern."
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "Digitale Transformationsstrategie",
+            "client": "Fertigungsunternehmen",
+            "description": "Wir haben eine umfassende digitale Transformationsstrategie entwickelt und implementiert, um Betriebsabläufe zu modernisieren.",
+            "image": "assets/images/case-studies/digital-transformation.jpg",
+            "results": [
+              "30% Steigerung der betrieblichen Effizienz",
+              "25% Kostenreduzierung",
+              "40% Verbesserung der Kundenzufriedenheit"
             ]
           }
         ]
@@ -246,7 +418,7 @@
           "id": "custom-solutions",
           "icon": "fas fa-cogs",
           "title": "Maßgeschneiderte Lösungen",
-          "description": "Wir entwickeln maßgeschneiderte Lösungen für Ihre spezifischen Geschäftsanforderungen."
+          "description": "Wir entwickeln maßgeschneiderte Lösungen für die spezifischen Bedürfnisse Ihres Unternehmens."
         }
       ],
       "statistics": [
@@ -265,7 +437,7 @@
       "subtitle": "Erfahrungsberichte von Unternehmen, denen wir zum Erfolg verholfen haben",
       "items": [
         {
-          "text": "House Digital of Business hat unsere Online-Präsenz komplett verändert.",
+          "text": "House Digital of Business hat unsere Online-Präsenz komplett transformiert.",
           "name": "Michael Schmidt",
           "position": "CEO",
           "company": "TechInnovate GmbH"
@@ -273,7 +445,7 @@
         {
           "text": "Die von House Digital of Business entwickelte mobile App war ein Wendepunkt.",
           "name": "Anna Müller",
-          "position": "Marketingdirektorin",
+          "position": "Marketing Direktorin",
           "company": "Lifestyle Brands"
         }
       ]
@@ -281,12 +453,145 @@
     "cta": {
       "title": "Bereit, Ihr Unternehmen zu transformieren?",
       "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere Dienstleistungen Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
-      "button": "Kontakt Aufnehmen",
+      "button": "Kontaktieren Sie Uns",
       "serviceCta": {
         "title": "Bereit anzufangen?",
-        "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere {{serviceTitle}}-Dienstleistungen Ihrem Unternehmen nutzen können.",
+        "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere {{serviceTitle}}-Dienstleistungen Ihrem Unternehmen zugutekommen können.",
         "button": "Kontakt Aufnehmen"
       }
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Über <span>House Digital of Business</span>",
+      "subtitle": "Wir sind ein Team von digitalen Experten, die leidenschaftlich innovative Lösungen schaffen, die das Unternehmenswachstum fördern."
+    },
+    "ourStory": {
+      "title": "Unsere Geschichte",
+      "subtitle": "Die Reise der House Digital of Business",
+      "heading": "Von der Vision zur Realität",
+      "paragraphs": [
+        "Gegründet im Jahr 2015 in Berlin, begann House Digital of Business mit einer klaren Mission: Unternehmen dabei zu helfen, durch innovative und maßgeschneiderte Lösungen im digitalen Umfeld zu gedeihen.",
+        "Was als kleines Team leidenschaftlicher digitaler Experten begann, hat sich zu einer umfassenden Digitalagentur entwickelt, die Kunden in ganz Deutschland und darüber hinaus betreut. Unsere Reise wurde durch ein Engagement für Exzellenz, kontinuierliche Innovation und starke Kundenbeziehungen geprägt.",
+        "Heute sind wir stolz darauf, ein vertrauenswürdiger Partner für Unternehmen zu sein, die ihre digitale Präsenz verbessern, Betriebsabläufe optimieren und Wachstum durch Technologie fördern möchten."
+      ],
+      "signature": {
+        "name": "Alexander Schmidt",
+        "position": "CEO & Gründer"
+      }
+    },
+    "ourValues": {
+      "title": "Unsere Werte",
+      "subtitle": "Die Prinzipien, die alles leiten, was wir tun"
+    },
+    "companyValues": [
+      {
+        "title": "Innovation",
+        "description": "Wir suchen ständig nach neuen und kreativen Lösungen, um die sich entwickelnden Bedürfnisse unserer Kunden zu erfüllen.",
+        "icon": "fas fa-lightbulb"
+      },
+      {
+        "title": "Exzellenz",
+        "description": "Wir streben in allem, was wir tun, höchste Qualität an, vom Design über die Entwicklung bis hin zum Kundenservice.",
+        "icon": "fas fa-award"
+      },
+      {
+        "title": "Integrität",
+        "description": "Wir bauen Beziehungen auf Vertrauen, Transparenz und ethischen Geschäftspraktiken auf.",
+        "icon": "fas fa-shield-alt"
+      },
+      {
+        "title": "Zusammenarbeit",
+        "description": "Wir arbeiten eng mit unseren Kunden und untereinander zusammen, um außergewöhnliche Ergebnisse zu erzielen.",
+        "icon": "fas fa-hands-helping"
+      }
+    ],
+    "companyStats": [
+      { "value": "100+", "label": "Kunden Weltweit" },
+      { "value": "250+", "label": "Abgeschlossene Projekte" },
+      { "value": "15+", "label": "Branchenauszeichnungen" },
+      { "value": "25+", "label": "Spezialisierte Teammitglieder" }
+    ],
+    "ourJourney": {
+      "title": "Unsere Reise",
+      "subtitle": "Wichtige Meilensteine in der Geschichte unseres Unternehmens"
+    },
+    "milestones": [
+      {
+        "year": "2015",
+        "title": "Unternehmensgründung",
+        "description": "House Digital of Business wurde in Berlin mit der Vision gegründet, digitale Erlebnisse zu transformieren.",
+        "icon": "fas fa-flag"
+      },
+      {
+        "year": "2017",
+        "title": "Dienstleistungserweiterung",
+        "description": "Wir haben digitales Marketing und UX/UI-Design zu unserem Kerndienstleistungsangebot hinzugefügt.",
+        "icon": "fas fa-expand-alt"
+      },
+      {
+        "year": "2019",
+        "title": "Internationale Expansion",
+        "description": "Wir haben unser erstes internationales Büro eröffnet und begonnen, Kunden in ganz Europa zu betreuen.",
+        "icon": "fas fa-globe-europe"
+      },
+      {
+        "year": "2021",
+        "title": "Auszeichnung für digitale Innovation",
+        "description": "Wir wurden für unsere innovativen Ansätze für digitale Geschäftslösungen ausgezeichnet.",
+        "icon": "fas fa-trophy"
+      },
+      {
+        "year": "2023",
+        "title": "Strategische Partnerschaften",
+        "description": "Wir haben strategische Partnerschaften mit führenden Technologieanbietern geschlossen, um unser Angebot zu verbessern.",
+        "icon": "fas fa-handshake"
+      }
+    ],
+    "ourTeam": {
+      "title": "Unser Team",
+      "subtitle": "Lernen Sie die Experten hinter House Digital of Business kennen"
+    },
+    "teamMembers": [
+      {
+        "name": "Alexander Schmidt",
+        "position": "CEO & Gründer",
+        "bio": "Mit mehr als 15 Jahren Erfahrung in der digitalen Transformation führt Alexander unser Unternehmen mit Vision und Expertise.",
+        "image": "assets/images/team/team1.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email": "alexander@housedigitalofbusiness.com"
+        }
+      },
+      {
+        "name": "Julia Weber",
+        "position": "Kreativdirektorin",
+        "bio": "Julia bringt Kreativität und strategisches Denken in jedes Projekt ein und sorgt dafür, dass unsere Designs sowohl schön als auch effektiv sind.",
+        "image": "assets/images/team/team2.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email": "julia@housedigitalofbusiness.com"
+        }
+      },
+      {
+        "name": "Markus Müller",
+        "position": "Technischer Leiter",
+        "bio": "Markus überwacht alle technischen Aspekte unserer Projekte und bringt innovative Lösungen für komplexe Herausforderungen.",
+        "image": "assets/images/team/team3.jpg",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/",
+          "twitter": "https://twitter.com/",
+          "email:": "info@houseofdigitalbusiness.de"
+        }
+      }
+    ],
+    "cta": {
+      "title": "Bereit, mit uns zusammenzuarbeiten?",
+      "subtitle": "Lassen Sie uns besprechen, wie wir Ihrem Unternehmen helfen können, in der digitalen Landschaft zu wachsen.",
+      "contactBtn": "Kontaktieren Sie uns",
+      "servicesBtn": "Unsere Dienstleistungen"
     }
   }
 }
