@@ -1,66 +1,74 @@
 /* Global styles for House Digital of Business */
 
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 /* Theme Variables */
 :root {
   /* Light Theme (Default) */
-  --primary-color: #00FFFF; /* Cyan */
-  --primary-dark: #00CCCC;
-  --primary-light: #99FFFF;
-  --accent-color: #FF5722;
-  --text-color: #333333;
-  --text-light: #666666;
+  --primary-color: #00B8D9; /* Ajustado para um cyan mais profissional */
+  --primary-rgb: 0, 184, 217;
+  --primary-dark: #0097B3;
+  --primary-light: #7FE1F1;
+  --accent-color: #FF5630;
+  --accent-rgb: 255, 86, 48;
+  --text-color: #172B4D;
+  --text-secondary: #505F79;
   --light-text: #FFFFFF;
-  --background-light: #F5F5F5;
+  --background-color: #F4F7FA;
   --background-main: #FFFFFF;
-  --background-dark: #E0E0E0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --border-color: rgba(0, 0, 0, 0.05);
+  --background-dark: #E6ECF3;
+  --shadow-color: rgba(9, 30, 66, 0.08);
+  --border-color: rgba(9, 30, 66, 0.08);
   --card-bg: #FFFFFF;
-  --input-bg: #F9F9F9;
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --footer-bg: #333333;
+  --input-bg: #F9FAFB;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --footer-bg: #091E42;
   --footer-text: #FFFFFF;
-  --success-color: #4CAF50;
-  --warning-color: #FFC107;
-  --error-color: #F44336;
+  --success-color: #36B37E;
+  --warning-color: #FFAB00;
+  --error-color: #FF5630;
   --section-bg: #FFFFFF;
-  --section-alt-bg: #F5F5F5;
-  --heading-color: #222222;
-  --hero-overlay: rgba(0, 0, 0, 0.6);
-  --nav-text: #333333;
+  --section-alt-bg: #F4F7FA;
+  --heading-color: #091E42;
+  --hero-bg-gradient-1: #F4F7FA;
+  --hero-bg-gradient-2: #E6ECF3;
+  --hero-overlay: rgba(0, 0, 0, 0.03);
+  --nav-text: #172B4D;
 }
 
 /* Dark Theme - Soft, Modern, Corporate */
 [data-theme="dark"] {
-  --primary-color: #00e0e0;
-  --primary-dark: #00c8c8;
-  --primary-light: #99FFFF;
-  --accent-color: #FF7A50;
-  --text-color: #e0e0e0;
-  --text-light: #b0b0b0;
+  --primary-color: #00C7E6;
+  --primary-rgb: 0, 199, 230;
+  --primary-dark: #00A3BD;
+  --primary-light: #79E2F2;
+  --accent-color: #FF7452;
+  --accent-rgb: 255, 116, 82;
+  --text-color: #E9EAED;
+  --text-secondary: #B6C2CF;
   --light-text: #FFFFFF;
-  --background-light: #3a3a47;
-  --background-main: #2d2d39;
-  --background-dark: #252532;
-  --shadow-color: rgba(0, 0, 0, 0.2);
+  --background-color: #1D2330;
+  --background-main: #161A25;
+  --background-dark: #0E121B;
+  --shadow-color: rgba(0, 0, 0, 0.3);
   --border-color: rgba(255, 255, 255, 0.08);
-  --card-bg: #343446;
-  --input-bg: #3a3a47;
-  --header-bg: rgb(45, 45, 57);
-  --footer-bg: #252532;
-  --footer-text: #e0e0e0;
-  --success-color: #66BB6A;
-  --warning-color: #FFCA28;
-  --error-color: #EF5350;
-  --section-bg: #2d2d39;
-  --section-alt-bg: #343446;
-   --heading-color: #f0f0f0;
-  --hero-overlay: rgba(20, 20, 35, 0.75);
-  --nav-text: #e0e0e0;
+  --card-bg: #21283B;
+  --input-bg: #283248;
+  --header-bg: rgba(22, 26, 37, 0.85);
+  --footer-bg: #0E121B;
+  --footer-text: #E9EAED;
+  --success-color: #57D9A3;
+  --warning-color: #FFC400;
+  --error-color: #FF7452;
+  --section-bg: #161A25;
+  --section-alt-bg: #1D2330;
+  --heading-color: #E9EAED;
+  --hero-bg-gradient-1: #161A25;
+  --hero-bg-gradient-2: #21283B;
+  --hero-overlay: rgba(0, 0, 0, 0.3);
+  --nav-text: #E9EAED;
 }
 
 /* Transition for theme switching */
@@ -68,7 +76,7 @@ body {
   background-color: var(--background-main);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', 'Roboto', sans-serif;
   line-height: 1.6;
 }
 

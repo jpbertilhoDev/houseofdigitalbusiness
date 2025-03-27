@@ -10,7 +10,7 @@ import {
   stagger,
 } from '@angular/animations';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { Subscription } from 'rxjs';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -51,6 +51,13 @@ import { Subscription } from 'rxjs';
         ),
       ]),
     ]),
+    trigger('wordAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms ease-out', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('400ms ease-in', style({ opacity: 0 }))]),
+    ]),
   ],
 })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -68,6 +75,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     company: string;
   }[] = [];
 
+  // Palavras completas para animação no herói
+  servicePhrases: string[] = [
+    'Web Design',
+    'Desenvolvimento Full Stack',
+    'UX/UI Design',
+    'Lojas Virtuais',
+    'Aplicativos Web',
+    'SEO & Marketing Digital',
+  ];
+
+  // Configurações para animação de digitação
+  currentPhraseIndex = 0;
+  displayedText = '';
+  isDeleting = false;
+  typingSpeed = 80; // velocidade em ms para digitar/apagar
+  pauseTime = 900; // tempo de pausa após completar a palavra
+  typingInterval: any;
+
   currentTestimonial = 0;
   testimonialInterval: any;
   private langChangeSubscription!: Subscription;
@@ -80,6 +105,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadFeaturedProjects();
     this.loadTestimonials();
     this.startTestimonialRotation();
+    this.startTypingAnimation();
     this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
       () => {
         this.loadServices();
@@ -94,9 +120,74 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (this.testimonialInterval) {
       clearInterval(this.testimonialInterval);
     }
+    if (this.typingInterval) {
+      clearInterval(this.typingInterval);
+    }
     if (this.langChangeSubscription) {
       this.langChangeSubscription.unsubscribe();
     }
+  }
+
+  startTypingAnimation(): void {
+    // Inicia o efeito de digitação
+    this.typeNextChar();
+  }
+
+  typeNextChar(): void {
+    const currentWord = this.servicePhrases[this.currentPhraseIndex];
+
+    // Limpa qualquer intervalo existente
+    if (this.typingInterval) {
+      clearTimeout(this.typingInterval);
+    }
+
+    // Se estamos deletando o texto
+    if (this.isDeleting) {
+      // Remove o último caractere
+      this.displayedText = currentWord.substring(
+        0,
+        this.displayedText.length - 1
+      );
+
+      // Quando terminar de apagar toda a palavra
+      if (this.displayedText.length === 0) {
+        this.isDeleting = false;
+        // Avança para a próxima palavra
+        this.currentPhraseIndex =
+          (this.currentPhraseIndex + 1) % this.servicePhrases.length;
+        // Pequena pausa antes de começar a próxima palavra
+        this.typingInterval = setTimeout(
+          () => this.typeNextChar(),
+          this.pauseTime / 2
+        );
+        return;
+      }
+    } else {
+      // Adiciona o próximo caractere
+      this.displayedText = currentWord.substring(
+        0,
+        this.displayedText.length + 1
+      );
+
+      // Quando completar a palavra
+      if (this.displayedText === currentWord) {
+        // Pausa antes de começar a apagar
+        this.typingInterval = setTimeout(() => {
+          this.isDeleting = true;
+          this.typeNextChar();
+        }, this.pauseTime);
+        return;
+      }
+    }
+
+    // Velocidade de digitação/deleção
+    // Digita um pouco mais rápido do que apaga para efeito natural
+    const charSpeed = this.isDeleting
+      ? this.typingSpeed * 0.7
+      : this.typingSpeed;
+
+    // Continua o processo de digitação/deleção
+    this.typingInterval = setTimeout(() => this.typeNextChar(), charSpeed);
   }
 
   private loadServices(): void {
