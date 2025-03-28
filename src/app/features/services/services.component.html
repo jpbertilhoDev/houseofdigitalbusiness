@@ -1,35 +1,37 @@
-<!-- Hero Section -->
-<section class="services-hero" @fadeIn>
-  <div class="animated-particles">
-    <div class="particle" *ngFor="let i of [1,2,3,4,5]"></div>
-  </div>
+<!-- Hero Section - Ultra moderna e imersiva -->
+<section class="services-hero" @fadeIn data-theme-mode="dark">
+  <!-- <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div> -->
   <div class="container">
     <div class="services-hero-content">
-      <div class="hero-subtitle">{{ 'servicesPage.hero.subtitle_prefix' | transloco }}</div>
-      <h1 [innerHTML]="'servicesPage.hero.title' | transloco"></h1>
-      <p>{{ 'servicesPage.hero.subtitle' | transloco }}</p>
-      <div class="hero-cta-buttons">
-        <a routerLink="/contact" class="btn btn-primary">
+      <div class="hero-subtitle" @slideInUp>{{ 'servicesPage.hero.subtitle_prefix' | transloco }}</div>
+      <h1 @staggerText [innerHTML]="'servicesPage.hero.title' | transloco"></h1>
+      <p @slideInUp>{{ 'servicesPage.hero.subtitle' | transloco }}</p>
+      <div class="hero-cta-buttons" @staggerList>
+        <a routerLink="/contact" class="btn btn-primary btn-glow">
           <i class="fas fa-comment-dots"></i>
-          {{ 'servicesPage.hero.contact_us' | transloco }}
+          <span>{{ 'servicesPage.hero.contact_us' | transloco }}</span>
         </a>
-        <a (click)="scrollToServices()" class="btn btn-outline scroll-btn">
+        <a (click)="scrollToServices()" class="btn btn-outline btn-hover-effect">
           <i class="fas fa-long-arrow-alt-down"></i>
-          {{ 'servicesPage.hero.explore' | transloco }}
+          <span>{{ 'servicesPage.hero.explore' | transloco }}</span>
         </a>
       </div>
     </div>
   </div>
-  <div class="hero-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="var(--background-color)" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,186.7C384,203,480,245,576,261.3C672,277,768,267,864,229.3C960,192,1056,128,1152,117.3C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-  </div>
+  
 </section>
 
-<!-- Services Filter Section -->
-<section class="services-filter" @slideInUp>
+<!-- Services Filter Section - Fluido e interativo -->
+<section class="services-filter" @slideInUp data-theme-mode="dark">
   <div class="container">
+    <div class="filter-indicator">
+      <div class="indicator-line"></div>
+      <!-- <span>{{ 'servicesPage.filterBy' | transloco }}</span> -->
+    </div>
     <div class="filter-tabs">
       <button
         *ngFor="let category of serviceCategories"
@@ -38,63 +40,80 @@
         <span class="filter-icon" *ngIf="category.icon">
           <i [class]="category.icon"></i>
         </span>
-        {{ category.name }}
+        <span class="filter-text">{{ category.name }}</span>
+        <span class="filter-indicator-dot"></span>
       </button>
     </div>
   </div>
 </section>
 
-<!-- Services Grid Section -->
-<section class="services-grid section" @staggerList>
+<!-- Services Grid Section - Design minimalista com interatividade avançada -->
+<section class="services-grid section" @fadeIn data-theme-mode="dark">
   <div class="container">
-    <div class="services-container">
-      <div class="service-card stagger-item" *ngFor="let service of filteredServices" (click)="selectService(service)">
-        <div class="service-icon">
-          <i [class]="service.icon"></i>
+    <div class="services-container" @staggerList>
+      <div class="service-card stagger-item"
+           *ngFor="let service of filteredServices"
+           (click)="selectService(service)"
+           (mouseenter)="cardHovered = service.id"
+           (mouseleave)="cardHovered = null"
+           [class.hovered]="cardHovered === service.id"
+           data-theme-mode="dark"
+           @fadeIn>
+        <div class="card-content">
+          <div class="service-icon" [class.pulse]="cardHovered === service.id">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{service.title}}</h3>
+          <p>{{service.shortDescription}}</p>
+          <div class="service-link">
+            <span>{{ 'services.learn_more' | transloco }}</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
         </div>
-        <h3>{{service.title}}</h3>
-        <p>{{service.shortDescription}}</p>
-        <div class="service-link">
-          <span>{{ 'services.learn_more' | transloco }}</span>
-          <i class="fas fa-arrow-right"></i>
+        <div class="card-background">
+          <div class="bg-shape"></div>
         </div>
-        <div class="card-decoration"></div>
       </div>
+    </div>
+    <div class="services-empty-state" *ngIf="filteredServices.length === 0">
+      <div class="empty-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <h3>{{ 'servicesPage.noServicesFound' | transloco }}</h3>
+      <p>{{ 'servicesPage.tryDifferentCategory' | transloco }}</p>
+      <button class="btn btn-outline" (click)="filterServices('all')">
+        {{ 'servicesPage.viewAllServices' | transloco }}
+      </button>
     </div>
   </div>
 </section>
 
-<!-- Service Details Section -->
+<!-- Service Details Section - Imersivo e narrativo -->
 <section id="service-details" class="service-details section" *ngIf="selectedService" @slideInUp>
   <div class="container">
-    <div class="back-button" (click)="clearSelectedService()">
-      <i class="fas fa-arrow-left"></i> {{ 'servicesPage.backToServices' | transloco }}
+    <div class="back-button" (click)="clearSelectedService()" @pulseAnimation>
+      <i class="fas fa-arrow-left"></i>
+      <span>{{ 'servicesPage.backToServices' | transloco }}</span>
     </div>
 
-    <div class="service-header">
-      <div class="service-title">
+    <div class="service-header" @staggerList>
+      <div class="service-title stagger-item">
         <div class="service-icon-large">
           <i [class]="selectedService.icon"></i>
         </div>
         <h2>{{selectedService.title}}</h2>
         <div class="service-divider"></div>
       </div>
-      <p class="service-description">{{selectedService.fullDescription}}</p>
+      <p class="service-description stagger-item">{{selectedService.fullDescription}}</p>
     </div>
 
-    <div class="service-content">
-      <div class="service-image">
-        <div class="placeholder-image">
-          <div class="image-overlay">
-            <i [class]="selectedService.icon"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-features">
+    <div class="service-content" @staggerList>
+      <div class="service-features stagger-item">
         <h3>{{ 'servicesPage.keyFeatures' | transloco }}</h3>
         <ul>
-          <li *ngFor="let feature of selectedService.features">
+          <li *ngFor="let feature of selectedService.features; let i = index"
+              @slideInFromRight
+              [style.animation-delay]="(i * 0.1) + 's'">
             <i class="fas fa-check-circle"></i>
             <span>{{feature}}</span>
           </li>
@@ -102,11 +121,15 @@
       </div>
     </div>
 
-    <!-- Service Process -->
-    <div class="service-process">
+    <!-- Service Process - Visualização de etapas -->
+    <div class="service-process" @fadeIn>
       <h3>{{ 'servicesPage.ourProcess' | transloco }}</h3>
       <div class="process-timeline">
-        <div class="process-step" *ngFor="let step of selectedService.process; let i = index">
+        <div class="process-connector"></div>
+        <div class="process-step"
+             *ngFor="let step of selectedService.process; let i = index"
+             @slideInUp
+             [style.animation-delay]="(i * 0.15) + 's'">
           <div class="step-number">{{i + 1}}</div>
           <div class="step-content">
             <h4>{{step.title}}</h4>
@@ -116,22 +139,24 @@
       </div>
     </div>
 
-    <!-- Case Studies -->
-    <div class="case-studies">
+    <!-- Case Studies - Apresentação moderna -->
+    <div class="case-studies" @fadeIn>
       <h3>{{ 'servicesPage.caseStudies' | transloco }}</h3>
       <div class="case-studies-grid">
-        <div class="case-study" *ngFor="let caseStudy of selectedService.caseStudies">
-          <div class="case-study-image">
-            <div class="placeholder-image">
-              <div class="image-overlay">
-                <i class="fas fa-project-diagram"></i>
+        <div class="case-study"
+             *ngFor="let caseStudy of selectedService.caseStudies; let i = index"
+             @slideInUp
+             [style.animation-delay]="(i * 0.2) + 's'">
+          <div class="case-study-content">
+            <div class="case-study-header">
+              <h4>{{caseStudy.title}}</h4>
+              <div class="case-tag">
+                <i class="fas fa-trophy"></i>
+                <span>{{ 'servicesPage.caseStudy' | transloco }}</span>
               </div>
             </div>
-          </div>
-          <div class="case-study-content">
-            <h4>{{caseStudy.title}}</h4>
             <p class="case-study-client">
-              <i class="fas fa-building"></i> {{ 'servicesPage.client' | transloco }}: {{caseStudy.client}}
+              <i class="fas fa-building"></i> {{ 'servicesPage.client' | transloco }}: <strong>{{caseStudy.client}}</strong>
             </p>
             <p>{{caseStudy.description}}</p>
             <div class="case-study-results">
@@ -139,7 +164,10 @@
                 <i class="fas fa-chart-line"></i> {{ 'servicesPage.results' | transloco }}:
               </h5>
               <ul>
-                <li *ngFor="let result of caseStudy.results">{{result}}</li>
+                <li *ngFor="let result of caseStudy.results">
+                  <div class="result-dot"></div>
+                  <span>{{result}}</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -147,46 +175,30 @@
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="service-cta">
-      <h3>{{ 'servicesPage.cta.serviceCta.title' | transloco }}</h3>
-      <p>{{ 'servicesPage.cta.serviceCta.subtitle' | transloco: { serviceTitle: selectedService.title } }}</p>
-      <a routerLink="/contact" class="btn">
-        <i class="fas fa-paper-plane"></i>
-        {{ 'servicesPage.cta.serviceCta.button' | transloco }}
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Statistics Section - Layouts organizados para evitar poluição visual -->
-<section id="statistics" class="statistics-full-section observe-section" @slideInUp *ngIf="!selectedService">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{{ 'servicesPage.achievements.title' | transloco }}</h2>
-      <p class="section-subtitle">{{ 'servicesPage.achievements.description' | transloco }}</p>
-      <div class="section-divider">
-        <span class="divider-dot"></span>
-        <span class="divider-line"></span>
-        <span class="divider-dot"></span>
-      </div>
-    </div>
-    <div class="statistics-grid">
-      <div class="statistic-card" *ngFor="let stat of statistics" @pulseAnimation>
-        <div class="statistic-icon">
-          <i [class]="stat.icon"></i>
-        </div>
-        <div class="statistic-value">{{stat.prefix}}{{stat.value}}{{stat.suffix}}</div>
-        <div class="statistic-label">{{stat.label}}</div>
+    <!-- CTA - Chamada à ação impactante -->
+    <div class="service-cta" @pulseAnimation>
+      <div class="cta-bg"></div>
+      <div class="cta-content">
+        <h3>{{ 'servicesPage.cta.serviceCta.title' | transloco }}</h3>
+        <p>{{ 'servicesPage.cta.serviceCta.subtitle' | transloco: { serviceTitle: selectedService.title } }}</p>
+        <a routerLink="/contact" class="btn btn-glow">
+          <i class="fas fa-paper-plane"></i>
+          <span>{{ 'servicesPage.cta.serviceCta.button' | transloco }}</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technology Stack Section - Reorganizado para mais clareza visual -->
-<section id="technologies" class="tech-stack-section observe-section" @slideInUp *ngIf="!selectedService">
+<!-- Technology Stack Section - Visualmente impressionante -->
+<section id="technologies" class="tech-stack-section observe-section" @fadeIn *ngIf="!selectedService" data-theme-mode="dark">
+  <div class="tech-floating-shapes">
+    <div class="tech-shape shape-1"></div>
+    <div class="tech-shape shape-2"></div>
+    <div class="tech-shape shape-3"></div>
+  </div>
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" @slideInUp>
       <h2 class="section-title">{{ 'servicesPage.technologies.title' | transloco }}</h2>
       <p class="section-subtitle">{{ 'servicesPage.technologies.subtitle' | transloco }}</p>
       <div class="section-divider">
@@ -196,33 +208,46 @@
       </div>
     </div>
 
-    <!-- Technology Filter Tabs -->
-    <div class="tech-filter-tabs">
-      <button *ngFor="let category of techCategories"
+    <!-- Technology Filter Tabs - Interface moderna -->
+    <div class="tech-filter-tabs" @staggerList>
+      <button *ngFor="let category of techCategories; let i = index"
               [class.active]="activeTechCategory === category"
-              (click)="filterTechnologies(category)">
-        {{ category | titlecase }}
+              (click)="filterTechnologies(category)"
+              class="stagger-item"
+              [style.animation-delay]="(i * 0.1) + 's'">
+        <span>{{ category | titlecase }}</span>
+        <div class="tab-underline"></div>
       </button>
     </div>
 
-    <div class="technologies-grid" @staggerList>
+    <div class="technologies-grid" @staggerList data-theme-mode="dark">
       <div class="technology-card stagger-item"
            *ngFor="let tech of technologies"
-           [style.display]="tech.category === activeTechCategory ? 'flex' : 'none'">
-        <div class="tech-icon">
+           (mouseenter)="techHovered = tech.id"
+           (mouseleave)="techHovered = null"
+           [class.hovered]="techHovered === tech.id"
+           [style.display]="tech.category === activeTechCategory ? 'flex' : 'none'"
+           data-theme-mode="dark"
+           @fadeIn>
+        <div class="tech-icon" [class.pulse]="techHovered === tech.id">
           <i [class]="tech.icon"></i>
         </div>
         <h3 class="tech-name">{{tech.name}}</h3>
         <p class="tech-description">{{tech.description}}</p>
+        <div class="card-bg-accent"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Why Choose Us Section - Simplificado para melhor experiência visual -->
-<section class="why-choose-us section" @slideInUp *ngIf="!selectedService">
+<!-- Why Choose Us Section - Interativo e envolvente -->
+<section class="why-choose-us section" @fadeIn *ngIf="!selectedService" data-theme-mode="dark">
+  <div class="why-choose-decoration">
+    <div class="decoration-element elem-1"></div>
+    <div class="decoration-element elem-2"></div>
+  </div>
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" @slideInUp>
       <h2 class="section-title">{{ 'servicesPage.whyChooseUs.title' | transloco }}</h2>
       <p class="section-subtitle">{{ 'servicesPage.whyChooseUs.subtitle' | transloco }}</p>
       <div class="section-divider">
@@ -233,10 +258,12 @@
     </div>
 
     <div id="benefits" class="benefits-grid observe-section" @staggerBenefits>
-      <div class="benefit-card" *ngFor="let benefit of benefits"
+      <div class="benefit-card stagger-item"
+           *ngFor="let benefit of benefits"
            [class.expanded]="flipStates[benefit.id] === 'flipped'"
            (click)="toggleFlipState(benefit.id)"
-           [@rotate3d]="flipStates[benefit.id]">
+           [@rotate3d]="flipStates[benefit.id]"
+           data-theme-mode="dark">
         <div class="benefit-front">
           <div class="benefit-icon">
             <i [class]="benefit.icon"></i>
@@ -245,6 +272,7 @@
             <h3 class="benefit-title">{{benefit.title}}</h3>
             <p class="click-hint">{{ 'clickToLearnMore' | transloco }}</p>
           </div>
+          <div class="card-corner"></div>
         </div>
         <div class="benefit-back">
           <p class="benefit-description">{{benefit.description}}</p>
@@ -257,86 +285,48 @@
   </div>
 </section>
 
-<!-- Industry Expertise Section - Layout mais limpo e focado -->
-<section class="industry-expertise-section" @fadeIn *ngIf="!selectedService">
+<!-- Statistics Section - Visualmente impactante -->
+<section id="statistics" class="statistics-full-section observe-section" @fadeIn *ngIf="!selectedService" data-theme-mode="dark">
+  <div class="stats-bg-pattern">
+    <div class="pattern-overlay"></div>
+  </div>
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{{ 'servicesPage.industryExpertise.title' | transloco }}</h2>
-      <p class="section-subtitle">{{ 'servicesPage.industryExpertise.subtitle' | transloco }}</p>
+    <div class="section-header" @slideInUp>
+      <h2 class="section-title">{{ 'servicesPage.achievements.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.achievements.description' | transloco }}</p>
       <div class="section-divider">
         <span class="divider-dot"></span>
         <span class="divider-line"></span>
         <span class="divider-dot"></span>
       </div>
     </div>
-
-    <div class="industry-grid" @staggerList>
-      <div class="industry-card stagger-item" *ngFor="let industry of industryExpertise">
-        <div class="industry-icon">
-          <i [class]="industry.icon"></i>
+    <div class="statistics-grid" @staggerList>
+      <div class="statistic-card stagger-item"
+           *ngFor="let stat of statistics"
+           @countAnimation>
+        <div class="stat-accent"></div>
+        <div class="statistic-icon">
+          <i [class]="stat.icon"></i>
         </div>
-        <h3 class="industry-name">{{industry.industry}}</h3>
-        <p class="industry-description">{{industry.description}}</p>
+        <div class="statistic-value">{{stat.prefix}}<span class="counter">{{stat.value}}</span>{{stat.suffix}}</div>
+        <div class="statistic-label">{{stat.label}}</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials Section - Simplificado e mais focado -->
-<section class="testimonials section" @fadeIn *ngIf="!selectedService">
-  <div class="section-bg-decoration">
-    <div class="decoration-circle circle-1"></div>
-    <div class="decoration-circle circle-2"></div>
+<!-- Call to Action Section - Envolvente e persuasiva -->
+<section class="cta-section" @fadeIn *ngIf="!selectedService" data-theme-mode="dark">
+  <div class="cta-bg-pattern">
+    <div class="pattern-overlay"></div>
   </div>
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{{ 'servicesPage.testimonials.title' | transloco }}</h2>
-      <p class="section-subtitle">{{ 'servicesPage.testimonials.subtitle' | transloco }}</p>
-      <div class="section-divider">
-        <span class="divider-dot"></span>
-        <span class="divider-line"></span>
-        <span class="divider-dot"></span>
-      </div>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
-        <div class="testimonial-content">
-          <i class="fas fa-quote-left quote-icon"></i>
-          <p>"{{testimonial.text}}"</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-image">
-            <div class="placeholder-image" [ngStyle]="{'background-image': testimonial.image ? 'url(' + testimonial.image + ')' : 'none'}">
-              <div class="image-overlay" *ngIf="!testimonial.image">
-                <i class="fas fa-user"></i>
-              </div>
-            </div>
-          </div>
-          <div class="author-info">
-            <h4>{{testimonial.name}}</h4>
-            <p>{{testimonial.position}}, {{testimonial.company}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action Section - Mais focado e direto -->
-<section class="cta-section" @fadeIn *ngIf="!selectedService">
-  <div class="cta-bg-decoration">
-    <div class="decoration-circle circle-1"></div>
-    <div class="decoration-circle circle-2"></div>
-    <div class="decoration-circle circle-3"></div>
-  </div>
-  <div class="container">
-    <div class="cta-content">
+    <div class="cta-content" @slideInUp>
       <h2>{{ 'servicesPage.cta.title' | transloco }}</h2>
       <p>{{ 'servicesPage.cta.subtitle' | transloco }}</p>
-      <a routerLink="/contact" class="btn btn-lg">
+      <a routerLink="/contact" class="btn btn-lg btn-glow">
+        <span class="btn-text">{{ 'servicesPage.cta.button' | transloco }}</span>
         <i class="fas fa-rocket"></i>
-        {{ 'servicesPage.cta.button' | transloco }}
       </a>
     </div>
   </div>

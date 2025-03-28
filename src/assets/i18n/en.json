@@ -406,6 +406,192 @@
         ]
       }
     ],
+    "technologies": {
+      "title": "Our Technologies",
+      "subtitle": "We use cutting-edge technologies to develop innovative solutions",
+      "items": [
+        {
+          "name": "Angular",
+          "icon": "fab fa-angular",
+          "category": "frontend",
+          "description": "Framework for building modern and responsive web applications"
+        },
+        {
+          "name": "React",
+          "icon": "fab fa-react",
+          "category": "frontend",
+          "description": "JavaScript library for building interactive user interfaces"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "fab fa-vuejs",
+          "category": "frontend",
+          "description": "Progressive framework for building user interfaces"
+        },
+        {
+          "name": "HTML5",
+          "icon": "fab fa-html5",
+          "category": "frontend",
+          "description": "Markup language for structuring content on the web"
+        },
+        {
+          "name": "CSS3",
+          "icon": "fab fa-css3-alt",
+          "category": "frontend",
+          "description": "Style sheet language for designing web pages"
+        },
+        {
+          "name": "SASS/SCSS",
+          "icon": "fab fa-sass",
+          "category": "frontend",
+          "description": "CSS preprocessor that adds advanced features"
+        },
+        {
+          "name": "Node.js",
+          "icon": "fab fa-node-js",
+          "category": "backend",
+          "description": "JavaScript runtime environment for server-side execution"
+        },
+        {
+          "name": "Express",
+          "icon": "fas fa-server",
+          "category": "backend",
+          "description": "Minimalist framework for Node.js web applications"
+        },
+        {
+          "name": "Spring Boot",
+          "icon": "fas fa-leaf",
+          "category": "backend",
+          "description": "Java framework for creating enterprise-level applications"
+        },
+        {
+          "name": "Django",
+          "icon": "fab fa-python",
+          "category": "backend",
+          "description": "High-level Python framework for web development"
+        },
+        {
+          "name": "Laravel",
+          "icon": "fab fa-laravel",
+          "category": "backend",
+          "description": "Elegant PHP framework for web development"
+        },
+        {
+          "name": ".NET Core",
+          "icon": "fab fa-microsoft",
+          "category": "backend",
+          "description": "Framework for building modern cloud applications"
+        },
+        {
+          "name": "React Native",
+          "icon": "fab fa-react",
+          "category": "mobile",
+          "description": "Framework for cross-platform mobile app development"
+        },
+        {
+          "name": "Flutter",
+          "icon": "fas fa-mobile-alt",
+          "category": "mobile",
+          "description": "Google's SDK for building native mobile, web, and desktop apps"
+        },
+        {
+          "name": "Swift",
+          "icon": "fab fa-swift",
+          "category": "mobile",
+          "description": "Programming language for iOS development"
+        },
+        {
+          "name": "Kotlin",
+          "icon": "fab fa-android",
+          "category": "mobile",
+          "description": "Modern language for Android development"
+        },
+        {
+          "name": "Ionic",
+          "icon": "fas fa-bolt",
+          "category": "mobile",
+          "description": "Framework for hybrid app development"
+        },
+        {
+          "name": "Xamarin",
+          "icon": "fab fa-microsoft",
+          "category": "mobile",
+          "description": "Microsoft's platform for cross-platform development"
+        },
+        {
+          "name": "Figma",
+          "icon": "fab fa-figma",
+          "category": "design",
+          "description": "Browser-based interface design tool"
+        },
+        {
+          "name": "Adobe XD",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "User experience design tool"
+        },
+        {
+          "name": "Sketch",
+          "icon": "fas fa-pencil-ruler",
+          "category": "design",
+          "description": "Vector design app for Mac"
+        },
+        {
+          "name": "Photoshop",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "Image editing and graphic design software"
+        },
+        {
+          "name": "Illustrator",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "Vector design and illustration software"
+        },
+        {
+          "name": "InVision",
+          "icon": "fas fa-eye",
+          "category": "design",
+          "description": "Digital product design platform and workflow"
+        },
+        {
+          "name": "MySQL",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Relational database management system"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Open source relational database system"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Document-oriented NoSQL database"
+        },
+        {
+          "name": "Firebase",
+          "icon": "fas fa-fire",
+          "category": "database",
+          "description": "Google's app development platform"
+        },
+        {
+          "name": "Redis",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "In-memory data structure store"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "fas fa-project-diagram",
+          "category": "database",
+          "description": "Query and manipulation language for APIs"
+        }
+      ]
+    },
     "whyChooseUs": {
       "title": "Why Choose Us",
       "subtitle": "What sets House Digital of Business apart from the competition",
@@ -414,23 +600,67 @@
           "id": "expert-team",
           "icon": "fas fa-users",
           "title": "Expert Team",
-          "description": "Our team consists of experienced professionals with deep knowledge."
+          "description": "Our team consists of experienced professionals with deep knowledge in cutting-edge technologies and industry best practices."
         },
         {
           "id": "custom-solutions",
           "icon": "fas fa-cogs",
           "title": "Custom Solutions",
-          "description": "We develop tailored solutions for your specific business needs."
+          "description": "We develop tailored solutions for your specific business needs, ensuring effective results aligned with your objectives."
+        },
+        {
+          "id": "agile-approach",
+          "icon": "fas fa-bolt",
+          "title": "Agile Methodology",
+          "description": "We use agile methods for rapid delivery, continuous adaptation, and maximum transparency throughout the development process."
+        },
+        {
+          "id": "cutting-edge",
+          "icon": "fas fa-rocket",
+          "title": "Cutting-Edge Technology",
+          "description": "We implement the most advanced technologies on the market to ensure modern, scalable, and future-proof solutions."
+        },
+        {
+          "id": "quality-assurance",
+          "icon": "fas fa-shield-alt",
+          "title": "Quality Assurance",
+          "description": "Our rigorous quality control process ensures that every product delivered meets the highest standards of performance and security."
+        },
+        {
+          "id": "continuous-support",
+          "icon": "fas fa-headset",
+          "title": "Continuous Support",
+          "description": "We offer dedicated technical support and proactive maintenance to ensure your digital solutions continue to function seamlessly."
         }
       ],
       "statistics": [
         {
           "value": "95%",
-          "label": "Client Satisfaction"
+          "label": "Client Satisfaction",
+          "icon": "fas fa-heart",
+          "prefix": "",
+          "suffix": ""
         },
         {
           "value": "200+",
-          "label": "Completed Projects"
+          "label": "Completed Projects",
+          "icon": "fas fa-check-circle",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "value": "12",
+          "label": "Years of Experience",
+          "icon": "fas fa-calendar-alt",
+          "prefix": "",
+          "suffix": "+"
+        },
+        {
+          "value": "24",
+          "label": "Countries Served",
+          "icon": "fas fa-globe",
+          "prefix": "",
+          "suffix": ""
         }
       ]
     },
@@ -468,7 +698,63 @@
     },
     "industryExpertise": {
       "title": "Industry Expertise",
-      "subtitle": "We have deep experience across multiple industries"
+      "subtitle": "We have deep experience across multiple sectors",
+      "items": [
+        {
+          "industry": "E-commerce",
+          "icon": "fas fa-shopping-cart",
+          "description": "Complete digital solutions for e-commerce platforms, from online stores to marketplaces."
+        },
+        {
+          "industry": "Finance",
+          "icon": "fas fa-chart-line",
+          "description": "Secure and responsive financial applications for banks, fintechs, and payment services."
+        },
+        {
+          "industry": "Healthcare",
+          "icon": "fas fa-heartbeat",
+          "description": "Digital health systems that enhance patient experience and optimize clinical processes."
+        },
+        {
+          "industry": "Education",
+          "icon": "fas fa-graduation-cap",
+          "description": "Interactive educational platforms for learning institutions and e-learning companies."
+        },
+        {
+          "industry": "Real Estate",
+          "icon": "fas fa-home",
+          "description": "Digital solutions for the real estate sector, including listing portals and management systems."
+        },
+        {
+          "industry": "Manufacturing",
+          "icon": "fas fa-industry",
+          "description": "Digital systems for optimizing manufacturing processes and supply chains."
+        }
+      ],
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Complete digital solutions for e-commerce platforms, from online stores to marketplaces."
+      },
+      "finance": {
+        "title": "Finance",
+        "description": "Secure and responsive financial applications for banks, fintechs, and payment services."
+      },
+      "healthcare": {
+        "title": "Healthcare",
+        "description": "Digital health systems that enhance patient experience and optimize clinical processes."
+      },
+      "education": {
+        "title": "Education",
+        "description": "Interactive educational platforms for learning institutions and e-learning companies."
+      },
+      "realestate": {
+        "title": "Real Estate",
+        "description": "Digital solutions for the real estate sector, including listing portals and management systems."
+      },
+      "manufacturing": {
+        "title": "Manufacturing",
+        "description": "Digital systems for optimizing manufacturing processes and supply chains."
+      }
     }
   },
   "aboutPage": {

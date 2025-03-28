@@ -7,35 +7,35 @@
 /* Theme Variables */
 :root {
   /* Light Theme (Default) */
-  --primary-color: #00B8D9; /* Ajustado para um cyan mais profissional */
+  --primary-color: #00B8D9; /* Ciano principal */
   --primary-rgb: 0, 184, 217;
-  --primary-dark: #0097B3;
+  --primary-dark: #008EAF;
   --primary-light: #7FE1F1;
-  --accent-color: #FF5630;
-  --accent-rgb: 255, 86, 48;
+  --accent-color: #36B37E; /* Verde esmeralda para complementar o ciano */
+  --accent-rgb: 54, 179, 126;
   --text-color: #172B4D;
   --text-secondary: #505F79;
   --light-text: #FFFFFF;
   --background-color: #F4F7FA;
   --background-main: #FFFFFF;
   --background-dark: #E6ECF3;
-  --shadow-color: rgba(9, 30, 66, 0.08);
-  --border-color: rgba(9, 30, 66, 0.08);
+  --shadow-color: rgba(0, 184, 217, 0.1);
+  --border-color: rgba(0, 184, 217, 0.15);
   --card-bg: #FFFFFF;
   --input-bg: #F9FAFB;
-  --header-bg: rgba(255, 255, 255, 0.9);
-  --footer-bg: #091E42;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #00819E;
   --footer-text: #FFFFFF;
   --success-color: #36B37E;
   --warning-color: #FFAB00;
   --error-color: #FF5630;
   --section-bg: #FFFFFF;
-  --section-alt-bg: #F4F7FA;
-  --heading-color: #091E42;
-  --hero-bg-gradient-1: #F4F7FA;
-  --hero-bg-gradient-2: #E6ECF3;
-  --hero-overlay: rgba(0, 0, 0, 0.03);
-  --nav-text: #172B4D;
+  --section-alt-bg: #F0FBFF; /* Fundo ciano muito claro para seções alternadas */
+  --heading-color: #0A5A6B; /* Tom mais escuro de ciano para títulos */
+  --hero-bg-gradient-1: #E6F9FF;
+  --hero-bg-gradient-2: #CCF2FF;
+  --hero-overlay: rgba(0, 184, 217, 0.05);
+  --nav-text: #0A5A6B;
 }
 
 /* Dark Theme - Soft, Modern, Corporate */
@@ -44,31 +44,31 @@
   --primary-rgb: 0, 199, 230;
   --primary-dark: #00A3BD;
   --primary-light: #79E2F2;
-  --accent-color: #FF7452;
-  --accent-rgb: 255, 116, 82;
+  --accent-color: #57D9A3; /* Verde mais brilhante para o tema escuro */
+  --accent-rgb: 87, 217, 163;
   --text-color: #E9EAED;
   --text-secondary: #B6C2CF;
   --light-text: #FFFFFF;
-  --background-color: #1D2330;
-  --background-main: #161A25;
-  --background-dark: #0E121B;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --card-bg: #21283B;
-  --input-bg: #283248;
-  --header-bg: rgba(22, 26, 37, 0.85);
-  --footer-bg: #0E121B;
+  --background-color: #15232D; /* Azul-escuro com tom de ciano */
+  --background-main: #0E1A22;
+  --background-dark: #091218;
+  --shadow-color: rgba(0, 199, 230, 0.2);
+  --border-color: rgba(0, 199, 230, 0.15);
+  --card-bg: #1A2F3B;
+  --input-bg: #203744;
+  --header-bg: rgba(14, 26, 34, 0.95);
+  --footer-bg: #091218;
   --footer-text: #E9EAED;
   --success-color: #57D9A3;
   --warning-color: #FFC400;
   --error-color: #FF7452;
-  --section-bg: #161A25;
-  --section-alt-bg: #1D2330;
-  --heading-color: #E9EAED;
-  --hero-bg-gradient-1: #161A25;
-  --hero-bg-gradient-2: #21283B;
-  --hero-overlay: rgba(0, 0, 0, 0.3);
-  --nav-text: #E9EAED;
+  --section-bg: #0E1A22;
+  --section-alt-bg: #15232D;
+  --heading-color: #79E2F2; /* Ciano claro para títulos no tema escuro */
+  --hero-bg-gradient-1: #0E1A22;
+  --hero-bg-gradient-2: #1A2F3B;
+  --hero-overlay: rgba(0, 199, 230, 0.1);
+  --nav-text: #79E2F2;
 }
 
 /* Transition for theme switching */
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 2.5;
-  text-align: center;
+  // text-align: center;
   color: var(--heading-color);
 }
 
@@ -103,6 +103,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  text-align: center;
 }
 
 h3 {

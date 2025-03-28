@@ -217,55 +217,102 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   // Carregar serviços do arquivo de tradução
   private loadServices(): void {
+    // Valores padrão para os serviços
+    const defaultServiceNames = [
+      'Desenvolvimento Web',
+      'Desenvolvimento Mobile',
+      'Design de UI/UX',
+      'Marketing Digital',
+      'Consultoria Empresarial',
+      'Todos os Serviços',
+    ];
+
     this.services = [
       {
         id: 'web-development',
-        name: this.translocoService.translate('servicesPage.services.0.title'),
+        name:
+          this.translocoService.translate('servicesPage.services.0.title') ||
+          defaultServiceNames[0],
       },
       {
         id: 'mobile-app-development',
-        name: this.translocoService.translate('servicesPage.services.1.title'),
+        name:
+          this.translocoService.translate('servicesPage.services.1.title') ||
+          defaultServiceNames[1],
       },
       {
         id: 'ui-ux-design',
-        name: this.translocoService.translate('servicesPage.services.2.title'),
+        name:
+          this.translocoService.translate('servicesPage.services.2.title') ||
+          defaultServiceNames[2],
       },
       {
         id: 'digital-marketing',
-        name: this.translocoService.translate('servicesPage.services.3.title'),
+        name:
+          this.translocoService.translate('servicesPage.services.3.title') ||
+          defaultServiceNames[3],
       },
       {
         id: 'business-consulting',
-        name: this.translocoService.translate('servicesPage.services.4.title'),
+        name:
+          this.translocoService.translate('servicesPage.services.4.title') ||
+          defaultServiceNames[4],
       },
       {
         id: 'other',
-        name: this.translocoService.translate('servicesPage.filter.all'),
+        name:
+          this.translocoService.translate('servicesPage.filter.all') ||
+          defaultServiceNames[5],
       },
     ];
 
+    // Valores padrão para fontes de referência
+    const defaultReferralSources = [
+      'Google/Busca',
+      'Redes Sociais',
+      'Indicação',
+      'Anúncios',
+      'Evento',
+      'Outro',
+    ];
+
     this.referralSources = [
-      this.translocoService.translate('contact.form.referral_sources.google'),
-      this.translocoService.translate('contact.form.referral_sources.social'),
-      this.translocoService.translate('contact.form.referral_sources.referral'),
-      this.translocoService.translate('contact.form.referral_sources.ads'),
-      this.translocoService.translate('contact.form.referral_sources.event'),
-      this.translocoService.translate('contact.form.referral_sources.other'),
+      this.translocoService.translate('contact.form.referral_sources.google') ||
+        defaultReferralSources[0],
+      this.translocoService.translate('contact.form.referral_sources.social') ||
+        defaultReferralSources[1],
+      this.translocoService.translate(
+        'contact.form.referral_sources.referral'
+      ) || defaultReferralSources[2],
+      this.translocoService.translate('contact.form.referral_sources.ads') ||
+        defaultReferralSources[3],
+      this.translocoService.translate('contact.form.referral_sources.event') ||
+        defaultReferralSources[4],
+      this.translocoService.translate('contact.form.referral_sources.other') ||
+        defaultReferralSources[5],
     ];
   }
 
   // Carregar escritórios do arquivo de tradução
   private loadOffices(): void {
+    // Valores padrão para horários e endereços
+    const defaultAddress = 'Alexanderplatz 1, 10178 Berlin, Germany';
+    const defaultHours = 'Segunda a Sexta: 9:00 - 18:00';
+
     this.offices = [
       {
         city: 'Berlin',
         country: 'Germany',
-        address: this.translocoService.translate('contact.info.location.value'),
+        address:
+          this.translocoService.translate('contact.info.location.value') ||
+          defaultAddress,
         phone: '+49 30 1234 5678',
         email: 'berlin@houseofdigitalbusiness.com',
         mapUrl:
           'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.654394609506!2d13.411046715667417!3d52.52068004355785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851d00f714303%3A0xb7b0148f3cd5c61a!2sAlexanderplatz%2C%20Berlin%2C%20Germany!5e0!3m2!1sen!2sus!4v1625584267004!5m2!1sen!2sus',
-        hours: this.translocoService.translate('contact.info.phone.hours'),
+        hours:
+          this.translocoService.translate('contact.info.phone.hours') ||
+          defaultHours,
       },
       {
         city: 'Munich',
@@ -275,7 +322,9 @@ export class ContactComponent implements OnInit, OnDestroy {
         email: 'munich@houseofdigitalbusiness.com',
         mapUrl:
           'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.8408146557856!2d11.57752231555205!3d48.13883027922384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e758b1e3e5199%3A0x9a9550c9bea3c4d6!2sMaximilianstra%C3%9Fe%2C%20Munich%2C%20Germany!5e0!3m2!1sen!2sus!4v1625584349481!5m2!1sen!2sus',
-        hours: this.translocoService.translate('contact.info.phone.hours'),
+        hours:
+          this.translocoService.translate('contact.info.phone.hours') ||
+          defaultHours,
       },
     ];
 
@@ -321,6 +370,35 @@ export class ContactComponent implements OnInit, OnDestroy {
     // Total de FAQs conforme visto nos arquivos JSON
     const totalFaqs = 5;
 
+    // FAQs padrão em caso de falha nas traduções
+    const defaultFaqs = [
+      {
+        question: 'Quais serviços a House of Digital Business oferece?',
+        answer:
+          'Oferecemos uma ampla gama de serviços digitais, incluindo desenvolvimento web, desenvolvimento de aplicativos móveis, design UI/UX, marketing digital e consultoria empresarial para transformação digital.',
+      },
+      {
+        question: 'Quanto tempo leva para desenvolver um site ou aplicativo?',
+        answer:
+          'O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Um site simples pode levar de 2 a 4 semanas, enquanto aplicativos mais complexos podem levar 3 a 6 meses. Fornecemos um cronograma detalhado durante a fase de planejamento do projeto.',
+      },
+      {
+        question: 'Como funciona o processo de desenvolvimento?',
+        answer:
+          'Nosso processo inclui: 1) Descoberta e planejamento, 2) Design e protótipo, 3) Desenvolvimento, 4) Testes e garantia de qualidade, 5) Lançamento, e 6) Suporte contínuo e manutenção. Mantemos nossos clientes envolvidos em cada etapa.',
+      },
+      {
+        question: 'Vocês oferecem suporte após o lançamento do projeto?',
+        answer:
+          'Sim, oferecemos vários pacotes de suporte e manutenção para garantir que seu site ou aplicativo funcione perfeitamente. Isso inclui atualizações regulares, monitoramento de desempenho e suporte técnico.',
+      },
+      {
+        question: 'Em quais setores vocês têm experiência?',
+        answer:
+          'Temos experiência em diversos setores, incluindo e-commerce, finanças, saúde, educação, imobiliário e manufatura. Nossa equipe adapta nossas soluções para atender às necessidades específicas de cada setor.',
+      },
+    ];
+
     this.faqs = [];
     for (let i = 0; i < totalFaqs; i++) {
       const questionKey = `contact.faq.questions.${i}`;
@@ -334,23 +412,21 @@ export class ContactComponent implements OnInit, OnDestroy {
         question &&
         answer &&
         typeof question === 'string' &&
-        typeof answer === 'string'
+        typeof answer === 'string' &&
+        !question.includes(questionKey) &&
+        !answer.includes(answerKey)
       ) {
-        // Verificar se as chaves não estão sendo retornadas como estão (o que acontece quando não há tradução)
-        if (!question.includes(questionKey) && !answer.includes(answerKey)) {
-          this.faqs.push({
-            question: question,
-            answer: answer,
-          });
-        }
+        this.faqs.push({
+          question: question,
+          answer: answer,
+        });
       }
     }
 
-    // Se nenhum FAQ foi carregado, adicionar mensagem de erro
+    // Se nenhum FAQ foi carregado, usar os padrões
     if (this.faqs.length === 0) {
-      console.error(
-        'Não foi possível carregar os FAQs a partir dos arquivos de tradução'
-      );
+      console.warn('Usando FAQs padrão devido a falha nas traduções');
+      this.faqs = defaultFaqs;
     }
   }
 }

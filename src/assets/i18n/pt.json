@@ -146,6 +146,7 @@
     "terms": "Termos de Serviço",
     "cookies": "Política de Cookies"
   },
+  "clickToLearnMore": "Clique para saber mais",
   "servicesPage": {
     "hero": {
       "title": "Nossos <span>Serviços</span>",
@@ -406,6 +407,192 @@
         ]
       }
     ],
+    "technologies": {
+      "title": "Nossas Tecnologias",
+      "subtitle": "Utilizamos tecnologias de ponta para desenvolver soluções inovadoras",
+      "items": [
+        {
+          "name": "Angular",
+          "icon": "fab fa-angular",
+          "category": "frontend",
+          "description": "Framework para criação de aplicações web modernas e responsivas"
+        },
+        {
+          "name": "React",
+          "icon": "fab fa-react",
+          "category": "frontend",
+          "description": "Biblioteca JavaScript para construir interfaces de usuário interativas"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "fab fa-vuejs",
+          "category": "frontend",
+          "description": "Framework progressivo para construção de interfaces de usuário"
+        },
+        {
+          "name": "HTML5",
+          "icon": "fab fa-html5",
+          "category": "frontend",
+          "description": "Linguagem de marcação para estruturar conteúdo na web"
+        },
+        {
+          "name": "CSS3",
+          "icon": "fab fa-css3-alt",
+          "category": "frontend",
+          "description": "Linguagem de estilo para design de páginas web"
+        },
+        {
+          "name": "SASS/SCSS",
+          "icon": "fab fa-sass",
+          "category": "frontend",
+          "description": "Pré-processador CSS que adiciona recursos avançados"
+        },
+        {
+          "name": "Node.js",
+          "icon": "fab fa-node-js",
+          "category": "backend",
+          "description": "Ambiente de execução JavaScript do lado do servidor"
+        },
+        {
+          "name": "Express",
+          "icon": "fas fa-server",
+          "category": "backend",
+          "description": "Framework minimalista para aplicações web Node.js"
+        },
+        {
+          "name": "Spring Boot",
+          "icon": "fas fa-leaf",
+          "category": "backend",
+          "description": "Framework Java para criar aplicações de nível empresarial"
+        },
+        {
+          "name": "Django",
+          "icon": "fab fa-python",
+          "category": "backend",
+          "description": "Framework Python de alto nível para desenvolvimento web"
+        },
+        {
+          "name": "Laravel",
+          "icon": "fab fa-laravel",
+          "category": "backend",
+          "description": "Framework PHP elegante para desenvolvimento web"
+        },
+        {
+          "name": ".NET Core",
+          "icon": "fab fa-microsoft",
+          "category": "backend",
+          "description": "Framework para construir aplicações modernas em nuvem"
+        },
+        {
+          "name": "React Native",
+          "icon": "fab fa-react",
+          "category": "mobile",
+          "description": "Framework para desenvolvimento de aplicativos móveis multiplataforma"
+        },
+        {
+          "name": "Flutter",
+          "icon": "fas fa-mobile-alt",
+          "category": "mobile",
+          "description": "SDK da Google para criar aplicativos nativos para móveis, web e desktop"
+        },
+        {
+          "name": "Swift",
+          "icon": "fab fa-swift",
+          "category": "mobile",
+          "description": "Linguagem de programação para desenvolvimento iOS"
+        },
+        {
+          "name": "Kotlin",
+          "icon": "fab fa-android",
+          "category": "mobile",
+          "description": "Linguagem moderna para desenvolvimento Android"
+        },
+        {
+          "name": "Ionic",
+          "icon": "fas fa-bolt",
+          "category": "mobile",
+          "description": "Framework para desenvolvimento de aplicativos híbridos"
+        },
+        {
+          "name": "Xamarin",
+          "icon": "fab fa-microsoft",
+          "category": "mobile",
+          "description": "Plataforma da Microsoft para desenvolvimento multiplataforma"
+        },
+        {
+          "name": "Figma",
+          "icon": "fab fa-figma",
+          "category": "design",
+          "description": "Ferramenta de design de interface baseada em navegador"
+        },
+        {
+          "name": "Adobe XD",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "Ferramenta de design de experiência do usuário"
+        },
+        {
+          "name": "Sketch",
+          "icon": "fas fa-pencil-ruler",
+          "category": "design",
+          "description": "Aplicativo de design vetorial para Mac"
+        },
+        {
+          "name": "Photoshop",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "Software de edição de imagens e design gráfico"
+        },
+        {
+          "name": "Illustrator",
+          "icon": "fab fa-adobe",
+          "category": "design",
+          "description": "Software de design vetorial e ilustração"
+        },
+        {
+          "name": "InVision",
+          "icon": "fas fa-eye",
+          "category": "design",
+          "description": "Plataforma de prototipagem digital e fluxo de trabalho de design"
+        },
+        {
+          "name": "MySQL",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Sistema de gerenciamento de banco de dados relacional"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Sistema de banco de dados relacional de código aberto"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Banco de dados NoSQL orientado a documentos"
+        },
+        {
+          "name": "Firebase",
+          "icon": "fas fa-fire",
+          "category": "database",
+          "description": "Plataforma de desenvolvimento de aplicativos da Google"
+        },
+        {
+          "name": "Redis",
+          "icon": "fas fa-database",
+          "category": "database",
+          "description": "Armazenamento de estrutura de dados em memória"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "fas fa-project-diagram",
+          "category": "database",
+          "description": "Linguagem de consulta e manipulação de dados para APIs"
+        }
+      ]
+    },
     "whyChooseUs": {
       "title": "Por Que Nos Escolher",
       "subtitle": "O que diferencia a House Digital of Business da concorrência",
@@ -414,23 +601,67 @@
           "id": "expert-team",
           "icon": "fas fa-users",
           "title": "Equipe Especializada",
-          "description": "Nossa equipe é composta por profissionais experientes com profundo conhecimento."
+          "description": "Nossa equipe é composta por profissionais experientes com profundo conhecimento em tecnologias de ponta e melhores práticas do mercado."
         },
         {
           "id": "custom-solutions",
           "icon": "fas fa-cogs",
           "title": "Soluções Personalizadas",
-          "description": "Desenvolvemos soluções sob medida para as necessidades específicas do seu negócio."
+          "description": "Desenvolvemos soluções sob medida para as necessidades específicas do seu negócio, garantindo resultados efetivos e alinhados aos seus objetivos."
+        },
+        {
+          "id": "agile-approach",
+          "icon": "fas fa-bolt",
+          "title": "Metodologia Ágil",
+          "description": "Utilizamos métodos ágeis para entrega rápida, adaptação contínua e máxima transparência durante todo o processo de desenvolvimento."
+        },
+        {
+          "id": "cutting-edge",
+          "icon": "fas fa-rocket",
+          "title": "Tecnologia de Ponta",
+          "description": "Implementamos as tecnologias mais avançadas do mercado para garantir soluções modernas, escaláveis e à prova do futuro."
+        },
+        {
+          "id": "quality-assurance",
+          "icon": "fas fa-shield-alt",
+          "title": "Garantia de Qualidade",
+          "description": "Nosso processo rigoroso de controle de qualidade assegura que cada produto entregue atenda aos mais altos padrões de desempenho e segurança."
+        },
+        {
+          "id": "continuous-support",
+          "icon": "fas fa-headset",
+          "title": "Suporte Contínuo",
+          "description": "Oferecemos suporte técnico dedicado e manutenção proativa para garantir que suas soluções digitais continuem funcionando perfeitamente."
         }
       ],
       "statistics": [
         {
           "value": "95%",
-          "label": "Satisfação dos Clientes"
+          "label": "Satisfação dos Clientes",
+          "icon": "fas fa-heart",
+          "prefix": "",
+          "suffix": ""
         },
         {
           "value": "200+",
-          "label": "Projetos Concluídos"
+          "label": "Projetos Concluídos",
+          "icon": "fas fa-check-circle",
+          "prefix": "",
+          "suffix": ""
+        },
+        {
+          "value": "12",
+          "label": "Anos de Experiência",
+          "icon": "fas fa-calendar-alt",
+          "prefix": "",
+          "suffix": "+"
+        },
+        {
+          "value": "24",
+          "label": "Países Atendidos",
+          "icon": "fas fa-globe",
+          "prefix": "",
+          "suffix": ""
         }
       ]
     },
@@ -468,7 +699,63 @@
     },
     "industryExpertise": {
       "title": "Experiência em Indústrias",
-      "subtitle": "Temos experiência profunda em múltiplos setores"
+      "subtitle": "Temos experiência profunda em múltiplos setores",
+      "items": [
+        {
+          "industry": "E-commerce",
+          "icon": "fas fa-shopping-cart",
+          "description": "Soluções digitais completas para plataformas de comércio eletrônico, desde lojas virtuais até marketplaces."
+        },
+        {
+          "industry": "Finanças",
+          "icon": "fas fa-chart-line",
+          "description": "Aplicações financeiras seguras e responsivas para bancos, fintechs e serviços de pagamento."
+        },
+        {
+          "industry": "Saúde",
+          "icon": "fas fa-heartbeat",
+          "description": "Sistemas de saúde digitais que melhoram a experiência do paciente e otimizam processos clínicos."
+        },
+        {
+          "industry": "Educação",
+          "icon": "fas fa-graduation-cap",
+          "description": "Plataformas educacionais interativas para instituições de ensino e empresas de e-learning."
+        },
+        {
+          "industry": "Imobiliário",
+          "icon": "fas fa-home",
+          "description": "Soluções digitais para o setor imobiliário, incluindo portais de listagem e sistemas de gerenciamento."
+        },
+        {
+          "industry": "Manufatura",
+          "icon": "fas fa-industry",
+          "description": "Sistemas digitais para otimização de processos de fabricação e cadeia de suprimentos."
+        }
+      ],
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Soluções digitais completas para plataformas de comércio eletrônico, desde lojas virtuais até marketplaces."
+      },
+      "finance": {
+        "title": "Finanças",
+        "description": "Aplicações financeiras seguras e responsivas para bancos, fintechs e serviços de pagamento."
+      },
+      "healthcare": {
+        "title": "Saúde",
+        "description": "Sistemas de saúde digitais que melhoram a experiência do paciente e otimizam processos clínicos."
+      },
+      "education": {
+        "title": "Educação",
+        "description": "Plataformas educacionais interativas para instituições de ensino e empresas de e-learning."
+      },
+      "realestate": {
+        "title": "Imobiliário",
+        "description": "Soluções digitais para o setor imobiliário, incluindo portais de listagem e sistemas de gerenciamento."
+      },
+      "manufacturing": {
+        "title": "Manufatura",
+        "description": "Sistemas digitais para otimização de processos de fabricação e cadeia de suprimentos."
+      }
     }
   },
   "aboutPage": {
