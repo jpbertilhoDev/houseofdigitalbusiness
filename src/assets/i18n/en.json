@@ -149,7 +149,10 @@
   "servicesPage": {
     "hero": {
       "title": "Our <span>Services</span>",
-      "subtitle": "Comprehensive digital solutions to help your business thrive in the digital landscape"
+      "subtitle_prefix": "Digital Excellence",
+      "subtitle": "Comprehensive digital solutions to help your business thrive in the digital landscape",
+      "contact_us": "Contact Us",
+      "explore": "Explore Services"
     },
     "filter": {
       "all": "All Services",
@@ -458,6 +461,14 @@
         "subtitle": "Contact us today to discuss how our {{serviceTitle}} services can benefit your business.",
         "button": "Contact Us"
       }
+    },
+    "achievements": {
+      "title": "Our Achievements",
+      "description": "Results that speak for themselves"
+    },
+    "industryExpertise": {
+      "title": "Industry Expertise",
+      "subtitle": "We have deep experience across multiple industries"
     }
   },
   "aboutPage": {
@@ -592,5 +603,6 @@
       "contactBtn": "Contact Us",
       "servicesBtn": "Our Services"
     }
-  }
+  },
+  "clickToLearnMore": "Click to learn more"
 }

@@ -5,18 +5,31 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
   z-index: 1000;
   transition: all 0.3s ease;
   background-color: transparent;
 
   &.header-scrolled {
     background-color: var(--card-bg-color);
-    padding: 12px 0;
+    padding: 10px 0;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    // Ajustes para a logo quando o header está com scroll
+    .logo {
+      a {
+        .logo-full {
+          height: 42px;
+        }
+
+        .logo-symbol {
+          height: 38px;
+        }
+      }
+    }
 
     // Para evitar que o blur afete o desempenho em mobile
     @media (max-width: 768px) {
@@ -35,6 +48,17 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    max-width: 1280px;
+    padding: 0 24px;
+    margin: 0 auto;
+
+    @media (max-width: 1320px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
   }
 
   .logo {
@@ -48,19 +72,41 @@
       text-decoration: none;
       color: var(--text-color);
 
-      .logo-text {
-        font-weight: 700;
-        font-size: 1.4rem;
-        letter-spacing: -0.5px;
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-left: 8px;
+      .logo-full {
+        height: 50px;
+        width: auto;
+        transition: all 0.3s ease;
 
-        @media (max-width: 576px) {
-          font-size: 1.2rem;
+        // Esconde a logo completa em mobile
+        @media (max-width: 768px) {
+          display: none;
         }
+      }
+
+      .logo-symbol {
+        height: 46px;
+        width: auto;
+        transition: all 0.3s ease;
+
+        // Mostra apenas o símbolo em mobile
+        @media (min-width: 769px) {
+          display: none;
+        }
+      }
+
+      // Suaviza a cor para um efeito mais elegante em dark mode
+      body[data-theme="dark"] & {
+        img {
+          filter: brightness(1.05) saturate(1.1);
+        }
+      }
+    }
+
+    // Animação ao passar o mouse
+    &:hover {
+      img {
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 3px rgba(var(--primary-rgb), 0.6));
       }
     }
   }
@@ -70,6 +116,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
+    // margin-left: 40px;
 
     @media (max-width: 991px) {
       display: none; // Esconde os itens de navegação no mobile
@@ -80,15 +128,16 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      justify-content: center;
 
       li {
-        margin: 0 15px;
+        margin: 0 20px;
 
         a {
           color: var(--text-color);
           text-decoration: none;
           font-weight: 500;
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           letter-spacing: 0.2px;
           padding: 8px 0;
           position: relative;
@@ -121,14 +170,14 @@
   .utility-nav {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
     margin-left: 20px;
     z-index: 3;
 
     // Ajusta espaçamento em telas menores
     @media (max-width: 991px) {
       margin-left: 0;
-      gap: 10px;
+      gap: 15px;
     }
 
     // Botão toggle do menu
@@ -139,7 +188,7 @@
       width: 24px;
       height: 18px;
       cursor: pointer;
-      margin-left: 15px;
+      margin-left: 18px;
       z-index: 101;
 
       @media (max-width: 991px) {
@@ -187,21 +236,21 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
-    max-width: 80vw;
+    width: 320px;
+    max-width: 85vw;
     height: 100vh;
     background-color: var(--card-bg-color);
     z-index: 100;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-    padding: 100px 40px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    padding: 110px 40px 40px;
     overflow-y: auto;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
     body[data-theme="dark"] & {
       background-color: rgba(22, 26, 37, 0.95);
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     }
 
     &.active {
@@ -214,13 +263,13 @@
       padding: 0;
 
       li {
-        margin: 20px 0;
+        margin: 25px 0;
 
         a {
           color: var(--text-color);
           text-decoration: none;
           font-weight: 500;
-          font-size: 1.1rem;
+          font-size: 1.15rem;
           letter-spacing: 0.2px;
           transition: all 0.3s ease;
           display: block;

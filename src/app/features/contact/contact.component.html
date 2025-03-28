@@ -1,115 +1,144 @@
-<!-- Hero Section -->
+<!-- Hero Section - Design Moderno e Imersivo -->
 <section class="contact-hero" @fadeIn>
+  <div class="particles"></div>
+  <div class="hero-shape"></div>
   <div class="container">
     <div class="contact-hero-content">
-      <h1>Get in <span>Touch</span></h1>
-      <p>We'd love to hear from you. Contact us for any inquiries or to discuss your project.</p>
+      <div class="hero-badge">{{ 'header.contact' | transloco }}</div>
+      <h1>{{ 'contact.title' | transloco }} <span>{{ 'contact.title_highlight' | transloco }}</span></h1>
+      <p>{{ 'contact.subtitle' | transloco }}</p>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>{{ 'scroll_down' | transloco }}</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Modern Contact Section -->
+<!-- Modern Contact Section - Design Aprimorado -->
 <section class="modern-contact-section" @slideInUp>
+  <div class="section-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
   <div class="container">
+    <div class="section-intro">
+      <h2>{{ 'how_help' | transloco }}</h2>
+      <p>{{ 'contact_intro' | transloco }}</p>
+    </div>
+
     <div class="contact-wrapper">
-      <!-- Contact Form -->
-      <div class="contact-form-panel" @slideInLeft>
+      <!-- Contact Form Panel -->
+      <div class="contact-form-panel glass-effect" @slideInLeft>
         <div class="form-header">
-          <h2>Send Us a Message</h2>
-          <p>Fill out the form below and we'll get back to you shortly</p>
+          <h2>{{ 'contact.form.title' | transloco }}</h2>
+          <p>{{ 'contact.form.subtitle' | transloco }}</p>
         </div>
 
         <div *ngIf="formSuccess" class="success-message">
-          <i class="fas fa-check-circle"></i>
-          <p>Your message has been sent successfully! We'll be in touch soon.</p>
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="success-content">
+            <h3>{{ 'success_title' | transloco }}</h3>
+            <p>{{ 'contact.form.success' | transloco }}</p>
+          </div>
         </div>
 
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!formSuccess">
           <div class="form-row">
             <div class="form-group">
-              <div class="input-with-icon">
+              <div class="input-with-icon" [class.focus]="contactForm.get('name')?.touched">
                 <i class="fas fa-user"></i>
                 <input
                   type="text"
                   formControlName="name"
-                  placeholder="Full Name *"
+                  placeholder="{{ 'contact.form.name' | transloco }} *"
                   [ngClass]="{'invalid': isInvalidAndTouched('name')}"
                 >
+                <div class="focus-border"></div>
               </div>
               <div class="error-message" *ngIf="isInvalidAndTouched('name')">
-                <span *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</span>
-                <span *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters</span>
+                <span *ngIf="contactForm.get('name')?.errors?.['required']">{{ 'validation.required' | transloco }}</span>
+                <span *ngIf="contactForm.get('name')?.errors?.['minlength']">{{ 'validation.min_length' | transloco: {count: 2} }}</span>
               </div>
             </div>
 
             <div class="form-group">
-              <div class="input-with-icon">
+              <div class="input-with-icon" [class.focus]="contactForm.get('email')?.touched">
                 <i class="fas fa-envelope"></i>
                 <input
                   type="email"
                   formControlName="email"
-                  placeholder="Email Address *"
+                  placeholder="{{ 'contact.form.email' | transloco }} *"
                   [ngClass]="{'invalid': isInvalidAndTouched('email')}"
                 >
+                <div class="focus-border"></div>
               </div>
               <div class="error-message" *ngIf="isInvalidAndTouched('email')">
-                <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</span>
-                <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+                <span *ngIf="contactForm.get('email')?.errors?.['required']">{{ 'validation.required' | transloco }}</span>
+                <span *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'validation.email' | transloco }}</span>
               </div>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <div class="input-with-icon">
+              <div class="input-with-icon" [class.focus]="contactForm.get('phone')?.touched">
                 <i class="fas fa-phone-alt"></i>
                 <input
                   type="tel"
                   formControlName="phone"
-                  placeholder="Phone Number (Optional)"
+                  placeholder="{{ 'contact.form.phone' | transloco }} ({{ 'optional' | transloco }})"
                 >
+                <div class="focus-border"></div>
               </div>
             </div>
 
             <div class="form-group">
-              <div class="select-with-icon">
+              <div class="select-with-icon" [class.focus]="contactForm.get('serviceInterest')?.touched">
                 <i class="fas fa-briefcase"></i>
                 <select formControlName="serviceInterest">
-                  <option value="" selected>Service of Interest (Optional)</option>
+                  <option value="" selected>{{ 'contact.form.service' | transloco }} ({{ 'optional' | transloco }})</option>
                   <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
                 </select>
+                <div class="focus-border"></div>
               </div>
             </div>
           </div>
 
           <div class="form-group">
-            <div class="input-with-icon">
+            <div class="input-with-icon" [class.focus]="contactForm.get('subject')?.touched">
               <i class="fas fa-tag"></i>
               <input
                 type="text"
                 formControlName="subject"
-                placeholder="Subject *"
+                placeholder="{{ 'contact.form.subject' | transloco }} *"
                 [ngClass]="{'invalid': isInvalidAndTouched('subject')}"
               >
+              <div class="focus-border"></div>
             </div>
             <div class="error-message" *ngIf="isInvalidAndTouched('subject')">
-              <span *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required</span>
+              <span *ngIf="contactForm.get('subject')?.errors?.['required']">{{ 'validation.required' | transloco }}</span>
             </div>
           </div>
 
           <div class="form-group">
-            <div class="input-with-icon textarea-container">
+            <div class="input-with-icon textarea-container" [class.focus]="contactForm.get('message')?.touched">
               <i class="fas fa-comment-alt"></i>
               <textarea
                 formControlName="message"
                 rows="5"
-                placeholder="Your Message *"
+                placeholder="{{ 'contact.form.message' | transloco }} *"
                 [ngClass]="{'invalid': isInvalidAndTouched('message')}"
               ></textarea>
+              <div class="focus-border"></div>
             </div>
             <div class="error-message" *ngIf="isInvalidAndTouched('message')">
-              <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</span>
-              <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 20 characters</span>
+              <span *ngIf="contactForm.get('message')?.errors?.['required']">{{ 'validation.required' | transloco }}</span>
+              <span *ngIf="contactForm.get('message')?.errors?.['minlength']">{{ 'validation.min_length' | transloco: {count: 20} }}</span>
             </div>
           </div>
 
@@ -121,81 +150,87 @@
                 formControlName="agreeToTerms"
                 [ngClass]="{'invalid': isInvalidAndTouched('agreeToTerms')}"
               >
-              <label for="agreeToTerms">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> *</label>
+              <label for="agreeToTerms">{{ 'contact.form.terms' | transloco }} *</label>
             </div>
             <div class="error-message" *ngIf="isInvalidAndTouched('agreeToTerms')">
-              <span>You must agree to the terms to proceed</span>
+              <span>{{ 'validation.terms' | transloco }}</span>
             </div>
           </div>
 
           <div class="form-actions">
             <button type="submit" class="submit-btn" [disabled]="formSubmitted">
-              <span *ngIf="!formSubmitted">Send Message</span>
-              <span *ngIf="formSubmitted"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+              <span *ngIf="!formSubmitted">{{ 'contact.form.submit' | transloco }}</span>
+              <span *ngIf="formSubmitted" class="sending-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>{{ 'contact.form.sending' | transloco }}</span>
+              </span>
             </button>
           </div>
 
           <div class="form-error" *ngIf="formError">
             <i class="fas fa-exclamation-circle"></i>
-            <p>There are errors in your form. Please correct them and try again.</p>
+            <p>{{ 'contact.form.error' | transloco }}</p>
           </div>
         </form>
       </div>
 
-      <!-- Contact Info -->
-      <div class="contact-info-panel" @slideInRight>
+      <!-- Contact Info with Map -->
+      <div class="contact-info-panel glass-effect" @slideInRight>
         <div class="contact-header">
-          <h2>Contact Information</h2>
-          <p>We're here to help and answer any questions</p>
+          <h2>{{ 'contact.info.title' | transloco }}</h2>
+          <p>{{ 'contact.info.subtitle' | transloco }}</p>
         </div>
 
         <div class="contact-details">
-          <div class="contact-item">
+          <div class="contact-item stagger-item">
             <div class="icon-circle">
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="contact-text">
-              <h3>Our Location</h3>
-              <p>Alexanderplatz 5, 10178 Berlin, Germany</p>
+              <h3>{{ 'contact.info.location.title' | transloco }}</h3>
+              <p>{{ 'contact.info.location.value' | transloco }}</p>
+              <a href="https://maps.google.com" target="_blank" class="map-link">
+                <i class="fas fa-external-link-alt"></i> {{ 'view_map' | transloco }}
+              </a>
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item stagger-item">
             <div class="icon-circle">
               <i class="fas fa-phone-alt"></i>
             </div>
             <div class="contact-text">
-              <h3>Phone Number</h3>
-              <p>+49 30 1234 5678</p>
-              <p class="small-text">Monday - Friday, 9:00 AM - 6:00 PM</p>
+              <h3>{{ 'contact.info.phone.title' | transloco }}</h3>
+              <p>{{ 'contact.info.phone.value' | transloco }}</p>
+              <p class="availability">{{ 'contact.info.phone.hours' | transloco }}</p>
             </div>
           </div>
 
-          <div class="contact-item">
+          <div class="contact-item stagger-item">
             <div class="icon-circle">
               <i class="fas fa-envelope"></i>
             </div>
             <div class="contact-text">
-              <h3>Email Address</h3>
-              <p></p>
-              <p class="small-text">We'll respond within 24 business hours</p>
+              <h3>{{ 'contact.info.email.title' | transloco }}</h3>
+              <p>{{ 'contact.info.email.value' | transloco }}</p>
+              <p class="availability">{{ 'contact.info.email.response' | transloco }}</p>
             </div>
           </div>
         </div>
 
         <div class="social-media">
-          <h3>Follow Us</h3>
+          <h3>{{ 'contact.info.social' | transloco }}</h3>
           <div class="social-icons">
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </div>
@@ -205,13 +240,41 @@
   </div>
 </section>
 
+<!-- FAQ Section -->
+<section class="faq-section" @slideInUp>
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ 'contact.faq.title' | transloco }}</h2>
+      <p>{{ 'contact.faq.subtitle' | transloco }}</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faqToggleState[i]">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <h3>{{ faq.question }}</h3>
+          <div class="faq-icon">
+            <i class="fas" [ngClass]="faqToggleState[i] ? 'fa-minus' : 'fa-plus'"></i>
+          </div>
+        </div>
+        <div class="faq-answer" [style.maxHeight]="faqToggleState[i] ? '500px' : '0'">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Call to Action Section -->
 <section class="cta-section" @fadeIn>
+  <div class="particles"></div>
   <div class="container">
     <div class="cta-content">
-      <h2>Ready to Start Your Project?</h2>
-      <p>Schedule a free consultation with our experts to discuss your needs.</p>
-      <a href="https://calendly.com" target="_blank" class="btn btn-lg">Schedule a Call</a>
+      <h2>{{ 'ready_start' | transloco }}</h2>
+      <p>{{ 'schedule_consultation' | transloco }}</p>
+      <div class="cta-buttons">
+        <a href="https://calendly.com" target="_blank" class="btn btn-lg btn-primary">{{ 'schedule_call' | transloco }}</a>
+        <a routerLink="/services" class="btn btn-lg btn-outline">{{ 'our_services' | transloco }}</a>
+      </div>
     </div>
   </div>
 </section>

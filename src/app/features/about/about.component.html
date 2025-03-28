@@ -1,14 +1,22 @@
-<!-- Hero Section -->
+<!-- Hero Section - Design Moderno e Imersivo -->
 <section class="about-hero" @fadeIn>
+  <div class="particles"></div>
   <div class="container">
     <div class="about-hero-content">
+      <div class="hero-badge">Nossa Agência</div>
       <h1 [innerHTML]="'aboutPage.hero.title' | transloco"></h1>
       <p>{{ 'aboutPage.hero.subtitle' | transloco }}</p>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Role para descobrir</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Our Story Section -->
+<!-- Our Story Section - Design Moderno com CEO Image -->
 <section class="our-story section" @slideInUp>
   <div class="container">
     <div class="section-title">
@@ -18,9 +26,23 @@
 
     <div class="story-content">
       <div class="story-image" @slideInLeft>
-        <div class="placeholder-image"></div>
+        <div class="image-frame">
+          <img src="/images/wash.jpg" alt="CEO da House of Digital Business" class="ceo-image">
+          <div class="image-accent"></div>
+          <div class="image-badge">CEO</div>
+        </div>
+        <div class="image-caption">
+          <p class="caption-name">Washington Silva</p>
+          <p class="caption-title">CEO & Fundador</p>
+          <div class="caption-social">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="story-text" @slideInRight>
+        <!-- <div class="badge-tag">Nossa História</div> -->
         <h3>{{ 'aboutPage.ourStory.heading' | transloco }}</h3>
 
         <!-- Acessando os parágrafos diretamente da tradução -->
@@ -28,16 +50,33 @@
           <p *ngFor="let paragraph of paragraphs">{{ paragraph }}</p>
         </ng-container>
 
-        <div class="signature">
+        <div class="key-points">
+          <div class="key-point">
+            <i class="fas fa-rocket"></i>
+            <div>
+              <h4>Missão Clara</h4>
+              <p>Transformar ideias em experiências digitais completas que impulsionam os negócios.</p>
+            </div>
+          </div>
+          <div class="key-point">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+              <h4>Abordagem Inovadora</h4>
+              <p>Combinamos estratégia, design e tecnologia para criar soluções digitais impactantes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="signature">
           <p>{{ 'aboutPage.ourStory.signature.name' | transloco }}</p>
           <span>{{ 'aboutPage.ourStory.signature.position' | transloco }}</span>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </section>
 
-<!-- Company Values Section -->
+<!-- Company Values Section - Cards Modernos -->
 <section class="values section" @staggerList *ngIf="companyValues.length > 0">
   <div class="container">
     <div class="section-title">
@@ -57,9 +96,13 @@
   </div>
 </section>
 
-<!-- Stats Section -->
+<!-- Stats Section - Visual Moderno -->
 <section class="stats section" @fadeIn *ngIf="companyStats.length > 0">
   <div class="container">
+    <div class="stat-header">
+      <h2>Nossos Números</h2>
+      <p>Ao longo dos anos construímos uma trajetória de sucesso</p>
+    </div>
     <div class="stats-grid">
       <div class="stat-item" *ngFor="let stat of companyStats">
         <div class="stat-value">{{ stat.value }}</div>
@@ -69,7 +112,7 @@
   </div>
 </section>
 
-<!-- Timeline Section -->
+<!-- Timeline Section - Design Moderno -->
 <section class="timeline section" @slideInUp *ngIf="milestones.length > 0">
   <div class="container">
     <div class="section-title">
@@ -92,7 +135,7 @@
   </div>
 </section>
 
-<!-- Team Section -->
+<!-- Team Section - Cards Modernos -->
 <section class="team section" @staggerList *ngIf="teamMembers.length > 0">
   <div class="container">
     <div class="section-title">
@@ -126,7 +169,7 @@
   </div>
 </section>
 
-<!-- Call to Action Section -->
+<!-- Call to Action Section - Design Moderno -->
 <section class="cta-section" @fadeIn>
   <div class="container">
     <div class="cta-content">

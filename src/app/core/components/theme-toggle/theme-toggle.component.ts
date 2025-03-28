@@ -69,7 +69,7 @@ import { ThemeService } from '../../services/theme.service';
       }
 
       .dark-icon {
-        color: #05bebe;
+        color: rgb(73, 151, 252);
         opacity: 0;
         transform: translateY(20px) rotate(90deg);
       }

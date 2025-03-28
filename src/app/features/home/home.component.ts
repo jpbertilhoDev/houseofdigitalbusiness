@@ -76,14 +76,35 @@ export class HomeComponent implements OnInit, OnDestroy {
   }[] = [];
 
   // Palavras completas para animação no herói
-  servicePhrases: string[] = [
-    'Web Design',
-    'Desenvolvimento Full Stack',
-    'UX/UI Design',
-    'Lojas Virtuais',
-    'Aplicativos Web',
-    'SEO & Marketing Digital',
-  ];
+  servicePhrases: string[] = [];
+
+  // Frases padrão em PT, serão substituídas pelas traduzidas
+  defaultServicePhrases: { [key: string]: string[] } = {
+    pt: [
+      'Web Design',
+      'Desenvolvimento Full Stack',
+      'UX/UI Design',
+      'Lojas Virtuais',
+      'Aplicativos Web',
+      'SEO & Marketing Digital',
+    ],
+    en: [
+      'Web Design',
+      'Full Stack Development',
+      'UX/UI Design',
+      'E-commerce Stores',
+      'Web Applications',
+      'SEO & Digital Marketing',
+    ],
+    de: [
+      'Webdesign',
+      'Full-Stack-Entwicklung',
+      'UX/UI-Design',
+      'E-Commerce-Shops',
+      'Webanwendungen',
+      'SEO & Digitalmarketing',
+    ],
+  };
 
   // Configurações para animação de digitação
   currentPhraseIndex = 0;
@@ -100,6 +121,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    this.loadServicePhrases();
     this.loadServices();
     this.loadPortfolio();
     this.loadFeaturedProjects();
@@ -107,11 +129,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.startTestimonialRotation();
     this.startTypingAnimation();
     this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
-      () => {
+      (lang) => {
+        this.loadServicePhrases();
         this.loadServices();
         this.loadPortfolio();
         this.loadFeaturedProjects();
         this.loadTestimonials();
+        // Reinicia a animação de digitação quando o idioma muda
+        this.currentPhraseIndex = 0;
+        this.displayedText = '';
+        this.isDeleting = false;
+        if (this.typingInterval) {
+          clearTimeout(this.typingInterval);
+        }
+        this.startTypingAnimation();
       }
     );
   }
@@ -240,5 +271,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentTestimonial === this.testimonials.length - 1
         ? 0
         : this.currentTestimonial + 1;
+  }
+
+  // Carrega as frases de animação do idioma atual
+  private loadServicePhrases(): void {
+    const currentLang = this.translocoService.getActiveLang();
+    // Usa as frases padrão do idioma atual
+    this.servicePhrases =
+      this.defaultServicePhrases[currentLang] ||
+      this.defaultServicePhrases['en'];
   }
 }

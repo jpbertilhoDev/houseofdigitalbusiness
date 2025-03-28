@@ -1,11 +1,12 @@
 <!-- src/app/layout/header/header.component.html -->
 <header class="header" [ngClass]="{'header-scrolled': isScrolled}">
-  <div class="container">
+  <div class="container header-container">
     <div class="logo">
       <a routerLink="/">
-        <span class="logo-text">
-          {{ 'header.company' | transloco }}
-        </span>
+        <!-- Logo completa para desktop -->
+        <img src="assets/images/logo-full.svg" alt="{{ 'header.company' | transloco }}" class="logo-full">
+        <!-- Apenas símbolo para mobile -->
+        <img src="assets/images/logo-symbol.svg" alt="{{ 'header.company' | transloco }}" class="logo-symbol">
       </a>
     </div>
 
@@ -31,5 +32,14 @@
   </div>
 
   <!-- Mobile menu overlay -->
-  <div class="mobile-overlay" [ngClass]="{'active': menuActive}" (click)="toggleMenu()"></div>
+  <div class="mobile-overlay" [ngClass]="{'active': menuActive}" (click)="toggleMenu()">
+    <nav>
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'header.home' | transloco }}</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">{{ 'header.services' | transloco }}</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | transloco }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | transloco }}</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>

@@ -3,31 +3,31 @@
     <li class="nav-item">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
         <i class="fas fa-home"></i>
-        <span>Início</span>
+        <span>{{ 'header.home' | transloco }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a routerLink="/services" routerLinkActive="active" class="nav-link">
         <i class="fas fa-cog"></i>
-        <span>Serviços</span>
+        <span>{{ 'header.services' | transloco }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a routerLink="/portfolio" routerLinkActive="active" class="nav-link">
         <i class="fas fa-briefcase"></i>
-        <span>Portfólio</span>
+        <span>{{ 'header.portfolio' | transloco }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a routerLink="/about" routerLinkActive="active" class="nav-link">
         <i class="fas fa-info-circle"></i>
-        <span>Sobre</span>
+        <span>{{ 'header.about' | transloco }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a routerLink="/contact" routerLinkActive="active" class="nav-link">
         <i class="fas fa-envelope"></i>
-        <span>Contato</span>
+        <span>{{ 'header.contact' | transloco }}</span>
       </a>
     </li>
   </ul>

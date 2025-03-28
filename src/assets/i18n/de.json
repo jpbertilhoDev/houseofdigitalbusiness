@@ -1,4 +1,3 @@
-
 {
   "header": {
     "home": "Startseite",
@@ -150,7 +149,10 @@
   "servicesPage": {
     "hero": {
       "title": "Unsere <span>Dienstleistungen</span>",
-      "subtitle": "Umfassende digitale Lösungen, um Ihrem Unternehmen zum Erfolg im digitalen Umfeld zu verhelfen"
+      "subtitle_prefix": "Digitale Exzellenz",
+      "subtitle": "Umfassende digitale Lösungen, die Ihrem Unternehmen helfen, in der digitalen Landschaft zu wachsen",
+      "contact_us": "Kontaktieren Sie uns",
+      "explore": "Dienstleistungen erkunden"
     },
     "filter": {
       "all": "Alle Dienstleistungen",
@@ -459,6 +461,14 @@
         "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere {{serviceTitle}}-Dienstleistungen Ihrem Unternehmen zugutekommen können.",
         "button": "Kontakt Aufnehmen"
       }
+    },
+    "achievements": {
+      "title": "Unsere Erfolge",
+      "description": "Ergebnisse, die für sich selbst sprechen"
+    },
+    "industryExpertise": {
+      "title": "Branchenexpertise",
+      "subtitle": "Wir haben tiefe Erfahrung in mehreren Branchen"
     }
   },
   "aboutPage": {
@@ -593,5 +603,6 @@
       "contactBtn": "Kontaktieren Sie uns",
       "servicesBtn": "Unsere Dienstleistungen"
     }
-  }
+  },
+  "clickToLearnMore": "Klicken Sie für mehr Informationen"
 }

@@ -89,8 +89,9 @@
         display: block;
         height: 70px;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
         margin: 5px 0 15px;
+        z-index: 5;
 
         .typing-text {
           display: inline-block;
@@ -98,11 +99,13 @@
           font-weight: 700;
           position: relative;
           font-size: 5rem;
+          white-space: nowrap;
+          text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.2);
         }
 
         .typing-cursor {
           display: inline-block;
-        color: var(--primary-color);
+          color: var(--primary-color);
           font-weight: 700;
           margin-left: 2px;
           animation: cursor-blink 1s step-end infinite;
@@ -161,6 +164,7 @@
 
         .animated-text {
           height: 40px;
+          min-height: 40px;
 
           .typing-text,
           .typing-cursor {
@@ -246,7 +250,7 @@
     gap: 30px;
     width: 100%;
     max-width: 600px;
-    margin: 10px auto 0;
+    // margin: 10px auto 0;
     padding: 32px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
@@ -286,10 +290,10 @@
     }
 
     @media (max-width: 576px) {
-      flex-direction: column;
+      // flex-direction: column;
       gap: 25px;
       padding: 25px 15px;
-      max-width: 280px;
+      // max-width: 280px;
     }
 
     .stat-divider {

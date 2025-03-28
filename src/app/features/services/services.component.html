@@ -1,10 +1,29 @@
 <!-- Hero Section -->
 <section class="services-hero" @fadeIn>
+  <div class="animated-particles">
+    <div class="particle" *ngFor="let i of [1,2,3,4,5]"></div>
+  </div>
   <div class="container">
     <div class="services-hero-content">
+      <div class="hero-subtitle">{{ 'servicesPage.hero.subtitle_prefix' | transloco }}</div>
       <h1 [innerHTML]="'servicesPage.hero.title' | transloco"></h1>
       <p>{{ 'servicesPage.hero.subtitle' | transloco }}</p>
+      <div class="hero-cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">
+          <i class="fas fa-comment-dots"></i>
+          {{ 'servicesPage.hero.contact_us' | transloco }}
+        </a>
+        <a (click)="scrollToServices()" class="btn btn-outline scroll-btn">
+          <i class="fas fa-long-arrow-alt-down"></i>
+          {{ 'servicesPage.hero.explore' | transloco }}
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="hero-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="var(--background-color)" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,186.7C384,203,480,245,576,261.3C672,277,768,267,864,229.3C960,192,1056,128,1152,117.3C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
   </div>
 </section>
 
@@ -16,6 +35,9 @@
         *ngFor="let category of serviceCategories"
         [class.active]="activeCategory === category.id"
         (click)="filterServices(category.id)">
+        <span class="filter-icon" *ngIf="category.icon">
+          <i [class]="category.icon"></i>
+        </span>
         {{ category.name }}
       </button>
     </div>
@@ -36,6 +58,7 @@
           <span>{{ 'services.learn_more' | transloco }}</span>
           <i class="fas fa-arrow-right"></i>
         </div>
+        <div class="card-decoration"></div>
       </div>
     </div>
   </div>
@@ -50,6 +73,9 @@
 
     <div class="service-header">
       <div class="service-title">
+        <div class="service-icon-large">
+          <i [class]="selectedService.icon"></i>
+        </div>
         <h2>{{selectedService.title}}</h2>
         <div class="service-divider"></div>
       </div>
@@ -58,7 +84,11 @@
 
     <div class="service-content">
       <div class="service-image">
-        <div class="placeholder-image"></div>
+        <div class="placeholder-image">
+          <div class="image-overlay">
+            <i [class]="selectedService.icon"></i>
+          </div>
+        </div>
       </div>
 
       <div class="service-features">
@@ -92,14 +122,22 @@
       <div class="case-studies-grid">
         <div class="case-study" *ngFor="let caseStudy of selectedService.caseStudies">
           <div class="case-study-image">
-            <div class="placeholder-image"></div>
+            <div class="placeholder-image">
+              <div class="image-overlay">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+            </div>
           </div>
           <div class="case-study-content">
             <h4>{{caseStudy.title}}</h4>
-            <p class="case-study-client">{{ 'servicesPage.client' | transloco }}: {{caseStudy.client}}</p>
+            <p class="case-study-client">
+              <i class="fas fa-building"></i> {{ 'servicesPage.client' | transloco }}: {{caseStudy.client}}
+            </p>
             <p>{{caseStudy.description}}</p>
             <div class="case-study-results">
-              <h5>{{ 'servicesPage.results' | transloco }}:</h5>
+              <h5>
+                <i class="fas fa-chart-line"></i> {{ 'servicesPage.results' | transloco }}:
+              </h5>
               <ul>
                 <li *ngFor="let result of caseStudy.results">{{result}}</li>
               </ul>
@@ -113,13 +151,76 @@
     <div class="service-cta">
       <h3>{{ 'servicesPage.cta.serviceCta.title' | transloco }}</h3>
       <p>{{ 'servicesPage.cta.serviceCta.subtitle' | transloco: { serviceTitle: selectedService.title } }}</p>
-      <a routerLink="/contact" class="btn">{{ 'servicesPage.cta.serviceCta.button' | transloco }}</a>
+      <a routerLink="/contact" class="btn">
+        <i class="fas fa-paper-plane"></i>
+        {{ 'servicesPage.cta.serviceCta.button' | transloco }}
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Why Choose Us Section -->
-<section class="why-choose-us section" @slideInUp>
+<!-- Statistics Section - Layouts organizados para evitar poluição visual -->
+<section id="statistics" class="statistics-full-section observe-section" @slideInUp *ngIf="!selectedService">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'servicesPage.achievements.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.achievements.description' | transloco }}</p>
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+    </div>
+    <div class="statistics-grid">
+      <div class="statistic-card" *ngFor="let stat of statistics" @pulseAnimation>
+        <div class="statistic-icon">
+          <i [class]="stat.icon"></i>
+        </div>
+        <div class="statistic-value">{{stat.prefix}}{{stat.value}}{{stat.suffix}}</div>
+        <div class="statistic-label">{{stat.label}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technology Stack Section - Reorganizado para mais clareza visual -->
+<section id="technologies" class="tech-stack-section observe-section" @slideInUp *ngIf="!selectedService">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'servicesPage.technologies.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.technologies.subtitle' | transloco }}</p>
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+    </div>
+
+    <!-- Technology Filter Tabs -->
+    <div class="tech-filter-tabs">
+      <button *ngFor="let category of techCategories"
+              [class.active]="activeTechCategory === category"
+              (click)="filterTechnologies(category)">
+        {{ category | titlecase }}
+      </button>
+    </div>
+
+    <div class="technologies-grid" @staggerList>
+      <div class="technology-card stagger-item"
+           *ngFor="let tech of technologies"
+           [style.display]="tech.category === activeTechCategory ? 'flex' : 'none'">
+        <div class="tech-icon">
+          <i [class]="tech.icon"></i>
+        </div>
+        <h3 class="tech-name">{{tech.name}}</h3>
+        <p class="tech-description">{{tech.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section - Simplificado para melhor experiência visual -->
+<section class="why-choose-us section" @slideInUp *ngIf="!selectedService">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">{{ 'servicesPage.whyChooseUs.title' | transloco }}</h2>
@@ -131,36 +232,71 @@
       </div>
     </div>
 
-    <div class="benefits-grid" @staggerBenefits>
-      <div class="benefit-card" *ngFor="let benefit of benefits">
-        <div class="benefit-icon">
-          <i [class]="benefit.icon"></i>
+    <div id="benefits" class="benefits-grid observe-section" @staggerBenefits>
+      <div class="benefit-card" *ngFor="let benefit of benefits"
+           [class.expanded]="flipStates[benefit.id] === 'flipped'"
+           (click)="toggleFlipState(benefit.id)"
+           [@rotate3d]="flipStates[benefit.id]">
+        <div class="benefit-front">
+          <div class="benefit-icon">
+            <i [class]="benefit.icon"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">{{benefit.title}}</h3>
+            <p class="click-hint">{{ 'clickToLearnMore' | transloco }}</p>
+          </div>
         </div>
-        <div class="benefit-content">
-          <h3 class="benefit-title">{{benefit.title}}</h3>
+        <div class="benefit-back">
           <p class="benefit-description">{{benefit.description}}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Statistics Section -->
-    <div class="statistics-section">
-      <div class="statistics-container">
-        <div class="statistic-item" *ngFor="let stat of statistics">
-          <div class="statistic-value">{{stat.value}}</div>
-          <div class="statistic-label">{{stat.label}}</div>
+          <div class="back-button">
+            <i class="fas fa-undo"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials section" @fadeIn>
+<!-- Industry Expertise Section - Layout mais limpo e focado -->
+<section class="industry-expertise-section" @fadeIn *ngIf="!selectedService">
   <div class="container">
-    <div class="section-title">
-      <h2>{{ 'servicesPage.testimonials.title' | transloco }}</h2>
-      <p>{{ 'servicesPage.testimonials.subtitle' | transloco }}</p>
+    <div class="section-header">
+      <h2 class="section-title">{{ 'servicesPage.industryExpertise.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.industryExpertise.subtitle' | transloco }}</p>
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+    </div>
+
+    <div class="industry-grid" @staggerList>
+      <div class="industry-card stagger-item" *ngFor="let industry of industryExpertise">
+        <div class="industry-icon">
+          <i [class]="industry.icon"></i>
+        </div>
+        <h3 class="industry-name">{{industry.industry}}</h3>
+        <p class="industry-description">{{industry.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section - Simplificado e mais focado -->
+<section class="testimonials section" @fadeIn *ngIf="!selectedService">
+  <div class="section-bg-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+  </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'servicesPage.testimonials.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'servicesPage.testimonials.subtitle' | transloco }}</p>
+      <div class="section-divider">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
     </div>
 
     <div class="testimonials-grid">
@@ -171,7 +307,11 @@
         </div>
         <div class="testimonial-author">
           <div class="author-image">
-            <div class="placeholder-image"></div>
+            <div class="placeholder-image" [ngStyle]="{'background-image': testimonial.image ? 'url(' + testimonial.image + ')' : 'none'}">
+              <div class="image-overlay" *ngIf="!testimonial.image">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
           </div>
           <div class="author-info">
             <h4>{{testimonial.name}}</h4>
@@ -183,13 +323,21 @@
   </div>
 </section>
 
-<!-- Call to Action Section -->
-<section class="cta-section" @fadeIn>
+<!-- Call to Action Section - Mais focado e direto -->
+<section class="cta-section" @fadeIn *ngIf="!selectedService">
+  <div class="cta-bg-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
   <div class="container">
     <div class="cta-content">
       <h2>{{ 'servicesPage.cta.title' | transloco }}</h2>
       <p>{{ 'servicesPage.cta.subtitle' | transloco }}</p>
-      <a routerLink="/contact" class="btn btn-lg">{{ 'servicesPage.cta.button' | transloco }}</a>
+      <a routerLink="/contact" class="btn btn-lg">
+        <i class="fas fa-rocket"></i>
+        {{ 'servicesPage.cta.button' | transloco }}
+      </a>
     </div>
   </div>
 </section>

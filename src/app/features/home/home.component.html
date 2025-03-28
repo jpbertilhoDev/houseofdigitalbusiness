@@ -6,23 +6,23 @@
 
   <div class="container">
     <div class="hero-content">
-      <div class="hero-tagline">Design & Desenvolvimento</div>
+      <div class="hero-tagline">{{ 'hero.welcome' | transloco }}</div>
       <h1 class="hero-title">
         <div class="animated-text">
           <span class="typing-text">{{ displayedText }}</span><span class="typing-cursor">|</span>
         </div>
-        <span class="highlight">House Digital</span>
+        <span class="highlight">{{ 'hero.company' | transloco }}</span>
       </h1>
       <p class="hero-description">
-        Transformamos ideias em experiências digitais completas para o crescimento do seu negócio.
+        {{ 'hero.subtitle' | transloco }}
       </p>
 
       <div class="hero-buttons">
         <a routerLink="/services" class="btn btn-primary">
-          Nossos Serviços
+          {{ 'hero.services_btn' | transloco }}
         </a>
         <a routerLink="/portfolio" class="btn btn-outline">
-          Portfólio
+          {{ 'hero.portfolio_btn' | transloco }}
         </a>
       </div>
     </div>
@@ -30,17 +30,17 @@
     <div class="hero-stats">
       <div class="stat-item">
         <span class="stat-number">250+</span>
-        <span class="stat-label">Projetos</span>
+        <span class="stat-label">{{ 'stats.projects' | transloco }}</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-number">15+</span>
-        <span class="stat-label">Anos</span>
+        <span class="stat-label">{{ 'stats.years' | transloco }}</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-number">100%</span>
-        <span class="stat-label">Satisfação</span>
+        <span class="stat-label">{{ 'stats.satisfaction' | transloco }}</span>
       </div>
     </div>
   </div>

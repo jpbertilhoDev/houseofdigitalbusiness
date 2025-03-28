@@ -149,7 +149,10 @@
   "servicesPage": {
     "hero": {
       "title": "Nossos <span>Serviços</span>",
-      "subtitle": "Soluções digitais completas para ajudar seu negócio a prosperar no cenário digital"
+      "subtitle_prefix": "Excelência Digital",
+      "subtitle": "Soluções digitais abrangentes para ajudar seu negócio a prosperar no cenário digital",
+      "contact_us": "Contate-nos",
+      "explore": "Explorar Serviços"
     },
     "filter": {
       "all": "Todos os Serviços",
@@ -404,7 +407,7 @@
       }
     ],
     "whyChooseUs": {
-      "title": "Por que nos escolher",
+      "title": "Por Que Nos Escolher",
       "subtitle": "O que diferencia a House Digital of Business da concorrência",
       "benefits": [
         {
@@ -458,6 +461,14 @@
         "subtitle": "Entre em contato hoje para discutir como nossos serviços de {{serviceTitle}} podem beneficiar seu negócio.",
         "button": "Entre em Contato"
       }
+    },
+    "achievements": {
+      "title": "Nossas Conquistas",
+      "description": "Resultados que falam por si"
+    },
+    "industryExpertise": {
+      "title": "Experiência em Indústrias",
+      "subtitle": "Temos experiência profunda em múltiplos setores"
     }
   },
   "aboutPage": {
@@ -592,5 +603,6 @@
       "contactBtn": "Entre em Contato",
       "servicesBtn": "Nossos Serviços"
     }
-  }
+  },
+  "clickToLearnMore": "Clique para saber mais"
 }
