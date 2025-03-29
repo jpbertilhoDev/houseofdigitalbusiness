@@ -50,19 +50,24 @@
           <p *ngFor="let paragraph of paragraphs">{{ paragraph }}</p>
         </ng-container>
 
-        <div class="key-points">
-          <div class="key-point">
-            <i class="fas fa-rocket"></i>
-            <div>
-              <h4>Missão Clara</h4>
-              <p>Transformar ideias em experiências digitais completas que impulsionam os negócios.</p>
+        <div class="key-principles">
+          <div class="principle-card" @fadeInUp>
+            <div class="principle-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="principle-content">
+              <h4>{{ 'aboutPage.principles.mission.title' | transloco }}</h4>
+              <p>{{ 'aboutPage.principles.mission.description' | transloco }}</p>
             </div>
           </div>
-          <div class="key-point">
-            <i class="fas fa-lightbulb"></i>
-            <div>
-              <h4>Abordagem Inovadora</h4>
-              <p>Combinamos estratégia, design e tecnologia para criar soluções digitais impactantes.</p>
+
+          <div class="principle-card" @fadeInUp>
+            <div class="principle-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="principle-content">
+              <h4>{{ 'aboutPage.principles.approach.title' | transloco }}</h4>
+              <p>{{ 'aboutPage.principles.approach.description' | transloco }}</p>
             </div>
           </div>
         </div>

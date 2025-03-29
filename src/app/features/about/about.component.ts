@@ -60,6 +60,15 @@ interface CompanyValue {
         ),
       ]),
     ]),
+    trigger('fadeInUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(20px)', opacity: 0 }),
+        animate(
+          '600ms ease-out',
+          style({ transform: 'translateY(0)', opacity: 1 })
+        ),
+      ]),
+    ]),
     trigger('slideInLeft', [
       transition(':enter', [
         style({ transform: 'translateX(-50px)', opacity: 0 }),
@@ -214,11 +223,12 @@ export class AboutComponent implements OnInit, OnDestroy {
   }
 
   private loadCompanyValues(): void {
-    const valuesTranslation = this.translocoService.translate(
-      'aboutPage.companyValues'
-    );
-    if (Array.isArray(valuesTranslation)) {
-      this.companyValues = valuesTranslation;
+    try {
+      this.companyValues =
+        this.translocoService.translate('aboutPage.companyValues') || [];
+    } catch (error) {
+      console.error('Error loading company values:', error);
+      this.companyValues = [];
     }
   }
 

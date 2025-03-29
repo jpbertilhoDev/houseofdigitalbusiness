@@ -77,23 +77,69 @@
 </section>
 
 <!-- About Preview Section -->
-<section class="about-preview section" @slideInUp>
+<section class="about-preview">
+  <div class="diagonal-divider"></div>
+
+  <!-- Partículas dinâmicas -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <div class="container">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>{{ 'about.title' | transloco }}</h2>
-        <p>{{ 'about.description1' | transloco }}</p>
-        <p>{{ 'about.description2' | transloco }}</p>
-        <ul class="about-features">
-          <li><i class="fas fa-check-circle"></i> {{ 'about.features.team' | transloco }}</li>
-          <li><i class="fas fa-check-circle"></i> {{ 'about.features.solutions' | transloco }}</li>
-          <li><i class="fas fa-check-circle"></i> {{ 'about.features.innovation' | transloco }}</li>
-          <li><i class="fas fa-check-circle"></i> {{ 'about.features.approach' | transloco }}</li>
-        </ul>
-        <a routerLink="/about" class="btn">{{ 'about.learn_more' | transloco }}</a>
+    <div class="about-header">
+      <div class="badge-container">
+        <span class="section-badge">{{ 'homePage.about.badge' | transloco }}</span>
       </div>
-      <div class="about-image">
-        <div class="placeholder-image"></div>
+      <div class="title-container">
+        <div class="title-accent"></div>
+        <h2 [attr.data-text]="'homePage.about.title' | transloco">{{ 'homePage.about.title' | transloco }}</h2>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text-wrapper">
+        <div class="about-description">
+          <p>{{ 'homePage.about.description.first' | transloco }}</p>
+          <p>{{ 'homePage.about.description.second' | transloco }}</p>
+        </div>
+
+        <div class="about-principles">
+          <div class="principle-card" *ngFor="let principle of aboutPrinciples" @fadeIn>
+            <div class="principle-icon">
+              <i [class]="principle.icon"></i>
+            </div>
+            <div class="principle-content">
+              <h4>{{ principle.title }}</h4>
+              <p>{{ principle.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a routerLink="/about" class="btn btn-primary">{{ 'homePage.about.ctaButton' | transloco }}</a>
+        </div>
+      </div>
+
+      <div class="about-media">
+        <div class="about-image-wrapper">
+          <div class="background-shape"></div>
+          <div class="glow-effect"></div>
+
+          <div class="about-image">
+            <img src="assets/images/team-meeting.jpg" alt="{{ 'homePage.about.imageAlt' | transloco }}" onerror="this.src='https://via.placeholder.com/600x750/1e2e3f/00b8d4?text=Our+Team'">
+          </div>
+
+          <div class="experience-badge">
+            <div class="years">10+</div>
+            <div class="text">{{ 'homePage.about.yearsExperience' | transloco }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

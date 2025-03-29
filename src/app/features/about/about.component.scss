@@ -336,7 +336,7 @@
       border-radius: var(--card-border-radius);
       box-shadow: var(--card-shadow);
       overflow: hidden;
-      transform: perspective(1000px) rotateY(-5deg);
+      // transform: perspective(1000px) rotateY(-5deg);
       transition: var(--transition-smooth);
       height: 500px;
 
@@ -573,40 +573,76 @@
       }
     }
 
-    .key-points {
-      margin: 35px 0;
+    .key-principles {
       display: flex;
-      flex-direction: column;
-      gap: 25px;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
 
-      .key-point {
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .principle-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+        border-radius: 12px;
+        padding: 1.75rem;
+        flex: 1;
+        min-width: 250px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(var(--primary-rgb), 0.1);
+        transition: all 0.3s ease-in-out;
         display: flex;
         align-items: flex-start;
-        gap: 15px;
+        gap: 1.25rem;
 
-        i {
-          font-size: 1.5rem;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+          border-color: rgba(var(--primary-rgb), 0.2);
+
+          .principle-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+          }
+        }
+
+        .principle-icon {
+          background: rgba(var(--primary-rgb), 0.1);
           color: var(--primary-color);
-          margin-top: 5px;
-          width: 22px;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+          i {
+            transition: transform 0.3s ease;
+          }
         }
 
-        div {
+        .principle-content {
           flex: 1;
-        }
 
-        h4 {
-          font-size: 1.2rem;
-          margin: 0 0 10px 0;
-          color: var(--heading-color);
-          font-weight: 600;
-        }
+          h4 {
+            margin: 0 0 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            letter-spacing: -0.02em;
+          }
 
-        p {
-          margin: 0;
-          color: var(--text-secondary);
-          font-size: 1rem;
-          line-height: 1.6;
+          p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-muted, rgba(255, 255, 255, 0.7));
+          }
         }
       }
     }
@@ -1262,4 +1298,84 @@
       }
     }
   }
+}
+
+/* Estilos modernos para a seção de princípios */
+.key-principles {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .principle-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    border-radius: 12px;
+    padding: 1.75rem;
+    flex: 1;
+    min-width: 250px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--primary-rgb), 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      border-color: rgba(var(--primary-rgb), 0.2);
+
+      .principle-icon {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1) rotate(10deg);
+      }
+    }
+
+    .principle-icon {
+      background: rgba(var(--primary-rgb), 0.1);
+      color: var(--primary-color);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      i {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .principle-content {
+      flex: 1;
+
+      h4 {
+        margin: 0 0 0.75rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted, rgba(255, 255, 255, 0.7));
+      }
+    }
+  }
+}
+
+// Override dos estilos antigos de key-points (podem ser removidos se não houver conflito)
+.key-points {
+  display: none;
 }

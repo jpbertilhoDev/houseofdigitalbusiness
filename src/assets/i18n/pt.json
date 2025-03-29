@@ -50,7 +50,34 @@
       "innovation": "Foco em Inovação e Qualidade",
       "approach": "Abordagem Centrada no Cliente"
     },
-    "learn_more": "Saiba Mais Sobre Nós"
+    "learn_more": "Saiba Mais Sobre Nós",
+    "badge": "Sobre Nós",
+    "title": "Conheça Nossa Agência",
+    "description": {
+      "first": "Somos especialistas em transformar ideias em experiências digitais completas que impulsionam negócios. Nossa equipe multidisciplinar une criatividade e tecnologia para entregar soluções personalizadas que superam expectativas.",
+      "second": "Com foco em inovação e qualidade, desenvolvemos projetos que combinam design atraente, funcionalidade intuitiva e resultados mensuráveis para cada cliente."
+    },
+    "principles": {
+      "team": {
+        "title": "Equipe Especializada",
+        "description": "Desenvolvedores e designers experientes que transformam ideias em realidade digital."
+      },
+      "solutions": {
+        "title": "Soluções Personalizadas",
+        "description": "Criamos soluções sob medida para atender às necessidades específicas do seu negócio."
+      },
+      "innovation": {
+        "title": "Foco em Inovação",
+        "description": "Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade."
+      },
+      "client": {
+        "title": "Centrados no Cliente",
+        "description": "Desenvolvemos parcerias estratégicas para garantir resultados excepcionais."
+      }
+    },
+    "ctaButton": "Saiba Mais Sobre Nós",
+    "yearsExperience": "Anos de Experiência",
+    "imageAlt": "Equipe House of Digital Business"
   },
   "portfolio": {
     "title": "Projetos em Destaque",
@@ -118,7 +145,15 @@
       "submit": "Enviar Mensagem",
       "sending": "Enviando...",
       "success": "Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.",
-      "error": "Existem erros no seu formulário. Por favor, corrija-os e tente novamente."
+      "error": "Existem erros no seu formulário. Por favor, corrija-os e tente novamente.",
+      "referral_sources": {
+        "google": "Google/Busca",
+        "social": "Redes Sociais",
+        "referral": "Indicação",
+        "ads": "Anúncios",
+        "event": "Evento",
+        "other": "Outro"
+      }
     },
     "info": {
       "title": "Informações de Contato",
@@ -138,6 +173,24 @@
         "response": "Respondemos em até 24 horas úteis"
       },
       "social": "Siga-nos"
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "subtitle": "Encontre respostas para as perguntas mais comuns sobre nossos serviços",
+      "questions": [
+        "Quais serviços a House of Digital Business oferece?",
+        "Quanto tempo leva para desenvolver um site ou aplicativo?",
+        "Como funciona o processo de desenvolvimento?",
+        "Vocês oferecem suporte após o lançamento do projeto?",
+        "Em quais setores vocês têm experiência?"
+      ],
+      "answers": [
+        "Oferecemos uma ampla gama de serviços digitais, incluindo desenvolvimento web, desenvolvimento de aplicativos móveis, design UI/UX, marketing digital e consultoria empresarial para transformação digital.",
+        "O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Um site simples pode levar de 2 a 4 semanas, enquanto aplicativos mais complexos podem levar 3 a 6 meses. Fornecemos um cronograma detalhado durante a fase de planejamento do projeto.",
+        "Nosso processo inclui: 1) Descoberta e planejamento, 2) Design e protótipo, 3) Desenvolvimento, 4) Testes e garantia de qualidade, 5) Lançamento, e 6) Suporte contínuo e manutenção. Mantemos nossos clientes envolvidos em cada etapa.",
+        "Sim, oferecemos vários pacotes de suporte e manutenção para garantir que seu site ou aplicativo funcione perfeitamente. Isso inclui atualizações regulares, monitoramento de desempenho e suporte técnico.",
+        "Temos experiência em diversos setores, incluindo e-commerce, finanças, saúde, educação, imobiliário e manufatura. Nossa equipe adapta nossas soluções para atender às necessidades específicas de cada setor."
+      ]
     }
   },
   "footer": {
@@ -777,6 +830,16 @@
         "position": "CEO & Fundador"
       }
     },
+    "principles": {
+      "mission": {
+        "title": "Missão Clara",
+        "description": "Transformar ideias em experiências digitais completas que impulsionam os negócios."
+      },
+      "approach": {
+        "title": "Abordagem Inovadora",
+        "description": "Combinamos estratégia, design e tecnologia para criar soluções digitais impactantes."
+      }
+    },
     "ourValues": {
       "title": "Nossos Valores",
       "subtitle": "Os princípios que orientam tudo o que fazemos"
@@ -891,5 +954,36 @@
       "servicesBtn": "Nossos Serviços"
     }
   },
-  "clickToLearnMore": "Clique para saber mais"
+  "clickToLearnMore": "Clique para saber mais",
+  "homePage": {
+    "about": {
+      "badge": "Sobre Nós",
+      "title": "Conheça Nossa Agência",
+      "description": {
+        "first": "Somos especialistas em transformar ideias em experiências digitais completas que impulsionam negócios. Nossa equipe multidisciplinar une criatividade e tecnologia para entregar soluções personalizadas que superam expectativas.",
+        "second": "Com foco em inovação e qualidade, desenvolvemos projetos que combinam design atraente, funcionalidade intuitiva e resultados mensuráveis para cada cliente."
+      },
+      "principles": {
+        "team": {
+          "title": "Equipe Especializada",
+          "description": "Desenvolvedores e designers experientes que transformam ideias em realidade digital."
+        },
+        "solutions": {
+          "title": "Soluções Personalizadas",
+          "description": "Criamos soluções sob medida para atender às necessidades específicas do seu negócio."
+        },
+        "innovation": {
+          "title": "Foco em Inovação",
+          "description": "Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade."
+        },
+        "client": {
+          "title": "Centrados no Cliente",
+          "description": "Desenvolvemos parcerias estratégicas para garantir resultados excepcionais."
+        }
+      },
+      "ctaButton": "Saiba Mais Sobre Nós",
+      "yearsExperience": "Anos de Experiência",
+      "imageAlt": "Equipe House of Digital Business"
+    }
+  }
 }

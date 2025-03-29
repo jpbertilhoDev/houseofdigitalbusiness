@@ -50,7 +50,34 @@
       "innovation": "Fokus auf Innovation und Qualität",
       "approach": "Kundenorientierter Ansatz"
     },
-    "learn_more": "Mehr Über Uns Erfahren"
+    "learn_more": "Mehr Über Uns Erfahren",
+    "badge": "Über Uns",
+    "title": "Lernen Sie Unsere Agentur Kennen",
+    "description": {
+      "first": "Wir sind Experten darin, Ideen in vollständige digitale Erlebnisse umzuwandeln, die Unternehmen voranbringen. Unser multidisziplinäres Team vereint Kreativität und Technologie, um maßgeschneiderte Lösungen zu liefern, die die Erwartungen übertreffen.",
+      "second": "Mit Fokus auf Innovation und Qualität entwickeln wir Projekte, die ansprechendes Design, intuitive Funktionalität und messbare Ergebnisse für jeden Kunden kombinieren."
+    },
+    "principles": {
+      "team": {
+        "title": "Spezialisiertes Team",
+        "description": "Erfahrene Entwickler und Designer, die Ideen in digitale Realität umsetzen."
+      },
+      "solutions": {
+        "title": "Maßgeschneiderte Lösungen",
+        "description": "Wir erstellen maßgeschneiderte Lösungen, um die spezifischen Bedürfnisse Ihres Unternehmens zu erfüllen."
+      },
+      "innovation": {
+        "title": "Fokus auf Innovation",
+        "description": "Wir setzen die neuesten Technologien ein, um hochwertige Produkte zu liefern."
+      },
+      "client": {
+        "title": "Kundenorientiert",
+        "description": "Wir entwickeln strategische Partnerschaften, um außergewöhnliche Ergebnisse zu erzielen."
+      }
+    },
+    "ctaButton": "Mehr Über Uns Erfahren",
+    "yearsExperience": "Jahre Erfahrung",
+    "imageAlt": "House of Digital Business Team"
   },
   "portfolio": {
     "title": "Ausgewählte Projekte",
@@ -118,7 +145,15 @@
       "submit": "Nachricht Senden",
       "sending": "Wird gesendet...",
       "success": "Ihre Nachricht wurde erfolgreich gesendet! Wir werden uns in Kürze bei Ihnen melden.",
-      "error": "Es gibt Fehler in Ihrem Formular. Bitte korrigieren Sie diese und versuchen Sie es erneut."
+      "error": "Es gibt Fehler in Ihrem Formular. Bitte korrigieren Sie diese und versuchen Sie es erneut.",
+      "referral_sources": {
+        "google": "Google/Suche",
+        "social": "Soziale Medien",
+        "referral": "Empfehlung",
+        "ads": "Werbung",
+        "event": "Veranstaltung",
+        "other": "Andere"
+      }
     },
     "info": {
       "title": "Kontaktinformationen",
@@ -138,6 +173,24 @@
         "response": "Wir antworten innerhalb von 24 Geschäftsstunden"
       },
       "social": "Folgen Sie uns"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Finden Sie Antworten auf die häufigsten Fragen zu unseren Dienstleistungen",
+      "questions": [
+        "Welche Dienstleistungen bietet House of Digital Business an?",
+        "Wie lange dauert die Entwicklung einer Website oder Anwendung?",
+        "Wie funktioniert der Entwicklungsprozess?",
+        "Bieten Sie Unterstützung nach dem Projektstart an?",
+        "In welchen Branchen haben Sie Erfahrung?"
+      ],
+      "answers": [
+        "Wir bieten ein breites Spektrum an digitalen Dienstleistungen an, darunter Webentwicklung, Entwicklung mobiler Anwendungen, UI/UX-Design, digitales Marketing und Unternehmensberatung für die digitale Transformation.",
+        "Die Entwicklungszeit variiert je nach Komplexität des Projekts. Eine einfache Website kann 2-4 Wochen dauern, während komplexere Anwendungen 3-6 Monate in Anspruch nehmen können. Wir stellen in der Projektplanungsphase einen detaillierten Zeitplan zur Verfügung.",
+        "Unser Prozess umfasst: 1) Entdeckung und Planung, 2) Design und Prototyping, 3) Entwicklung, 4) Tests und Qualitätssicherung, 5) Start und 6) kontinuierliche Unterstützung und Wartung. Wir halten unsere Kunden in jedem Schritt eingebunden.",
+        "Ja, wir bieten verschiedene Support- und Wartungspakete an, um sicherzustellen, dass Ihre Website oder Anwendung einwandfrei funktioniert. Dies umfasst regelmäßige Updates, Leistungsüberwachung und technischen Support.",
+        "Wir haben Erfahrung in verschiedenen Branchen, darunter E-Commerce, Finanzen, Gesundheitswesen, Bildung, Immobilien und Fertigung. Unser Team passt unsere Lösungen an die spezifischen Bedürfnisse jedes Sektors an."
+      ]
     }
   },
   "footer": {
@@ -775,6 +828,16 @@
       "signature": {
         "name": "Alexander Schmidt",
         "position": "CEO & Gründer"
+      }
+    },
+    "principles": {
+      "mission": {
+        "title": "Klare Mission",
+        "description": "Ideen in vollständige digitale Erlebnisse umwandeln, die das Geschäft vorantreiben."
+      },
+      "approach": {
+        "title": "Innovativer Ansatz",
+        "description": "Wir kombinieren Strategie, Design und Technologie, um wirkungsvolle digitale Lösungen zu schaffen."
       }
     },
     "ourValues": {
