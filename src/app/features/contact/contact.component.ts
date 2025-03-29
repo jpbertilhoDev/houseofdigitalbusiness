@@ -18,6 +18,7 @@ import {
 import { ContactForm, Office } from './contact.interface';
 import { SafeResourceUrlPipe } from '../../shared/pipes/safe-resource-url.pipe';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { EmailService } from './email.service';
 import { Subscription } from 'rxjs';
 import { RouterModule } from '@angular/router';
 
@@ -109,7 +110,8 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private emailService: EmailService
   ) {}
 
   ngOnInit(): void {
@@ -154,19 +156,27 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.formSubmitted = true;
 
     if (this.contactForm.valid) {
-      // In a real application, you would send the form data to a backend service
-      console.log('Form submitted:', this.contactForm.value);
+      const formData: ContactForm = this.contactForm.value;
 
-      // Simulate API call
-      setTimeout(() => {
-        this.formSuccess = true;
-        this.formError = false;
-        this.contactForm.reset();
-        this.formSubmitted = false;
-      }, 1500);
+      // Usar o serviço de email para enviar o formulário
+      this.emailService.sendContactForm(formData).subscribe({
+        next: (response) => {
+          console.log('Email enviado com sucesso!', response);
+          this.formSuccess = true;
+          this.formError = false;
+          this.contactForm.reset();
+          this.formSubmitted = false;
+        },
+        error: (error) => {
+          console.error('Erro ao enviar email:', error);
+          this.formError = true;
+          this.formSubmitted = false;
+        }
+      });
     } else {
       this.formError = true;
       this.markFormGroupTouched(this.contactForm);
+      this.formSubmitted = false;
     }
   }
 
