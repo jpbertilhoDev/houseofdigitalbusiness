@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
@@ -88,7 +88,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   formError = false;
 
   // Services list for dropdown
-  services: { id: string; name: string }[] = [];
+  services: { id: string; name: string; icon: string }[] = [];
 
   // How did you hear about us options
   referralSources: string[] = [];
@@ -107,6 +107,12 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   // Subscription para mudanças de idioma
   private langChangeSubscription!: Subscription;
+
+  // Service dropdown state
+  isServiceDropdownOpen = false;
+
+  // Selected service
+  selectedService: { id: string; name: string; icon: string } | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -243,36 +249,42 @@ export class ContactComponent implements OnInit, OnDestroy {
         name:
           this.translocoService.translate('servicesPage.services.0.title') ||
           defaultServiceNames[0],
+        icon: 'fas fa-laptop-code'
       },
       {
         id: 'mobile-app-development',
         name:
           this.translocoService.translate('servicesPage.services.1.title') ||
           defaultServiceNames[1],
+        icon: 'fas fa-mobile-alt'
       },
       {
         id: 'ui-ux-design',
         name:
           this.translocoService.translate('servicesPage.services.2.title') ||
           defaultServiceNames[2],
+        icon: 'fas fa-paint-brush'
       },
       {
         id: 'digital-marketing',
         name:
           this.translocoService.translate('servicesPage.services.3.title') ||
           defaultServiceNames[3],
+        icon: 'fas fa-chart-line'
       },
       {
         id: 'business-consulting',
         name:
           this.translocoService.translate('servicesPage.services.4.title') ||
           defaultServiceNames[4],
+        icon: 'fas fa-briefcase'
       },
       {
         id: 'other',
         name:
           this.translocoService.translate('servicesPage.filter.all') ||
           defaultServiceNames[5],
+        icon: 'fas fa-th-list'
       },
     ];
 
@@ -438,5 +450,51 @@ export class ContactComponent implements OnInit, OnDestroy {
       console.warn('Usando FAQs padrão devido a falha nas traduções');
       this.faqs = defaultFaqs;
     }
+  }
+
+  // Toggle the service dropdown
+  toggleServiceDropdown(): void {
+    this.isServiceDropdownOpen = !this.isServiceDropdownOpen;
+
+    // Fechar dropdown ao clicar fora após um pequeno delay
+    if (this.isServiceDropdownOpen) {
+      setTimeout(() => {
+        const closeClickHandler = (event: MouseEvent) => {
+          const target = event.target as HTMLElement;
+          if (!target.closest('.service-dropdown')) {
+            this.isServiceDropdownOpen = false;
+            document.removeEventListener('click', closeClickHandler);
+          }
+        };
+        document.addEventListener('click', closeClickHandler);
+      }, 100);
+    }
+  }
+
+  // Select a service
+  selectService(service: { id: string; name: string; icon: string } | null): void {
+    this.selectedService = service;
+    
+    // Atualizar o valor no formulário
+    const serviceValue = service ? service.id : '';
+    this.contactForm.get('serviceInterest')?.setValue(serviceValue);
+    this.contactForm.get('serviceInterest')?.markAsTouched();
+    
+    // Fechar o dropdown após seleção
+    this.isServiceDropdownOpen = false;
+    
+    // Mostrar feedback visual da seleção
+    if (service) {
+      console.log(`Serviço selecionado: ${service.name} (${service.id})`);
+    } else {
+      console.log('Nenhum serviço selecionado');
+    }
+  }
+
+  // Close dropdown when clicking outside
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event): void {
+    // Este método foi substituído pela abordagem na função toggleServiceDropdown
+    // que é mais precisa e evita conflitos com outros componentes
   }
 }

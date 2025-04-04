@@ -6,7 +6,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import {
   TranslocoHttpLoader,
-
 } from './core/i18n/transloco.config';
 import { provideTransloco } from '@jsverse/transloco';
 

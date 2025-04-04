@@ -13,9 +13,21 @@
     "services_btn": "Nossos Serviços",
     "portfolio_btn": "Ver Portfólio"
   },
+  "stats": {
+    "projects": "PROJETOS",
+    "years": "ANOS",
+    "satisfaction": "SATISFAÇÃO"
+  },
   "services": {
     "title": "Nossos Serviços",
-    "subtitle": "Oferecemos soluções digitais abrangentes para ajudar seu negócio a prosperar no cenário digital",
+    "subtitle": "Oferecemos soluções digitais completas para ajudar seu negócio a prosperar no ambiente digital",
+    "branding": "Estratégia e Identidade de Marca",
+    "webdesign": "Design e Desenvolvimento Web",
+    "graphicdesign": "Design Gráfico",
+    "videoproduction": "Produção de Vídeo",
+    "aisolutions": "Soluções de IA",
+    "socialmedia": "Gestão de Mídias Sociais",
+    "consulting": "Consultoria Digital",
     "cards": [
       {
         "icon": "fas fa-code",
@@ -80,23 +92,25 @@
     "imageAlt": "Equipe House of Digital Business"
   },
   "portfolio": {
-    "title": "Projetos em Destaque",
-    "subtitle": "Confira alguns de nossos trabalhos recentes que demonstram nossa expertise e criatividade",
-    "view_all": "Ver Todos os Projetos",
-    "cards": [
-      {
-        "title": "Plataforma de E-commerce",
-        "description": "Desenvolvimento Web"
-      },
-      {
-        "title": "Painel Financeiro",
-        "description": "Desenvolvimento Web"
-      },
-      {
-        "title": "Aplicativo Móvel de Viagens",
-        "description": "Desenvolvimento Mobile"
-      }
-    ]
+    "badge": "Nosso Portfólio",
+    "title": "Projetos Recentes",
+    "subtitle": "Confira alguns dos nossos trabalhos recentes que demonstram nossa experiência e criatividade",
+    "viewProject": "Ver Projeto",
+    "noProjectsFound": "Nenhum projeto encontrado",
+    "tryDifferentCategory": "Tente selecionar uma categoria diferente",
+    "viewAllProjects": "Ver Todos os Projetos",
+    "client": "Cliente",
+    "category": "Categoria",
+    "date": "Data",
+    "projectOverview": "Visão Geral do Projeto",
+    "keyFeatures": "Funcionalidades Principais",
+    "technologies": "Tecnologias Utilizadas",
+    "visitProject": "Visitar Projeto",
+    "cta": {
+      "title": "Vamos Criar Algo Incrível Juntos?",
+      "subtitle": "Entre em contato para discutir como podemos ajudar a transformar sua visão em realidade",
+      "button": "Iniciar Seu Projeto"
+    }
   },
   "testimonials": {
     "title": "O Que Nossos Clientes Dizem",
@@ -123,8 +137,8 @@
     ]
   },
   "cta": {
-    "title": "Pronto para Expandir Seu Negócio?",
-    "subtitle": "Entre em contato hoje para discutir como podemos ajudá-lo a alcançar seus objetivos digitais.",
+    "title": "Pronto para transformar seu negócio?",
+    "subtitle": "Entre em contato hoje para discutir como nossos serviços podem ajudar a alcançar seus objetivos digitais.",
     "button": "Fale Conosco"
   },
   "contact": {
@@ -198,6 +212,17 @@
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "cookies": "Política de Cookies"
+  },
+  "ready_start": "Pronto para começar?",
+  "schedule_consultation": "Agende uma consulta gratuita para discutir seu projeto",
+  "schedule_call": "Agendar uma Chamada",
+  "our_services": "Nossos Serviços",
+  "optional": "opcional",
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "email": "Por favor, insira um endereço de e-mail válido",
+    "min_length": "Este campo deve ter pelo menos {{count}} caracteres",
+    "terms": "Você deve aceitar os termos e condições"
   },
   "clickToLearnMore": "Clique para saber mais",
   "servicesPage": {
@@ -495,12 +520,6 @@
           "description": "Linguagem de estilo para design de páginas web"
         },
         {
-          "name": "SASS/SCSS",
-          "icon": "fab fa-sass",
-          "category": "frontend",
-          "description": "Pré-processador CSS que adiciona recursos avançados"
-        },
-        {
           "name": "Node.js",
           "icon": "fab fa-node-js",
           "category": "backend",
@@ -529,12 +548,6 @@
           "icon": "fab fa-laravel",
           "category": "backend",
           "description": "Framework PHP elegante para desenvolvimento web"
-        },
-        {
-          "name": ".NET Core",
-          "icon": "fab fa-microsoft",
-          "category": "backend",
-          "description": "Framework para construir aplicações modernas em nuvem"
         },
         {
           "name": "React Native",
@@ -567,12 +580,6 @@
           "description": "Framework para desenvolvimento de aplicativos híbridos"
         },
         {
-          "name": "Xamarin",
-          "icon": "fab fa-microsoft",
-          "category": "mobile",
-          "description": "Plataforma da Microsoft para desenvolvimento multiplataforma"
-        },
-        {
           "name": "Figma",
           "icon": "fab fa-figma",
           "category": "design",
@@ -603,12 +610,6 @@
           "description": "Software de design vetorial e ilustração"
         },
         {
-          "name": "InVision",
-          "icon": "fas fa-eye",
-          "category": "design",
-          "description": "Plataforma de prototipagem digital e fluxo de trabalho de design"
-        },
-        {
           "name": "MySQL",
           "icon": "fas fa-database",
           "category": "database",
@@ -637,12 +638,6 @@
           "icon": "fas fa-database",
           "category": "database",
           "description": "Armazenamento de estrutura de dados em memória"
-        },
-        {
-          "name": "GraphQL",
-          "icon": "fas fa-project-diagram",
-          "category": "database",
-          "description": "Linguagem de consulta e manipulação de dados para APIs"
         }
       ]
     },

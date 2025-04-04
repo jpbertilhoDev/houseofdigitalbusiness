@@ -13,9 +13,21 @@
     "services_btn": "Our Services",
     "portfolio_btn": "View Portfolio"
   },
+  "stats": {
+    "projects": "PROJECTS",
+    "years": "YEARS",
+    "satisfaction": "SATISFACTION"
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "We offer comprehensive digital solutions to help your business thrive in the digital landscape",
+    "branding": "Brand Strategy & Identity",
+    "webdesign": "Web Design & Development",
+    "graphicdesign": "Graphic Design",
+    "videoproduction": "Video Production",
+    "aisolutions": "AI Solutions",
+    "socialmedia": "Social Media Management",
+    "consulting": "Digital Consulting",
     "cards": [
       {
         "icon": "fas fa-code",
@@ -80,23 +92,25 @@
     "imageAlt": "House of Digital Business Team"
   },
   "portfolio": {
-    "title": "Featured Projects",
-    "subtitle": "Take a look at some of our recent work that showcases our expertise and creativity",
-    "view_all": "View All Projects",
-    "cards": [
-      {
-        "title": "E-Commerce Platform",
-        "description": "Web Development"
-      },
-      {
-        "title": "Finance Dashboard",
-        "description": "UI/UX Design"
-      },
-      {
-        "title": "Travel Mobile App",
-        "description": "Mobile Development"
-      }
-    ]
+    "badge": "Our Portfolio",
+    "title": "Recent Projects",
+    "subtitle": "Check out some of our recent work that showcases our expertise and creativity",
+    "viewProject": "View Project",
+    "noProjectsFound": "No projects found",
+    "tryDifferentCategory": "Try selecting a different category",
+    "viewAllProjects": "View All Projects",
+    "client": "Client",
+    "category": "Category",
+    "date": "Date",
+    "projectOverview": "Project Overview",
+    "keyFeatures": "Key Features",
+    "technologies": "Technologies Used",
+    "visitProject": "Visit Project",
+    "cta": {
+      "title": "Let's Create Something Amazing Together",
+      "subtitle": "Contact us to discuss how we can help bring your vision to life",
+      "button": "Start Your Project"
+    }
   },
   "testimonials": {
     "title": "What Our Clients Say",
@@ -123,8 +137,8 @@
     ]
   },
   "cta": {
-    "title": "Ready to Expand Your Business?",
-    "subtitle": "Contact us today to discuss how we can help you achieve your digital goals.",
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Contact us today to discuss how our services can help you achieve your digital goals.",
     "button": "Get in Touch"
   },
   "contact": {
@@ -198,6 +212,17 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy"
+  },
+  "ready_start": "Ready to Start?",
+  "schedule_consultation": "Schedule a free consultation to discuss your project",
+  "schedule_call": "Schedule a Call",
+  "our_services": "Our Services",
+  "optional": "optional",
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "min_length": "This field must be at least {{count}} characters long",
+    "terms": "You must accept the terms and conditions"
   },
   "clickToLearnMore": "Click to learn more",
   "servicesPage": {
@@ -495,12 +520,6 @@
           "description": "Style sheet language for designing web pages"
         },
         {
-          "name": "SASS/SCSS",
-          "icon": "fab fa-sass",
-          "category": "frontend",
-          "description": "CSS preprocessor that adds advanced features"
-        },
-        {
           "name": "Node.js",
           "icon": "fab fa-node-js",
           "category": "backend",
@@ -531,18 +550,6 @@
           "description": "Elegant PHP framework for web development"
         },
         {
-          "name": ".NET Core",
-          "icon": "fab fa-microsoft",
-          "category": "backend",
-          "description": "Framework for building modern cloud applications"
-        },
-        {
-          "name": "React Native",
-          "icon": "fab fa-react",
-          "category": "mobile",
-          "description": "Framework for cross-platform mobile app development"
-        },
-        {
           "name": "Flutter",
           "icon": "fas fa-mobile-alt",
           "category": "mobile",
@@ -567,30 +574,6 @@
           "description": "Framework for hybrid app development"
         },
         {
-          "name": "Xamarin",
-          "icon": "fab fa-microsoft",
-          "category": "mobile",
-          "description": "Microsoft's platform for cross-platform development"
-        },
-        {
-          "name": "Figma",
-          "icon": "fab fa-figma",
-          "category": "design",
-          "description": "Browser-based interface design tool"
-        },
-        {
-          "name": "Adobe XD",
-          "icon": "fab fa-adobe",
-          "category": "design",
-          "description": "User experience design tool"
-        },
-        {
-          "name": "Sketch",
-          "icon": "fas fa-pencil-ruler",
-          "category": "design",
-          "description": "Vector design app for Mac"
-        },
-        {
           "name": "Photoshop",
           "icon": "fab fa-adobe",
           "category": "design",
@@ -603,10 +586,10 @@
           "description": "Vector design and illustration software"
         },
         {
-          "name": "InVision",
-          "icon": "fas fa-eye",
+          "name": "Figma",
+          "icon": "fab fa-figma",
           "category": "design",
-          "description": "Digital product design platform and workflow"
+          "description": "Browser-based interface design tool"
         },
         {
           "name": "MySQL",
@@ -637,12 +620,6 @@
           "icon": "fas fa-database",
           "category": "database",
           "description": "In-memory data structure store"
-        },
-        {
-          "name": "GraphQL",
-          "icon": "fas fa-project-diagram",
-          "category": "database",
-          "description": "Query and manipulation language for APIs"
         }
       ]
     },
@@ -954,7 +931,6 @@
       "servicesBtn": "Our Services"
     }
   },
-  "clickToLearnMore": "Click to learn more",
   "homePage": {
     "about": {
       "badge": "About Us",

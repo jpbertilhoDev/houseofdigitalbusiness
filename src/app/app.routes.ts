@@ -18,10 +18,10 @@ export const routes: Routes = [
         (m) => m.ServicesComponent
       ),
   },
-  // {
-  //   path: 'portfolio',
-  //   loadComponent: () => import('./features/portfolio/portfolio.component').then(m => m.PortfolioComponent)
-  // },
+  {
+    path: 'portfolio',
+    loadComponent: () => import('./features/portfolio/portfolio.component').then(m => m.PortfolioComponent)
+  },
   // {
   //   path: 'testimonials',
   //   loadComponent: () => import('./features/testimonials/testimonials.component').then(m => m.TestimonialsComponent)

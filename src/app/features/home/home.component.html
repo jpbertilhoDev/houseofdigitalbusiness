@@ -110,7 +110,7 @@
         </div>
 
         <div class="about-principles">
-          <div class="principle-card" *ngFor="let principle of aboutPrinciples" @fadeIn>
+          <div class="principle-card" *ngFor="let principle of aboutPrinciples" [style.--index]="principle.animationIndex">
             <div class="principle-icon">
               <i [class]="principle.icon"></i>
             </div>

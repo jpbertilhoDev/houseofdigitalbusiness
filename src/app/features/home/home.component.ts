@@ -76,7 +76,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   }[] = [];
 
   // Dados da seção About da página inicial
-  aboutPrinciples: { icon: string; title: string; description: string }[] = [];
+  aboutPrinciples: { 
+    icon: string; 
+    title: string; 
+    description: string; 
+    animationIndex?: number 
+  }[] = [];
 
   // Palavras completas para animação no herói
   servicePhrases: string[] = [];
@@ -124,6 +129,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    // Rolando para o topo da página ao iniciar o componente
+    window.scrollTo(0, 0);
+    
     this.loadServicePhrases();
     this.loadServices();
     this.loadPortfolio();
@@ -289,112 +297,257 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private loadAboutPrinciples(): void {
     try {
+      // Adicionando índices para animação escalonada
       const translatedPrinciples = [
         {
           icon: 'fas fa-users',
-          title: this.translocoService.translate(
-            'homePage.about.principles.team.title'
-          ),
-          description: this.translocoService.translate(
-            'homePage.about.principles.team.description'
-          ),
+          title: this.translocoService.translate('homePage.about.principles.team.title'),
+          description: this.translocoService.translate('homePage.about.principles.team.description'),
+          animationIndex: 0
         },
         {
           icon: 'fas fa-lightbulb',
-          title: this.translocoService.translate(
-            'homePage.about.principles.solutions.title'
-          ),
-          description: this.translocoService.translate(
-            'homePage.about.principles.solutions.description'
-          ),
+          title: this.translocoService.translate('homePage.about.principles.solutions.title'),
+          description: this.translocoService.translate('homePage.about.principles.solutions.description'),
+          animationIndex: 1
         },
         {
           icon: 'fas fa-rocket',
-          title: this.translocoService.translate(
-            'homePage.about.principles.innovation.title'
-          ),
-          description: this.translocoService.translate(
-            'homePage.about.principles.innovation.description'
-          ),
+          title: this.translocoService.translate('homePage.about.principles.innovation.title'),
+          description: this.translocoService.translate('homePage.about.principles.innovation.description'),
+          animationIndex: 2
         },
         {
           icon: 'fas fa-handshake',
-          title: this.translocoService.translate(
-            'homePage.about.principles.client.title'
-          ),
-          description: this.translocoService.translate(
-            'homePage.about.principles.client.description'
-          ),
+          title: this.translocoService.translate('homePage.about.principles.client.title'),
+          description: this.translocoService.translate('homePage.about.principles.client.description'),
+          animationIndex: 3
         },
       ];
 
       // Verifica se os dados foram carregados corretamente
       const isDataComplete = translatedPrinciples.every(
-        (principle) =>
-          principle.title &&
-          !principle.title.includes('homePage.about.principles')
+        (principle) => principle.title && principle.description
       );
 
       if (isDataComplete) {
         this.aboutPrinciples = translatedPrinciples;
       } else {
-        // Fallback para valores padrão se as traduções falharem
-        this.aboutPrinciples = [
+        // Log de erro para debugging
+        console.error('Falha ao carregar traduções para princípios da homepage. Verificando chaves alternativas...');
+        
+        // Tenta chaves de tradução alternativas
+        const alternativeTranslatedPrinciples = [
           {
             icon: 'fas fa-users',
-            title: 'Equipe Especializada',
-            description:
-              'Desenvolvedores e designers experientes que transformam ideias em realidade digital.',
+            title: this.translocoService.translate('about.principles.team.title'),
+            description: this.translocoService.translate('about.principles.team.description'),
+            animationIndex: 0
           },
           {
             icon: 'fas fa-lightbulb',
-            title: 'Soluções Personalizadas',
-            description:
-              'Criamos soluções sob medida para atender às necessidades específicas do seu negócio.',
+            title: this.translocoService.translate('about.principles.solutions.title'),
+            description: this.translocoService.translate('about.principles.solutions.description'),
+            animationIndex: 1
           },
           {
             icon: 'fas fa-rocket',
-            title: 'Foco em Inovação',
-            description:
-              'Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade.',
+            title: this.translocoService.translate('about.principles.innovation.title'),
+            description: this.translocoService.translate('about.principles.innovation.description'),
+            animationIndex: 2
           },
           {
             icon: 'fas fa-handshake',
-            title: 'Centrados no Cliente',
-            description:
-              'Desenvolvemos parcerias estratégicas para garantir resultados excepcionais.',
+            title: this.translocoService.translate('about.principles.client.title'),
+            description: this.translocoService.translate('about.principles.client.description'),
+            animationIndex: 3
           },
         ];
+        
+        const isAlternativeDataComplete = alternativeTranslatedPrinciples.every(
+          (principle) => principle.title && principle.description
+        );
+        
+        if (isAlternativeDataComplete) {
+          this.aboutPrinciples = alternativeTranslatedPrinciples;
+        } else {
+          // Fallback baseado no idioma atual
+          const currentLang = this.translocoService.getActiveLang();
+          
+          if (currentLang === 'de') {
+            this.aboutPrinciples = [
+              {
+                icon: 'fas fa-users',
+                title: 'Spezialisiertes Team',
+                description: 'Erfahrene Entwickler und Designer, die Ideen in digitale Realität umsetzen.',
+                animationIndex: 0
+              },
+              {
+                icon: 'fas fa-lightbulb',
+                title: 'Maßgeschneiderte Lösungen',
+                description: 'Wir erstellen maßgeschneiderte Lösungen, um die spezifischen Bedürfnisse Ihres Unternehmens zu erfüllen.',
+                animationIndex: 1
+              },
+              {
+                icon: 'fas fa-rocket',
+                title: 'Fokus auf Innovation',
+                description: 'Wir setzen die neuesten Technologien ein, um hochwertige Produkte zu liefern.',
+                animationIndex: 2
+              },
+              {
+                icon: 'fas fa-handshake',
+                title: 'Kundenorientiert',
+                description: 'Wir entwickeln strategische Partnerschaften, um außergewöhnliche Ergebnisse zu erzielen.',
+                animationIndex: 3
+              },
+            ];
+          } else if (currentLang === 'en') {
+            this.aboutPrinciples = [
+              {
+                icon: 'fas fa-users',
+                title: 'Specialized Team',
+                description: 'Experienced developers and designers who transform ideas into digital reality.',
+                animationIndex: 0
+              },
+              {
+                icon: 'fas fa-lightbulb',
+                title: 'Customized Solutions',
+                description: 'We create tailored solutions to meet the specific needs of your business.',
+                animationIndex: 1
+              },
+              {
+                icon: 'fas fa-rocket',
+                title: 'Focus on Innovation',
+                description: 'We employ the latest technologies to deliver high-quality products.',
+                animationIndex: 2
+              },
+              {
+                icon: 'fas fa-handshake',
+                title: 'Client-Oriented',
+                description: 'We develop strategic partnerships to ensure exceptional results.',
+                animationIndex: 3
+              },
+            ];
+          } else {
+            // Fallback para português
+            this.aboutPrinciples = [
+              {
+                icon: 'fas fa-users',
+                title: 'Equipe Especializada',
+                description: 'Desenvolvedores e designers experientes que transformam ideias em realidade digital.',
+                animationIndex: 0
+              },
+              {
+                icon: 'fas fa-lightbulb',
+                title: 'Soluções Personalizadas',
+                description: 'Criamos soluções sob medida para atender às necessidades específicas do seu negócio.',
+                animationIndex: 1
+              },
+              {
+                icon: 'fas fa-rocket',
+                title: 'Foco em Inovação',
+                description: 'Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade.',
+                animationIndex: 2
+              },
+              {
+                icon: 'fas fa-handshake',
+                title: 'Centrados no Cliente',
+                description: 'Desenvolvemos parcerias estratégicas para garantir resultados excepcionais.',
+                animationIndex: 3
+              },
+            ];
+          }
+        }
       }
     } catch (error) {
       console.error('Erro ao carregar princípios:', error);
-      // Fallback para valores padrão
+      // Reutiliza a mesma lógica de fallback com base no idioma
+      const currentLang = this.translocoService.getActiveLang();
+      
+      if (currentLang === 'de') {
+        this.aboutPrinciples = [
+          {
+            icon: 'fas fa-users',
+            title: 'Spezialisiertes Team',
+            description: 'Erfahrene Entwickler und Designer, die Ideen in digitale Realität umsetzen.',
+            animationIndex: 0
+          },
+          {
+            icon: 'fas fa-lightbulb',
+            title: 'Maßgeschneiderte Lösungen',
+            description: 'Wir erstellen maßgeschneiderte Lösungen, um die spezifischen Bedürfnisse Ihres Unternehmens zu erfüllen.',
+            animationIndex: 1
+          },
+          {
+            icon: 'fas fa-rocket',
+            title: 'Fokus auf Innovation',
+            description: 'Wir setzen die neuesten Technologien ein, um hochwertige Produkte zu liefern.',
+            animationIndex: 2
+          },
+          {
+            icon: 'fas fa-handshake',
+            title: 'Kundenorientiert',
+            description: 'Wir entwickeln strategische Partnerschaften, um außergewöhnliche Ergebnisse zu erzielen.',
+            animationIndex: 3
+          },
+        ];
+      } else if (currentLang === 'en') {
+        // Fallback em inglês
+        this.aboutPrinciples = [
+          {
+            icon: 'fas fa-users',
+            title: 'Specialized Team',
+            description: 'Experienced developers and designers who transform ideas into digital reality.',
+            animationIndex: 0
+          },
+          {
+            icon: 'fas fa-lightbulb',
+            title: 'Customized Solutions',
+            description: 'We create tailored solutions to meet the specific needs of your business.',
+            animationIndex: 1
+          },
+          {
+            icon: 'fas fa-rocket',
+            title: 'Focus on Innovation',
+            description: 'We employ the latest technologies to deliver high-quality products.',
+            animationIndex: 2
+          },
+          {
+            icon: 'fas fa-handshake',
+            title: 'Client-Oriented',
+            description: 'We develop strategic partnerships to ensure exceptional results.',
+            animationIndex: 3
+          },
+        ];
+      } else {
+        // Fallback para português
       this.aboutPrinciples = [
         {
           icon: 'fas fa-users',
           title: 'Equipe Especializada',
-          description:
-            'Desenvolvedores e designers experientes que transformam ideias em realidade digital.',
+            description: 'Desenvolvedores e designers experientes que transformam ideias em realidade digital.',
+            animationIndex: 0
         },
         {
           icon: 'fas fa-lightbulb',
           title: 'Soluções Personalizadas',
-          description:
-            'Criamos soluções sob medida para atender às necessidades específicas do seu negócio.',
+            description: 'Criamos soluções sob medida para atender às necessidades específicas do seu negócio.',
+            animationIndex: 1
         },
         {
           icon: 'fas fa-rocket',
           title: 'Foco em Inovação',
-          description:
-            'Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade.',
+            description: 'Adotamos as mais recentes tecnologias para entregar produtos de alta qualidade.',
+            animationIndex: 2
         },
         {
           icon: 'fas fa-handshake',
           title: 'Centrados no Cliente',
-          description:
-            'Desenvolvemos parcerias estratégicas para garantir resultados excepcionais.',
+            description: 'Desenvolvemos parcerias estratégicas para garantir resultados excepcionais.',
+            animationIndex: 3
         },
       ];
+      }
     }
   }
 }

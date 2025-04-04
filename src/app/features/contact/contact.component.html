@@ -29,7 +29,7 @@
       <p>{{ 'contact_intro' | transloco }}</p>
     </div>
 
-    <div class="contact-wrapper">
+    <div class="contact-wrapper improved-layout">
       <!-- Contact Form Panel -->
       <div class="contact-form-panel glass-effect" @slideInLeft>
         <div class="form-header">
@@ -47,15 +47,16 @@
           </div>
         </div>
 
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!formSuccess">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!formSuccess" class="improved-form">
           <div class="form-row">
             <div class="form-group">
+              <label for="fullName" class="form-label required">{{ 'contact.form.name' | transloco }}</label>
               <div class="input-with-icon" [class.focus]="contactForm.get('name')?.touched">
                 <i class="fas fa-user"></i>
                 <input
+                  id="fullName"
                   type="text"
                   formControlName="name"
-                  placeholder="{{ 'contact.form.name' | transloco }} *"
                   [ngClass]="{'invalid': isInvalidAndTouched('name')}"
                 >
                 <div class="focus-border"></div>
@@ -67,12 +68,13 @@
             </div>
 
             <div class="form-group">
+              <label for="emailAddress" class="form-label required">{{ 'contact.form.email' | transloco }}</label>
               <div class="input-with-icon" [class.focus]="contactForm.get('email')?.touched">
                 <i class="fas fa-envelope"></i>
                 <input
+                  id="emailAddress"
                   type="email"
                   formControlName="email"
-                  placeholder="{{ 'contact.form.email' | transloco }} *"
                   [ngClass]="{'invalid': isInvalidAndTouched('email')}"
                 >
                 <div class="focus-border"></div>
@@ -86,36 +88,65 @@
 
           <div class="form-row">
             <div class="form-group">
+              <label for="phoneNumber" class="form-label optional">{{ 'contact.form.phone' | transloco }}</label>
               <div class="input-with-icon" [class.focus]="contactForm.get('phone')?.touched">
                 <i class="fas fa-phone-alt"></i>
                 <input
+                  id="phoneNumber"
                   type="tel"
                   formControlName="phone"
-                  placeholder="{{ 'contact.form.phone' | transloco }} ({{ 'optional' | transloco }})"
                 >
-                <div class="focus-border"></div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="select-with-icon" [class.focus]="contactForm.get('serviceInterest')?.touched">
-                <i class="fas fa-briefcase"></i>
-                <select formControlName="serviceInterest">
-                  <option value="" selected>{{ 'contact.form.service' | transloco }} ({{ 'optional' | transloco }})</option>
-                  <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
-                </select>
                 <div class="focus-border"></div>
               </div>
             </div>
           </div>
 
           <div class="form-group">
+            <label class="form-label optional">{{ 'contact.form.service' | transloco }}</label>
+            <div class="service-selector-improved">
+              <div class="service-dropdown">
+                <div class="selected-service" (click)="toggleServiceDropdown()">
+                  <span>{{ selectedService?.name || 'Selecione um serviço' | transloco }}</span>
+                  <i class="fas" [ngClass]="isServiceDropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </div>
+                <div class="service-dropdown-menu" *ngIf="isServiceDropdownOpen">
+                  <div 
+                    class="service-option" 
+                    *ngFor="let service of services"
+                    (click)="selectService(service)"
+                  >
+                    <div class="service-option-icon">
+                      <i [class]="service.icon"></i>
+                    </div>
+                    <span>{{ service.name }}</span>
+                  </div>
+                  <div 
+                    class="service-option service-option-none" 
+                    (click)="selectService(null)"
+                  >
+                    <div class="service-option-icon">
+                      <i class="fas fa-times"></i>
+                    </div>
+                    <span>{{ 'none' | transloco }}</span>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" formControlName="serviceInterest">
+              <!-- Indicador visual de serviço selecionado -->
+              <div class="selected-service-indicator" *ngIf="selectedService">
+                <i class="fas fa-check-circle"></i> {{ 'contact.form.service_selected' | transloco }}: <strong>{{ selectedService.name }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label required">{{ 'contact.form.subject' | transloco }}</label>
             <div class="input-with-icon" [class.focus]="contactForm.get('subject')?.touched">
               <i class="fas fa-tag"></i>
               <input
+                id="subject"
                 type="text"
                 formControlName="subject"
-                placeholder="{{ 'contact.form.subject' | transloco }} *"
                 [ngClass]="{'invalid': isInvalidAndTouched('subject')}"
               >
               <div class="focus-border"></div>
@@ -126,15 +157,19 @@
           </div>
 
           <div class="form-group">
-            <div class="input-with-icon textarea-container" [class.focus]="contactForm.get('message')?.touched">
+            <label for="messageContent" class="form-label required">{{ 'contact.form.message' | transloco }}</label>
+            <div class="input-with-icon textarea-container dark-theme" [class.focus]="contactForm.get('message')?.touched">
               <i class="fas fa-comment-alt"></i>
               <textarea
+                id="messageContent"
                 formControlName="message"
                 rows="5"
-                placeholder="{{ 'contact.form.message' | transloco }} *"
                 [ngClass]="{'invalid': isInvalidAndTouched('message')}"
               ></textarea>
-              <div class="focus-border"></div>
+              <div class="focus-border glow-effect"></div>
+              <div class="character-count" *ngIf="contactForm.get('message')?.value">
+                {{ contactForm.get('message')?.value.length }} / 500
+              </div>
             </div>
             <div class="error-message" *ngIf="isInvalidAndTouched('message')">
               <span *ngIf="contactForm.get('message')?.errors?.['required']">{{ 'validation.required' | transloco }}</span>
@@ -150,7 +185,7 @@
                 formControlName="agreeToTerms"
                 [ngClass]="{'invalid': isInvalidAndTouched('agreeToTerms')}"
               >
-              <label for="agreeToTerms">{{ 'contact.form.terms' | transloco }} *</label>
+              <label for="agreeToTerms" class="form-label required">{{ 'contact.form.terms' | transloco }}</label>
             </div>
             <div class="error-message" *ngIf="isInvalidAndTouched('agreeToTerms')">
               <span>{{ 'validation.terms' | transloco }}</span>

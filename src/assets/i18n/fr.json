@@ -1,0 +1,21 @@
+{
+  "header": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À Propos",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Bienvenue à",
+    "company": "House Digital of Business",
+    "subtitle": "Solutions numériques professionnelles pour la croissance de votre entreprise en Allemagne et au-delà",
+    "services_btn": "Nos Services",
+    "portfolio_btn": "Voir Portfolio"
+  },
+  "stats": {
+    "projects": "PROJETS",
+    "years": "ANNÉES",
+    "satisfaction": "SATISFACTION"
+  }
+} 

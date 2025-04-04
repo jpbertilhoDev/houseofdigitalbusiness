@@ -10,6 +10,12 @@ export interface ContactForm {
   agreeToTerms: boolean;
 }
 
+export interface Service {
+  id: string;
+  name: string;
+  icon: string;
+}
+
 export interface Office {
   city: string;
   country: string;

@@ -136,6 +136,9 @@ export class AboutComponent implements OnInit, OnDestroy {
   constructor(public translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    // Rolando para o topo da página ao iniciar o componente
+    window.scrollTo(0, 0);
+    
     this.loadAllData();
     this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
       () => {

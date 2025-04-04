@@ -66,7 +66,6 @@
           <h3>{{service.title}}</h3>
           <p>{{service.shortDescription}}</p>
           <div class="service-link">
-            <span>{{ 'services.learn_more' | transloco }}</span>
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
@@ -240,45 +239,87 @@
   </div>
 </section>
 
-<!-- Why Choose Us Section - Interativo e envolvente -->
-<section class="why-choose-us section" @fadeIn *ngIf="!selectedService" data-theme-mode="dark">
-  <div class="why-choose-decoration">
-    <div class="decoration-element elem-1"></div>
-    <div class="decoration-element elem-2"></div>
-  </div>
-  <div class="container">
-    <div class="section-header" @slideInUp>
-      <h2 class="section-title">{{ 'servicesPage.whyChooseUs.title' | transloco }}</h2>
-      <p class="section-subtitle">{{ 'servicesPage.whyChooseUs.subtitle' | transloco }}</p>
-      <div class="section-divider">
-        <span class="divider-dot"></span>
-        <span class="divider-line"></span>
-        <span class="divider-dot"></span>
-      </div>
+<!-- Seção "Why Choose Us" completamente redesenhada -->
+<section class="why-choose-section" *ngIf="!selectedService">
+  <div class="why-choose-bg">
+    <div class="gradient-circle circle-1"></div>
+    <div class="gradient-circle circle-2"></div>
+    <div class="floating-dots">
+      <span class="dot" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"></span>
     </div>
-
-    <div id="benefits" class="benefits-grid observe-section" @staggerBenefits>
-      <div class="benefit-card stagger-item"
-           *ngFor="let benefit of benefits"
-           [class.expanded]="flipStates[benefit.id] === 'flipped'"
-           (click)="toggleFlipState(benefit.id)"
-           [@rotate3d]="flipStates[benefit.id]"
-           data-theme-mode="dark">
-        <div class="benefit-front">
-          <div class="benefit-icon">
-            <i [class]="benefit.icon"></i>
-          </div>
-          <div class="benefit-content">
-            <h3 class="benefit-title">{{benefit.title}}</h3>
-            <p class="click-hint">{{ 'clickToLearnMore' | transloco }}</p>
-          </div>
-          <div class="card-corner"></div>
+  </div>
+  
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ 'servicesPage.whyChooseUs.title' | transloco }}</h2>
+      <p>{{ 'servicesPage.whyChooseUs.subtitle' | transloco }}</p>
+      <div class="animated-underline"></div>
+    </div>
+    
+    <div class="advantages-container">
+      <div class="advantages-sidebar">
+        <ul class="advantages-nav">
+          <li *ngFor="let benefit of benefits; let i = index" 
+              [class.active]="activeBenefit === benefit.id"
+              (click)="setActiveBenefit(benefit.id)"
+              (mouseenter)="hoverBenefit = benefit.id"
+              (mouseleave)="hoverBenefit = null"
+              [style.--delay]="i * 0.1 + 's'">
+              
+            <div class="advantage-indicator">
+              <div class="indicator-line" [class.active]="activeBenefit === benefit.id"></div>
+              <div class="indicator-circle" [class.active]="activeBenefit === benefit.id"></div>
+            </div>
+            
+            <div class="advantage-icon" [class.active]="activeBenefit === benefit.id || hoverBenefit === benefit.id">
+              <i [class]="benefit.icon"></i>
+            </div>
+            
+            <div class="advantage-text">
+              <h3>{{ benefit.title }}</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="advantage-showcase">
+        <div class="showcase-background">
+          <div class="glow-effect" 
+               [style.left]="showcaseGlowPosition.x + 'px'" 
+               [style.top]="showcaseGlowPosition.y + 'px'"></div>
         </div>
-        <div class="benefit-back">
-          <p class="benefit-description">{{benefit.description}}</p>
-          <div class="back-button">
-            <i class="fas fa-undo"></i>
-          </div>
+        
+        <div class="showcase-content">
+          <ng-container *ngFor="let benefit of benefits">
+            <div class="benefit-detail" 
+                 [@fadeSlide]="activeBenefit === benefit.id ? 'in' : 'out'"
+                 [class.active]="activeBenefit === benefit.id"
+                 (mousemove)="updateGlowPosition($event)">
+                 
+              <div class="detail-header">
+                <h3>{{ benefit.title }}</h3>
+                <div class="detail-icon">
+                  <i [class]="benefit.icon"></i>
+                </div>
+              </div>
+              
+              <div class="detail-body">
+                <p>{{ benefit.description }}</p>
+              </div>
+              
+              <div class="detail-visual" *ngIf="benefit.image">
+                <div class="visual-item">
+                  <img [src]="benefit.image" [alt]="benefit.title">
+                </div>
+              </div>
+              
+              <div class="detail-cta">
+                <button class="learn-more-btn">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -300,16 +341,33 @@
         <span class="divider-dot"></span>
       </div>
     </div>
+    
     <div class="statistics-grid" @staggerList>
       <div class="statistic-card stagger-item"
-           *ngFor="let stat of statistics"
-           @countAnimation>
+           *ngFor="let stat of statistics; let i = index"
+           @countAnimation
+           (mouseenter)="cardHovered = 'stat-' + i"
+           (mouseleave)="cardHovered = null"
+           [class.hovered]="cardHovered === 'stat-' + i"
+           [attr.data-index]="i"
+           [attr.aria-label]="stat.label">
+           
         <div class="stat-accent"></div>
+        <div class="particles-bg">
+          <span class="particle" *ngFor="let p of [0,1,2,3,4]"></span>
+        </div>
+        
         <div class="statistic-icon">
           <i [class]="stat.icon"></i>
         </div>
-        <div class="statistic-value">{{stat.prefix}}<span class="counter">{{stat.value}}</span>{{stat.suffix}}</div>
+        
+        <div class="statistic-value">
+          {{stat.prefix}}<span class="counter">{{stat.value}}</span>{{stat.suffix}}
+        </div>
+        
         <div class="statistic-label">{{stat.label}}</div>
+        
+        <div class="glow-effect"></div>
       </div>
     </div>
   </div>
@@ -331,3 +389,4 @@
     </div>
   </div>
 </section>
+

@@ -23,13 +23,7 @@ import {
   state,
 } from '@angular/animations';
 import { Service } from './service.interface';
-
-interface Benefit {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-}
+import { Benefit } from './services.interface';
 
 interface Technology {
   id: string;
@@ -153,6 +147,24 @@ interface Technology {
         animate('800ms ease-out', style({ opacity: 1 })),
       ]),
     ]),
+    trigger('fadeSlide', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)',
+        visibility: 'visible'
+      })),
+      state('out', style({
+        opacity: 0,
+        transform: 'translateX(20px)',
+        visibility: 'hidden'
+      })),
+      transition('out => in', [
+        animate('400ms cubic-bezier(0.165, 0.84, 0.44, 1)')
+      ]),
+      transition('in => out', [
+        animate('300ms cubic-bezier(0.165, 0.84, 0.44, 1)')
+      ])
+    ])
   ],
 })
 export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -209,9 +221,21 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
   cardHovered: string | null = null; // Controla o card de serviço em hover
   techHovered: string | null = null; // Controla o card de tecnologia em hover
 
+  // Propriedade para controlar qual benefício está ativo atualmente
+  activeBenefit: string | null = null;
+
+  // Propriedade para controlar qual benefício está em hover
+  hoverBenefit: string | null = null;
+
+  // Propriedade para posição do efeito de brilho
+  showcaseGlowPosition = { x: 0, y: 0 };
+
   constructor(private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
+    // Rolando para o topo da página ao iniciar o componente
+    window.scrollTo(0, 0);
+    
     this.loadAllData();
     this.langChangeSubscription = this.translocoService.langChanges$.subscribe(
       () => {
@@ -227,6 +251,11 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
         });
       }
     }, 0);
+
+    // Definir o benefício ativo inicial
+    if (this.benefits.length > 0) {
+      this.activeBenefit = this.benefits[0].id;
+    }
   }
 
   ngAfterViewInit(): void {
@@ -762,5 +791,21 @@ export class ServicesComponent implements OnInit, OnDestroy, AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
     // Implementa lógica de animação baseada em rolagem se necessário
+  }
+
+  // Método para definir o benefício ativo
+  setActiveBenefit(benefitId: string): void {
+    this.activeBenefit = benefitId;
+  }
+
+  // Método para atualizar a posição do efeito de brilho
+  updateGlowPosition(event: MouseEvent): void {
+    const element = event.currentTarget as HTMLElement;
+    const rect = element.getBoundingClientRect();
+    
+    this.showcaseGlowPosition = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top
+    };
   }
 }

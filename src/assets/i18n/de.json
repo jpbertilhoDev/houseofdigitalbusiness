@@ -9,13 +9,25 @@
   "hero": {
     "welcome": "Willkommen bei",
     "company": "House Digital of Business",
-    "subtitle": "Professionelle digitale Lösungen für das Wachstum Ihres Unternehmens in Deutschland und darüber hinaus",
+    "subtitle": "Professionelle digitale Lösungen für Ihr Geschäftswachstum in Deutschland und darüber hinaus",
     "services_btn": "Unsere Dienstleistungen",
-    "portfolio_btn": "Portfolio Ansehen"
+    "portfolio_btn": "Portfolio anzeigen"
+  },
+  "stats": {
+    "projects": "PROJEKTE",
+    "years": "JAHRE",
+    "satisfaction": "ZUFRIEDENHEIT"
   },
   "services": {
     "title": "Unsere Dienstleistungen",
     "subtitle": "Wir bieten umfassende digitale Lösungen, um Ihrem Unternehmen zum Erfolg im digitalen Umfeld zu verhelfen",
+    "branding": "Markenstrategie & Identität",
+    "webdesign": "Webdesign & Entwicklung",
+    "graphicdesign": "Grafikdesign",
+    "videoproduction": "Videoproduktion",
+    "aisolutions": "KI-Lösungen",
+    "socialmedia": "Social Media Management",
+    "consulting": "Digitale Beratung",
     "cards": [
       {
         "icon": "fas fa-code",
@@ -123,8 +135,8 @@
     ]
   },
   "cta": {
-    "title": "Bereit, Ihr Geschäft zu erweitern?",
-    "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie wir Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
+    "title": "Bereit, Ihr Geschäft zu transformieren?",
+    "subtitle": "Kontaktieren Sie uns noch heute, um zu besprechen, wie unsere Dienstleistungen Ihnen helfen können, Ihre digitalen Ziele zu erreichen.",
     "button": "Kontaktieren Sie Uns"
   },
   "contact": {
@@ -198,6 +210,17 @@
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
     "cookies": "Cookie-Richtlinie"
+  },
+  "ready_start": "Bereit loszulegen?",
+  "schedule_consultation": "Vereinbaren Sie eine kostenlose Beratung, um Ihr Projekt zu besprechen",
+  "schedule_call": "Termin vereinbaren",
+  "our_services": "Unsere Dienstleistungen",
+  "optional": "optional",
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "min_length": "Dieses Feld muss mindestens {{count}} Zeichen lang sein",
+    "terms": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren"
   },
   "clickToLearnMore": "Klicken Sie für mehr Informationen",
   "servicesPage": {
@@ -495,12 +518,6 @@
           "description": "Stylesheet-Sprache für das Design von Webseiten"
         },
         {
-          "name": "SASS/SCSS",
-          "icon": "fab fa-sass",
-          "category": "frontend",
-          "description": "CSS-Präprozessor, der erweiterte Funktionen hinzufügt"
-        },
-        {
           "name": "Node.js",
           "icon": "fab fa-node-js",
           "category": "backend",
@@ -529,12 +546,6 @@
           "icon": "fab fa-laravel",
           "category": "backend",
           "description": "Elegantes PHP-Framework für die Webentwicklung"
-        },
-        {
-          "name": ".NET Core",
-          "icon": "fab fa-microsoft",
-          "category": "backend",
-          "description": "Framework zum Erstellen moderner Cloud-Anwendungen"
         },
         {
           "name": "React Native",
@@ -567,12 +578,6 @@
           "description": "Framework für die Entwicklung hybrider Apps"
         },
         {
-          "name": "Xamarin",
-          "icon": "fab fa-microsoft",
-          "category": "mobile",
-          "description": "Microsofts Plattform für die plattformübergreifende Entwicklung"
-        },
-        {
           "name": "Figma",
           "icon": "fab fa-figma",
           "category": "design",
@@ -603,12 +608,6 @@
           "description": "Vektordesign- und Illustrations-Software"
         },
         {
-          "name": "InVision",
-          "icon": "fas fa-eye",
-          "category": "design",
-          "description": "Digitale Produktdesign-Plattform und Workflow"
-        },
-        {
           "name": "MySQL",
           "icon": "fas fa-database",
           "category": "database",
@@ -637,12 +636,6 @@
           "icon": "fas fa-database",
           "category": "database",
           "description": "In-Memory-Datenstrukturspeicher"
-        },
-        {
-          "name": "GraphQL",
-          "icon": "fas fa-project-diagram",
-          "category": "database",
-          "description": "Abfrage- und Manipulationssprache für APIs"
         }
       ]
     },
@@ -954,5 +947,18 @@
       "servicesBtn": "Unsere Dienstleistungen"
     }
   },
-  "clickToLearnMore": "Klicken Sie für mehr Informationen"
+  "clickToLearnMore": "Klicken Sie für mehr Informationen",
+  "homePage": {
+    "about": {
+      "badge": "Über Uns",
+      "title": "Lernen Sie Unsere Agentur Kennen",
+      "description": {
+        "first": "Wir sind Experten darin, Ideen in vollständige digitale Erlebnisse umzuwandeln, die Unternehmen voranbringen. Unser multidisziplinäres Team vereint Kreativität und Technologie, um maßgeschneiderte Lösungen zu liefern, die die Erwartungen übertreffen.",
+        "second": "Mit Fokus auf Innovation und Qualität entwickeln wir Projekte, die ansprechendes Design, intuitive Funktionalität und messbare Ergebnisse für jeden Kunden kombinieren."
+      },
+      "ctaButton": "Mehr Über Uns Erfahren",
+      "yearsExperience": "Jahre Erfahrung",
+      "imageAlt": "House of Digital Business Team"
+    }
+  }
 }

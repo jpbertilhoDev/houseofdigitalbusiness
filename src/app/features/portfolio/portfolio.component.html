@@ -1,0 +1,191 @@
+<!-- Portfolio Hero Section - Estilo moderno e minimalista -->
+<section class="portfolio-hero" @fadeIn data-theme-mode="dark">
+  <div class="hero-background">
+    <div class="gradient-shape shape-1"></div>
+    <div class="gradient-shape shape-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-content" @slideInUp>
+      <div class="section-badge">{{ 'portfolio.badge' | transloco }}</div>
+      <h1 class="section-title">{{ 'portfolio.title' | transloco }}</h1>
+      <p class="section-subtitle">{{ 'portfolio.subtitle' | transloco }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Filter - Minimalista e funcional -->
+<section class="portfolio-filter" @fadeIn>
+  <div class="container">
+    <div class="filter-tabs" @staggerList>
+      <button 
+        *ngFor="let category of categories" 
+        [class.active]="activeFilter === category.id"
+        (click)="filterProjects(category.id)"
+        class="filter-btn stagger-item">
+        <span class="filter-icon"><i [class]="category.icon"></i></span>
+        <span class="filter-text">{{ category.name }}</span>
+        <div class="active-indicator"></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid - Inspirado em Apple com animações fluidas -->
+<section class="portfolio-grid" @fadeIn>
+  <div class="container">
+    <div class="grid-container" #portfolioGrid @staggerList>
+      <div 
+        *ngFor="let item of filteredItems" 
+        class="portfolio-item stagger-item observe-element"
+        (click)="selectProject(item)"
+        (mouseenter)="hoveredItem = item.id"
+        (mouseleave)="hoveredItem = null"
+        [@expandCard]="hoveredItem === item.id ? 'expanded' : 'default'">
+        
+        <div class="item-image">
+          <img 
+            [src]="hoveredItem === item.id && item.hoverImage ? item.hoverImage : item.image" 
+            [alt]="item.title" 
+            class="project-img">
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <span class="project-category">{{ item.category | uppercase }}</span>
+              <h3 class="project-title">{{ item.title }}</h3>
+              <div class="project-client">{{ item.client }}</div>
+              <div class="view-project">
+                <span>{{ 'portfolio.viewProject' | transloco }}</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Estado vazio -->
+    <div class="empty-state" *ngIf="filteredItems.length === 0">
+      <div class="empty-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <h3>{{ 'portfolio.noProjectsFound' | transloco }}</h3>
+      <p>{{ 'portfolio.tryDifferentCategory' | transloco }}</p>
+      <button class="btn btn-outline" (click)="filterProjects('all')">
+        {{ 'portfolio.viewAllProjects' | transloco }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Project Details Modal - Design Imersivo -->
+<div class="project-modal" *ngIf="modalOpen" @fadeIn>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+  
+  <div class="modal-container">
+    <button class="close-modal" (click)="closeModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="modal-content" *ngIf="selectedItem">
+      <div class="project-header">
+        <h2 class="project-title">{{ selectedItem.title }}</h2>
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">{{ 'portfolio.client' | transloco }}:</span>
+            <span class="meta-value">{{ selectedItem.client }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">{{ 'portfolio.category' | transloco }}:</span>
+            <span class="meta-value">{{ selectedItem.category | titlecase }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">{{ 'portfolio.date' | transloco }}:</span>
+            <span class="meta-value">{{ selectedItem.date }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-gallery" *ngIf="selectedItem.gallery && selectedItem.gallery.length > 0">
+        <div class="gallery-container">
+          <img [src]="selectedItem.gallery[currentGalleryIndex]" [alt]="selectedItem.title" class="gallery-image">
+          
+          <div class="gallery-navigation" *ngIf="selectedItem.gallery.length > 1">
+            <button class="nav-btn prev" (click)="prevGalleryImage()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next" (click)="nextGalleryImage()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          
+          <div class="gallery-dots" *ngIf="selectedItem.gallery.length > 1">
+            <span 
+              *ngFor="let img of selectedItem.gallery; let i = index" 
+              class="dot" 
+              [class.active]="i === currentGalleryIndex"
+              (click)="currentGalleryIndex = i">
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-video" *ngIf="selectedItem.videoUrl">
+        <iframe 
+          [src]="selectedItem.videoUrl | safeUrl" 
+          title="Project Video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <div class="project-description">
+        <h3>{{ 'portfolio.projectOverview' | transloco }}</h3>
+        <p>{{ selectedItem.fullDescription || selectedItem.description }}</p>
+      </div>
+      
+      <div class="project-features" *ngIf="selectedItem.features && selectedItem.features.length > 0">
+        <h3>{{ 'portfolio.keyFeatures' | transloco }}</h3>
+        <ul class="features-list">
+          <li *ngFor="let feature of selectedItem.features">
+            <i class="fas fa-check"></i>
+            <span>{{ feature }}</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="project-technologies">
+        <h3>{{ 'portfolio.technologies' | transloco }}</h3>
+        <div class="tech-tags">
+          <span class="tech-tag" *ngFor="let tech of selectedItem.technologies">{{ tech }}</span>
+        </div>
+      </div>
+      
+      <div class="project-link" *ngIf="selectedItem.link">
+        <a [href]="selectedItem.link" target="_blank" rel="noopener noreferrer" class="visit-link">
+          <span>{{ 'portfolio.visitProject' | transloco }}</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action - Design premium e impactante -->
+<section class="portfolio-cta" @fadeIn *ngIf="!modalOpen">
+  <div class="cta-background">
+    <div class="gradient-overlay"></div>
+  </div>
+  
+  <div class="container">
+    <div class="cta-content" @slideInUp>
+      <h2>{{ 'portfolio.cta.title' | transloco }}</h2>
+      <p>{{ 'portfolio.cta.subtitle' | transloco }}</p>
+      <a routerLink="/contact" class="cta-button">
+        {{ 'portfolio.cta.button' | transloco }}
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section> 
